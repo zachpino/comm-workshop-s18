@@ -34,12 +34,12 @@ Documentation and Resources for the Spring 2018 IIT Institute of Design Communic
 - [Week 07 · Choropleths and Showing Data on Maps](week07/readme.md)
 	> Classtime: Draw a map and programmatically draw circles based on a dataset.  
 	
-	> Homework: Plot multidimensional datapoints on a self-selected map.
+	> Homework: Plot multidimensional datapoints on map from week 6
 
 - [Week 08 · Animation and Interactivity](week08/readme.md)
 	> Classtime: Add intro animation to a simple chart, user-selection, click and hover handlers, tooltips
 	
-	> Homework: Plot multidimensional datapoints on a self-selected map.
+	> Homework: Create T+Z defined animations with assigned dataset 
 
 - [Week 09 · Transitioning Datasets in Visualizations](week09/readme.md)
 	> Classtime: Add dropdown so that a chart can animate between different census year datasets
