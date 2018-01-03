@@ -1,13 +1,15 @@
 # comm-workshop-s18
 Documentation and Resources for the Spring 2018 IIT Institute of Design Communication Design Workshop
 
-- [Week 01](week01/readme.md)
-- [Week 02](week02/readme.md)
-- [Week 03](week03/readme.md)
-- [Week 04](week04/readme.md)
-- [Week 05](week05/readme.md)
-- [Week 06](week06/readme.md)
-- [Week 07](week07/readme.md)
+- [Week 01 · Accessing the Census API and Bash Terminal Basics](week01/readme.md) 
+	
+	HW: Pull down and explore some data
+- [Week 02 · Accessing the Census API with more Specificity](week02/readme.md) HW: 
+- [Week 03 · Data and List Management in JS and SVG](week03/readme.md)
+- [Week 04 · Drawing and Styling Simple Charts](week04/readme.md)
+- [Week 05 · Drawing Custom Shapes and Plots](week05/readme.md)
+- [Week 06 · Other API Access Protocol Standards](week06/readme.md)
+- [Week 07 · Geo-Data and Drawing Maps](week07/readme.md)
 - [Week 08](week08/readme.md)
 - [Week 09](week09/readme.md)
 - [Week 10](week10/readme.md)
