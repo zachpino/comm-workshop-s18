@@ -1,9 +1,9 @@
 # comm-workshop-s18
 Documentation and Resources for the Spring 2018 IIT Institute of Design Communication Design Workshop
 
-- [Week 01 · Accessing the Census API and Bash Terminal Basics](week01/readme.md) 
-	
-> HW: Pull down and explore census datasets
+- [Week 01 · Accessing the Census API and Bash Terminal Basics](week01/readme.md) 	
+	> HW: Pull down and explore census datasets
+
 - [Week 02 · Accessing the Census API with more Specificity](week02/readme.md) HW: 
 - [Week 03 · Data and List Management in JS and SVG](week03/readme.md)
 - [Week 04 · Drawing and Styling Simple Charts](week04/readme.md)
