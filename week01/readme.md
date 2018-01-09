@@ -80,7 +80,7 @@ Selecting the [html](https://api.census.gov/data/2016/acs/acs1/variables.html) l
 | :------     |:-------------   | :-----   | :------- |:---------  | :-----| :------------- |:------| :-----------|
 B24121_014E    |   Estimate!! Total!!Industrial production managers	   |    DETAILED OCCUPATION BY MEDIAN EARNINGS IN THE PAST 12 MONTHS (IN 2016 INFLATION-ADJUSTED DOLLARS) FOR THE FULL-TIME, YEAR-ROUND CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER   |    not required    | B24121_014M, B24121_014EA   |   0   |   int   |   B24121   |   N/A
 
-
+ff 
 
 <!DOCTYPE html>
 <html>
