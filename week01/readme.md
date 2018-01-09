@@ -78,9 +78,12 @@ Selecting the [html](https://api.census.gov/data/2016/acs/acs1/variables.html) l
 
 | Name        | Label           | Concept  | Required | Attributes | Limit | Predicate Type | Group | Valid Value |
 | :------     |:-------------   | :-----   | :------- |:---------  | :-----| :------------- |:------| :-----------|
-B24121_014E    |   Estimate!! Total!!Industrial production managers	   |    DETAILED OCCUPATION BY MEDIAN EARNINGS IN THE PAST 12 MONTHS (IN 2016 INFLATION-ADJUSTED DOLLARS) FOR THE FULL-TIME, YEAR-ROUND CIVILIAN EMPLOYED POPULATION 16 YEARS AND OVER   |    not required    | B24121_014M, B24121_014EA   |   0   |   int   |   B24121   |   N/A
-
-ff 
+|   C15010_001E   |   Estimate!!Total   |   FIELD OF BACHELOR'S DEGREE FOR FIRST MAJOR FOR THE POPULATION 25 YEARS AND OVER   |   not required   |   C15010_001M, C15010_001EA   |   0   |   int   |   C15010   |   N/A   |
+|   C15010_002E   |   Estimate!!Total!!Science and Engineering   |   FIELD OF BACHELOR'S DEGREE FOR FIRST MAJOR FOR THE POPULATION 25 YEARS AND OVER	not required   |   C15010_002M, C15010_002EA   |   0   |   int   |   C15010   |   N/A   |
+|   C15010_003E   |   Estimate!!Total!!Science and Engineering Related Fields   |   FIELD OF BACHELOR'S DEGREE FOR FIRST MAJOR FOR THE POPULATION 25 YEARS AND OVER	not required   |   C15010_003M, C15010_003EA   |   0   |   int   |   C15010   |   N/A   |
+|   C15010_004E   |   Estimate!!Total!!Business   |   FIELD OF BACHELOR'S DEGREE FOR FIRST MAJOR FOR THE POPULATION 25 YEARS AND OVER	not required   |   C15010_004M, C15010_004EA   |   0   |   int   |   C15010   |   N/A   |
+|   C15010_005E   |   Estimate!!Total!!Education   |   FIELD OF BACHELOR'S DEGREE FOR FIRST MAJOR FOR THE POPULATION 25 YEARS AND OVER	not required   |   C15010_005M, C15010_005EA   |   0   |   int   |   C15010   |   N/A   |
+|   C15010_006E   |   Estimate!!Total!!Arts, Humanities and Other   |   FIELD OF BACHELOR'S DEGREE FOR FIRST MAJOR FOR THE POPULATION 25 YEARS AND OVER	not required   |   C15010_006M, C15010_006EA   |   0   |   int   |   C15010   |   N/A   |
 
 <!DOCTYPE html>
 <html>
