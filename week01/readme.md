@@ -1,15 +1,19 @@
 ### Accessing the Census API
 
-##### What is the Census and the American Community Survey?
+#### What is the Census?
 
 The [US Census](https://en.wikipedia.org/wiki/United_States_Census) — an extraordinary resource for data scientists, policymakers, and social science researchers — is an attempt to collect information on every single person living within the boundaries of sovereign United States territory every ten years. It is called for by the Constitution of the United States, and has never been missed (even taking place during the United States Civil War ). Not only is the census vital for a better understanding of the makeup and condition of the United States, but it also serves as the official mechanism for drawing congressional and state goverment district boundaries — rendering the census a vital component of the United States political mechanism. Thousands of taxpayer-supported census workers campus the country, knock on doors, collect data, and ensure as accurate a count as possible.
 
 Though an effort is made to deliver a wholistic and objective count with financial punishment for those who do not complete the census form ($100/household in 2010) and a promise of total confidentiality and indemnity, participation in the census is estimated at 74%, with some populations statistically underreporting. For instance, undocumented immigrant families are less likely to participate for fear of governmental reprisal. This skew has been modeled, and serves as a statistical adjustment in some of the census datasets which do not report raw numbers. Most census datasets, however, report nothing more than pure integer counts, and contextual offsets are left up to the data modeler. 
 
+Modeled on an Ancient Roman equivalent that tracked citizenry for military draft purposes (*censore* in Latin means *to determine value of something*), the success of the US census has served as a model for similar efforts across the globe and supported by the United Nations. Many countries complete their own censuses, and provide them to citizens in a similar way to the United States model. 
+
+
+#### Criticisms and Limitations of the Census
 Historical census data, valuable and available, is tarnished by historical realities. The censuses of the early United States did not count women, people of color, or indigineous peoples, until the landmark census of 1850 — which was administered by the ahead-of-his-time sociopoltical activist and Civil War cartographer and strategist [Joseph C.G. Kennedy](https://en.wikipedia.org/wiki/Joseph_C._G._Kennedy). The census of 1940 was used surreptitiously to identify potential Italian, German, and Japanese sympathizers. The 2020 census is already being accused of similar potential misuse, and despite its importance, is under threat of defunding by both political sides.
 
-Modeled on an Ancient Roman equivalent that tracked citizenry for military draft purposes (*censore* in Latin means *to determine value of something* ), the success of the US census has served as a model for similar efforts across the globe and supported by the United Nations. Many countries complete their own censuses, and provide them to citizens in a similar way to the United States model. 
 
+#### American Community Survey
 Since the early aughts, the 10 year cadence of the census — clearly an outdated model in an era of constant data production and collection — has been supported by a motley assortment of supplemental data gathering efforts. One of the more successful attempts has been the American Community Survey, which aims to provide census-level details of a statistical sampling of the full American population at a higher frequency for large population centers. The ACS occurs once every year with a (relatively) small sample size (population centers of 65,000 individuals or greater), and every five years with a larger sampling (population centers of 20,000 individuals or greater).
 
 The ACS tracks around 65,000 *variables*, and provides projections and estimates for another 20,000 or so. The data is voluminous, to say the least. Many of these indicators are aimed at constructing a picture of the United States' identity makeup — gender, race, ethnicity, derivation, age. Others are financial — income, employment status, employment industry, labor force participation. Further indicators support a better understanding of the American household — children/family, household size, number of rooms, rent/mortgage cost, frequency of housing changes, languages spoken at home. A large proportion of these variables have been tracked in the same way over many years, allowing data scientists and visualizers to track and understand the increasingly tumultuous social dynamics of the United States.
@@ -51,11 +55,10 @@ Despite census data being fully public, API access is gated to prevent abuse and
 
 [Request an API Key](https://api.census.gov/data/key_signup.html), which will be sent to the email address you provide within 15 minutes or so. It may go to your spam folder.
 
-Keep this 41 character string to yourself, and never share it online. Doing so could allow someone else to masquerade as you and hammer the Census API servers.
+Keep this 41 character string to yourself, and never share it online. Doing so could allow someone else to masquerade as you and hammer the Census API servers. Make sure you copy the string somewhere so that it will be easily accessible.
 
-Make sure you copy the string somewhere so that it will be easily accessible.
 
-##### Browsing the API
+#### Browsing the API Data
 
 The [yearly ACS API](https://census.gov/data/developers/data-sets/acs-1year.html) offers many different way of learning about the data available within. The page lays out four main, confusingly named presentations of the underlying data.
 
@@ -98,8 +101,9 @@ All of the columns hold important information.
 - Group : Most data sets belong to a group of related datasets.
 - Valid Value : Some data sets only permit certain responses. Links here describe those options.
 
+-----
 
-##### Calling an API
+#### Calling an API
 
 Let's compose a simple query of the ACS.
 
