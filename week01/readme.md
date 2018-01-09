@@ -17,11 +17,14 @@ The ACS tracks around 65,000 *variables*, and provides projections and estimates
 This course will provide walkthroughs for accessing this ACS data, cleaning and transforming it, combining it with other datasets, finding insights, using statistical tools for proving those insights, and rendering it visual through the D3 data visualization library.
 
 
-##### Census API
+----------
 
-The ACS are available online, along with an increasing number of historical census datasets, as an Application Programming Interface (API).  
 
-	> An API is a formalized way of accessing complex and/or voluminous data-stores. Making a query to an API is termed 'calling' and API.
+#### Census API
+
+The ACS are available online, along with an increasing number of historical census datasets and other data repositories, as an Application Programming Interface (API).  
+
+	> An API is a formalized way of accessing complex and/or voluminous data-stores. Making a query to an API is termed 'calling' an API.
 
 Some terminology: 
 
@@ -38,7 +41,7 @@ The [Census API homepage](https://census.gov/developers/) offers a good sense of
 The [available APIs](https://census.gov/data/developers/data-sets.html) are also enumerated and you can find the ACS there, and [many exploratory tools](https://census.gov/data/data-tools.html) are provided.
 
 
-##### API Key
+#### API Key
 
 The first step to accessing most APIs is to acquire an API cryptographic key.
 
@@ -51,7 +54,6 @@ Despite census data being fully public, API access is gated to prevent abuse and
 Keep this 41 character string to yourself, and never share it online. Doing so could allow someone else to masquerade as you and hammer the Census API servers.
 
 Make sure you copy the string somewhere so that it will be easily accessible.
-
 
 ##### Browsing the API
 
@@ -97,7 +99,7 @@ All of the columns hold important information.
 - Valid Value : Some data sets only permit certain responses. Links here describe those options.
 
 
-##### Calling and API
+##### Calling an API
 
 Let's compose a simple query of the ACS.
 
