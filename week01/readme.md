@@ -36,7 +36,7 @@ Some terminology:
 	> Data Set : An organized collection of related information
 	> Data Point : A singular piece of encoded information
 
-	>The Census API, a *data store*, offers a *data set* on uninsured people in each state, wherein we can find the data point for Illinois in 2016, which had an uninsured population of 71319 people under the age of 18.
+The Census API, a *data store*, offers a *data set* on uninsured people in each state, wherein we can find the *data point* for Illinois in 2016, which had an uninsured population of 71319 people under the age of 18.
 
 Through the use of the Census API, very specific queries can be generated to access information at different geographic resolutions — from whole country tabulations to data bucketed for each state to county- and block-level raw counts.
 
@@ -55,7 +55,7 @@ Despite census data being fully public, API access is gated to prevent abuse and
 
 [Request an API Key](https://api.census.gov/data/key_signup.html), which will be sent to the email address you provide within 15 minutes or so. It may go to your spam folder.
 
-Keep this 41 character string to yourself, and never share it online. Doing so could allow someone else to masquerade as you and hammer the Census API servers. Make sure you copy the string somewhere so that it will be easily accessible.
+Keep this 40 character string to yourself, and never share it online. Doing so could allow someone else to masquerade as you and hammer the Census API servers. Make sure you copy the string somewhere so that it will be easily accessible.
 
 
 #### Browsing the API Data
@@ -107,7 +107,7 @@ All of the columns hold important information.
 
 Let's compose a simple query of the ACS.
 
-For instance, we could attempt to find counts of those who live in the State of Illinois who graduated with STEM Bachelor degrees in 2016. The "Example Call" descibes how to construct an API call, which looks like a standard web address.
+For instance, we could attempt to find counts of those who live in the State of Illinois who graduated with STEM Bachelor degrees in 2016. Since we are interested in counts alone, the *Detail Tables* presentation is most appropriate. The "Example Call" descibes how to construct an API call, which looks like a standard web address.
 
 ```
 api.census.gov/data/2016/acs/acs1?get=NAME,B01001_001E&for=state:*&key=...
@@ -131,7 +131,7 @@ Thousands of geographic areas are encoded with the [FIPS encoding system](https:
 So, our call would look like the 
 
 ```
-api.census.gov/data/2016/acs/acs1?get=C15010_003E&for=state:17&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+api.census.gov/data/2016/acs/acs1?get=C15010_003E&for=state:17&key=a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0
 ```
 
 Entering that into any web browser will return the following text.
@@ -146,7 +146,7 @@ The API confirms that `C15010_003E` was accessed at the `state` level. `283557` 
 We could similarly ask for all states by using the wildcard operator `*`.
 
 ```
-api.census.gov/data/2016/acs/acs1?get=C15010_003E&for=state:*&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+api.census.gov/data/2016/acs/acs1?get=C15010_003E&for=state:*&key=a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0
 ```
 
 ```
@@ -207,5 +207,5 @@ api.census.gov/data/2016/acs/acs1?get=C15010_003E&for=state:*&key=e0f41b3ce147e2
 
 Note that there 52 data points. The District of Columbia and Puerto Rico are included.
 
-We'll soon look at how to visualize this data using D3.
+We'll soon look at how to visualize this data using [D3](www.d3js.org).
 
