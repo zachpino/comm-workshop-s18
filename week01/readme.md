@@ -53,9 +53,7 @@ Keep this 41 character string to yourself, and never share it online. Doing so c
 Make sure you copy the string somewhere so that it will be easily accessible.
 
 
-##### Accessing the API
-
-Let's compose a simple query of the ACS.
+##### Browsing the API
 
 The [yearly ACS API](https://census.gov/data/developers/data-sets/acs-1year.html) offers many different way of learning about the data available within. The page lays out four main, confusingly named presentations of the underlying data.
 
@@ -74,7 +72,7 @@ Detail Tables
 - ACS Technical Documentation
 - Examples and Supported Geography
 
-Selecting the [html](https://api.census.gov/data/2016/acs/acs1/variables.html) link will display a webpage listing all of the data dimensions available and is the best place to start browsing. On that linked page thousands of rows will display exactly what is avaiable.
+Selecting the [html](https://api.census.gov/data/2016/acs/acs1/variables.html) link will display a webpage listing all of the data dimensions available and is the best place to start browsing. On that linked page thousands of rows will display exactly what is avaiable in the ACS.
 
 | Name        | Label           | Concept  | Required | Attributes | Limit | Predicate Type | Group | Valid Value |
 | :------     |:-------------   | :-----   | :------- |:---------  | :-----| :------------- |:------| :-----------|
@@ -84,6 +82,128 @@ Selecting the [html](https://api.census.gov/data/2016/acs/acs1/variables.html) l
 |   C15010_004E   |   Estimate!!Total!!Business   |   FIELD OF BACHELOR'S DEGREE FOR FIRST MAJOR FOR THE POPULATION 25 YEARS AND OVER	not required   |   C15010_004M, C15010_004EA   |   0   |   int   |   C15010   |   N/A   |
 |   C15010_005E   |   Estimate!!Total!!Education   |   FIELD OF BACHELOR'S DEGREE FOR FIRST MAJOR FOR THE POPULATION 25 YEARS AND OVER	not required   |   C15010_005M, C15010_005EA   |   0   |   int   |   C15010   |   N/A   |
 |   C15010_006E   |   Estimate!!Total!!Arts, Humanities and Other   |   FIELD OF BACHELOR'S DEGREE FOR FIRST MAJOR FOR THE POPULATION 25 YEARS AND OVER	not required   |   C15010_006M, C15010_006EA   |   0   |   int   |   C15010   |   N/A   |
+
+
+All of the columns hold important information.
+
+- Name : The unique identifier for each data set. This is necessary for calling an API.
+- Label : The unique, human readable name for each data set. Most ACS fields will display 'Estimate' since not everyone is being counted.
+- Concept : The overall idea of what is being tracked within the dataset, usually understandable.
+- Required : As this is an ACS and not a decennial census, no data is notionally 'required' of participants.
+- Attributes : The name + 'M' is an accounting for the margin of error data point for the data set. The name + "EA" is any statement available about how the estimate or average was calculated.
+- Limit : If there was a limit on the number of respondents. 0 means 'no limit.'
+- Predicate Type : What kind of data is in the data set. Most ACS fields are 'int,' integers, or 'strings,' textual descriptions. 
+- Group : Most data sets belong to a group of related datasets.
+- Valid Value : Some data sets only permit certain responses. Links here describe those options.
+
+
+##### Calling and API
+
+Let's compose a simple query of the ACS.
+
+For instance, we could attempt to find counts of those who live in the State of Illinois who graduated with STEM Bachelor degrees in 2016. The "Example Call" descibes how to construct an API call, which looks like a standard web address.
+
+```
+api.census.gov/data/2016/acs/acs1?get=NAME,B01001_001E&for=state:*&key=...
+```
+
+To complete our call, we need some specific pieces of information.
+
+- Name of the dataset, found above. Many can be called together, separated by commas. 
+- Geographic domain of interest. Many can be called together, separated by commas. FIPS encoded.
+- ACS year of interest
+- API key
+
+```
+api.census.gov/data/ |YEAR| /acs/acs1?get= |NAME| &for= |GEOGRAPHY| &key= |KEY|
+```
+
+We already have many of the necessary pieces. The unique name of the data set is `C15010_003E` for the year `2016`, and we've requested an API key previously. The only thing missing is the geographic area of interest.
+
+Thousands of geographic areas are encoded with the [FIPS encoding system](https://en.wikipedia.org/wiki/Federal_Information_Processing_Standards) and accessible for querying. Every state, county, metropolitan area, congressional district, and census tract has a unique numerical id, which can be [found here](https://www.census.gov/geo/reference/codes/cou.html). A list of [state FIPS codes](https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code) is also avaiable for easy browsing. The state of Illinois is `17`.
+
+So, our call would look like the 
+
+```
+api.census.gov/data/2016/acs/acs1?get=C15010_003E&for=state:17&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+```
+
+Entering that into any web browser will return the following text.
+
+```
+[["C15010_003E","state"],
+["283557","17"]]
+```
+
+The API confirms that `C15010_003E` was accessed at the `state` level. `283557` individuals have STEM related degrees in FIPS state `17`, Illinois.
+
+We could similarly ask for all states by using the wildcard operator `*`.
+
+```
+api.census.gov/data/2016/acs/acs1?get=C15010_003E&for=state:*&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+```
+
+```
+[["C15010_003E","state"],
+["84646","01"],
+["14711","02"],
+["139304","04"],
+["50278","05"],
+["692652","06"],
+["116557","08"],
+["76857","09"],
+["20035","10"],
+["11014","11"],
+["432861","12"],
+["190302","13"],
+["32736","15"],
+["33691","16"],
+["283557","17"],
+["134891","18"],
+["59116","19"],
+["62926","20"],
+["81884","21"],
+["90705","22"],
+["31382","23"],
+["141516","24"],
+["168557","25"],
+["205751","26"],
+["128965","27"],
+["50784","28"],
+["115480","29"],
+["26978","30"],
+["45956","31"],
+["49666","32"],
+["30866","33"],
+["204546","34"],
+["35635","35"],
+["436594","36"],
+["205115","37"],
+["19826","38"],
+["247831","39"],
+["69776","40"],
+["81895","41"],
+["292374","42"],
+["24036","44"],
+["81485","45"],
+["21036","46"],
+["129196","47"],
+["457374","48"],
+["58726","49"],
+["12151","50"],
+["171380","51"],
+["152394","53"],
+["34796","54"],
+["133290","55"],
+["13783","56"],
+["60478","72"]]
+```
+
+Note that there 52 data points. The District of Columbia and Puerto Rico are included.
+
+
+
+
 
 <!DOCTYPE html>
 <html>
