@@ -1,13 +1,13 @@
 # comm-workshop-s18
 Documentation and Resources for the Spring 2018 IIT Institute of Design Communication Design Workshop
 
-- [Week 01 · Accessing the Census API and Bash Terminal Basics](week01/readme.md) 	
-	> Classtime: Pull down data from various census endpoints, talk through FIPS codes, and discuss how to manipulate json, csv, raw text.
+- [Week 01 · Accessing the Census API](week01/readme.md) 	
+	> Classtime: Pull down data from various census endpoints, talk through FIPS codes, and discuss how to manipulate raw and csv text.
 	
 	> Homework: Explore census data. Pull down assigned census datasets and find specific answers to questions T+Z devise
 
-- [Week 02 · Accessing the Census API with Specificity](week02/readme.md) 
-	> Classtime: Access data based on lon-lat coordinates, geocoded regions, and demographic qualifiers
+- [Week 02 · Accessing the Census API with Specificity from the Terminal](week02/readme.md) 
+	> Classtime: Access data based on lon-lat coordinates, geocoded regions, and in batches
 	
 	> Homework: Explore census data. Pull down assigned census datasets and find specific answers to questions T+Z devise
 
