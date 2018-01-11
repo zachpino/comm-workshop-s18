@@ -149,7 +149,7 @@ if(i%2==0){labelPos = xAxis+30}
 */
 
 
-width=3000;
+width=2000;
 height=500;
 
 barWidth=width/dataset.length;
@@ -164,18 +164,23 @@ var drawAxis = d3.select('svg').append('line').attr('x1',0).attr('y1',xAxis).att
 
 var myScale = d3.scaleLinear().domain([0,50000000]).range([0,400])
 
-
+var tooltip = d3.select('svg').append('text').attr('width',200).attr('height','50').attr('x',100).attr('y',100).attr('opacity',0).attr('id','tooltip').text('hello').style('font-family','courier');
 
 var bars = d3.select('svg').selectAll('.bars').data(dataset).enter().append('rect').attr('width',barWidth).attr('height', function(d,i){return myScale(d[0])}).attr('fill','#333').attr('x',function(d,i){return i*barWidth}).attr('y', function(d,i){return xAxis- myScale(d[0])}  ).attr('class','bars').on('mouseover', function(d,i){
+		
 		d3.select(this).transition().duration(300).attr('fill','#666');
 		d3.select('#myLabel').transition().duration(300).style('opacity','1').text( fips[d[1]] + " : " + d[0]);
+		d3.select('#tooltip').text(fips[d[1]] + " : " + d[0]).attr('x', barWidth*i).attr('y', xAxis-myScale(d[0])-20).transition().duration(300).style('opacity',1);
+
 	}).on('mouseout', function(d){
 		d3.select(this).transition().duration(300).attr('fill','#333');
 		d3.select('#myLabel').transition().duration(300).style('opacity','0').text( fips[d[1]] + " : " + d[0]);
-
+		d3.select('#tooltip').transition().duration(300).style('opacity',0);
+		d3.select('#tooltip').transition().duration(300).style('opacity',0);
 	});
 
-var labels = d3.select('svg').selectAll('.labels').data(dataset).enter().append('text').text(function(d){return fips[d[1]]}).attr('width',barWidth).attr('fill','#333').attr('x',function(d,i){return i*barWidth}).attr('y', function(d,i){ if(i % 2 == 0 ){return xAxis + 30} else{return xAxis+ 60} }  ).attr('class','labels').style('font-size','8pt').style('font-family','courier');
+var labels = d3.select('svg').selectAll('.labels').data(dataset).enter().append('text').text(function(d){return fips[d[1]]}).attr('width',barWidth).attr('fill','#333').attr('x',function(d,i){return i*barWidth}).attr('y', function(d,i){ if(i % 2 == 0 ){return xAxis + 30} else{return xAxis+ 50} }  ).attr('class','labels').style('font-size','6pt').style('font-family','courier');
+
 
 
 //	var labels = d3.select('svg').append('text').text(states[i]).attr('x',i*barWidth).attr('y',labelPos).attr('class','labels').attr('font-family','courier').style('font-size','10px');
