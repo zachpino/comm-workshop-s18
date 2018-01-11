@@ -1,8 +1,5 @@
 ### Simple Data Visualization : Bar Chart
 
-#### What is the Census?
-
-
 #### A Basic HTML Shell for Data Visualization
 
 All web pages have a few mandatory bits and pieces. We will talk about all of the ways to manipulate the structure and content of web pages, but for now, we'll simplify things.
@@ -54,7 +51,7 @@ All of the data visualizations produced within this course in javascript will be
 
 Note also how we can make a commment -- content not shown on the page, in order to take notes in code -- within html by surrounding text with the necessary character sequences `<!--` at the beginning of the comment and `-->` to end the comment.
 
-If the file is saved and then opened in a web browser 
+If the file is saved and then opened in a web browser, the sentence within the `<body>` tags should appear as a very simple web page.
 
 -----
 
@@ -78,7 +75,7 @@ This will produce a popup window saying "hello world," should the code above be 
 
 First things first, all lines in Javascript terminate in a semicolon, `;`. This is the most common issue that will get in the way of new coders. Indentation and empty lines are ignored by the Javascript compiler, so use whitespace to keep code legible and intelligently structured.
 
-Javascript, a weakly typed language, doesn't care what kind of data is saved into variables. Here, a string of text, enclosed in either double or single quotation marks, is saved into a variable called `myText`. Camel Case (all lowercase letters except for the beginning of words, no spaces or hyphens) variable names are used by convention. Note that 2 slashes makes comments in Javascript.
+Javascript, a weakly typed language, doesn't care what kind of data is saved into variables. Here, a string of text, enclosed in either double or single quotation marks, is saved into a variable called `myText`. Camel Case (all lowercase letters except for the beginning of words, no spaces or hyphens) variable names are used by convention. Note that 2 slashes makes lines into comments in Javascript. Multi line comments begin with `/*` and end with `*/`.
 
 We could similarly save integers into variables. Note that numbers don't need quotation mark encapsulation, and all the standard arithmetic operators work as expected.
 
@@ -88,7 +85,11 @@ We could similarly save integers into variables. Note that numbers don't need qu
 var myFirstInteger = 5;
 var mySecondInteger = 3;
 
-//returns 8
+/*
+returns 8
+because JS can add! 
+*/
+
 alert(myFirstInteger + mySecondInteger);
 
 ```
@@ -114,7 +115,7 @@ Text can be concatenated together with the addition `+` operator.
 
 //make a variable
 var myIntro = "Greetings";
-var space = " "
+var space = " ";
 var myStatement = "my name is";
 var myName = "Robot";
 
@@ -128,54 +129,55 @@ alert(myIntro + "," + space + mystatement + space + yourInteger);
 
 #### Javascript Lists
 
-Very rarely in data visualization is 
+Very rarely in data visualization are variables singular. More often, data comes in as a *list*, also called an *array*.
+
+```javascript
+
+var myList = [5,2,1,3,9,7];
+
+``` 
+
+Lists are encapsulated by square brackets `[ ]` and separated by commas. Lists can include any kind of data, in any combination.
+
+```javascript
+
+var myList = [5,"hello",1,3,9,7,"goodbye",8,2];
+
+``` 
+
+Items from a list can be accessed with square brackets and an `index`. The first item in the list has the index of `0`, to make math easier and *confuse students*. The second item is index `1`, and on increasingly.
+
+```javascript
+
+var myList = [5,"hello",1,3,9,7,"goodbye",8,2];
+
+//returns "hello goodbye"
+alert(myList[1] + " " + myList[6]);
+
+``` 
+
+Math can be done too...
+
+```javascript
+
+var myList = [5,"hello",1,3,9,7,"goodbye",8,2];
+
+//evaluates to (5 + 3 + 2 + 1) * 8
+//and returns 88
+alert( (myList[0] + myList[3] + myList[8] + myList[2]) * myList[7]);
+
+``` 
+
+Negative indices can be used to count backwards in the list.
+
+```javascript
+
+var myList = [5,"hello",1,3,9,7,"goodbye",8,2];
+
+//returns 1
+alert( (myList[-2] - myList[-4]);
+
+``` 
 
 
 
-
-
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-
-	<script src="https://d3js.org/d3.v4.min.js"></script>
-
-	<script>
-/*
-var dataset = [12,13,4,7,10,1];
-
-var dataColors = [17,3,7,11,3,7]
-
-width=500;
-height=500;
-
-barWidth=50;
-
-var xAxis = 300;
-
-var svg = d3.select('body').append('svg').attr('width', width).attr('height',height);
-
-var background = d3.select('svg').append('rect').attr('width',width).attr('height',height).attr('fill',"#eee").attr('x',0).attr('y',0);
-
-var drawAxis = d3.select('svg').append('line').attr('x1',0).attr('y1',xAxis).attr('x2',width).attr('y2',xAxis).attr('stroke','#000','stroke-width',3);
-
-
-for (var i = 0; i < dataset.length; i++) {
-//	console.log(dataset[i]);
-
-	fill = dataColors[i];
-
-
-	var bars = d3.select('svg').append('rect').attr('width',barWidth).attr('height', dataset[i]*10).attr('fill','#333').attr('x',i*(barWidth+20)+50).attr('y',xAxis-(dataset[i]*10)).attr('class','bars');
-
-	var labels = d3.select('svg').append('text').text(i).attr('x',i*(barWidth+20)+50+(barWidth*.5)).attr('y',xAxis + 30).attr('class','labels').attr('font-family','courier');
-
-	var values = d3.select('svg').append('text').text(dataset[i]).attr('x',i*(barWidth+20)+50+(barWidth*.45)).attr('y',xAxis-(dataset[i]*5)).attr('class','labels').attr('font-family','courier').attr('fill','#fff');
-}
-
-*/
-
-/*

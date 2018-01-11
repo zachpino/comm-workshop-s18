@@ -1,0 +1,190 @@
+-
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+
+	<script>
+/*
+var dataset = [12,13,4,7,10,1];
+
+var dataColors = [17,3,7,11,3,7]
+
+width=500;
+height=500;
+
+barWidth=50;
+
+var xAxis = 300;
+
+var svg = d3.select('body').append('svg').attr('width', width).attr('height',height);
+
+var background = d3.select('svg').append('rect').attr('width',width).attr('height',height).attr('fill',"#eee").attr('x',0).attr('y',0);
+
+var drawAxis = d3.select('svg').append('line').attr('x1',0).attr('y1',xAxis).attr('x2',width).attr('y2',xAxis).attr('stroke','#000','stroke-width',3);
+
+
+for (var i = 0; i < dataset.length; i++) {
+//	console.log(dataset[i]);
+
+	fill = dataColors[i];
+
+
+	var bars = d3.select('svg').append('rect').attr('width',barWidth).attr('height', dataset[i]*10).attr('fill','#333').attr('x',i*(barWidth+20)+50).attr('y',xAxis-(dataset[i]*10)).attr('class','bars');
+
+	var labels = d3.select('svg').append('text').text(i).attr('x',i*(barWidth+20)+50+(barWidth*.5)).attr('y',xAxis + 30).attr('class','labels').attr('font-family','courier');
+
+	var values = d3.select('svg').append('text').text(dataset[i]).attr('x',i*(barWidth+20)+50+(barWidth*.45)).attr('y',xAxis-(dataset[i]*5)).attr('class','labels').attr('font-family','courier').attr('fill','#fff');
+}
+
+*/
+
+/*
+
+d3.csv('https://api.census.gov/data/2016/acs/acs1/profile?get=DP02_0070E&for=state:*&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5', function(data){
+
+	for (var i = 0; i < data.length; i++) {
+		console.log(data[i]);
+	}
+
+})
+
+*/
+
+
+
+var dataset = [["4782529","01"],["718419","02"],["6824645","04"],["2934272","05"],["38763815","06"],["5447760","08"],["3525154","09"],["937935","10"],["670985","11"],["20294479","12"],["10120788","13"],["1378730","15"],["1662867","16"],["12620388","17"],["6534914","18"],["3091437","19"],["2850862","20"],["4354380","21"],["4577182","22"],["1317148","23"],["5918535","24"],["6736017","25"],["9818099","26"],["5462438","27"],["2924168","28"],["5977199","29"],["1027510","30"],["1877654","31"],["2905767","32"],["1316467","33"],["8837578","34"],["2046001","35"],["19505596","36"],["9957830","37"],["741486","38"],["11439848","39"],["3845697","40"],["4054353","41"],["12579422","42"],["1040259","44"],["4861188","45"],["848774","46"],["6546914","47"],["27386023","48"],["3024767","49"],["618622","50"],["8199576","51"],["7184110","53"],["1802572","54"],["5706681","55"],["576027","56"]];
+
+
+
+var fips = {
+'01' : 'Alabama',
+'02' : 'Alaska',
+'04' : 'Arizona',
+'05' : 'Arkansas',
+'06' : 'California',
+'08' : 'Colorado',
+'09' : 'Connecticut',
+'10' : 'Delaware',
+'11' : 'DC',
+'12' : 'Florida',
+'13' : 'Georgia',
+'15' : 'Hawaii',
+'16' : 'Idaho',
+'17' : 'Illinois',
+'18' : 'Indiana',
+'19' : 'Iowa',
+'20' : 'Kansas',
+'21' : 'Kentucky',
+'22' : 'Louisiana',
+'23' : 'Maine',
+'24' : 'Maryland',
+'25' : 'Massachusetts',
+'26' : 'Michigan',
+'27' : 'Minnesota',
+'28' : 'Mississippi',
+'29' : 'Missouri',
+'30' : 'Montana',
+'31' : 'Nebraska',
+'32' : 'Nevada',
+'33' : 'New Hampshire',
+'34' : 'New Jersey',
+'35' : 'New Mexico',
+'36' : 'New York',
+'37' : 'North Carolina',
+'38' : 'North Dakota',
+'39' : 'Ohio',
+'40' : 'Oklahoma',
+'41' : 'Oregon',
+'42' : 'Pennsylvania',
+'44' : 'Rhode Island',
+'45' : 'South Carolina',
+'46' : 'South Dakota',
+'47' : 'Tennessee',
+'48' : 'Texas',
+'49' : 'Utah',
+'50' : 'Vermont',
+'51' : 'Virginia',
+'53' : 'Washington',
+'54' : 'West Virginia',
+'55' : 'Wisconsin',
+'56' : 'Wyoming'
+};
+
+
+/*
+width=3000;
+height=500;
+
+barWidth=width/dataset.length;
+
+var xAxis = 300;
+
+var svg = d3.select('body').append('svg').attr('width', width).attr('height',height);
+
+var background = d3.select('svg').append('rect').attr('width',width).attr('height',height).attr('fill',"#eee").attr('x',0).attr('y',0);
+
+var drawAxis = d3.select('svg').append('line').attr('x1',0).attr('y1',xAxis).attr('x2',width).attr('y2',xAxis).attr('stroke','#000','stroke-width',3);
+
+
+for (var i = 0; i < dataset.length; i++) {
+//	console.log(dataset[i]);
+
+if(i%2==0){labelPos = xAxis+30}
+	else{labelPos = xAxis+60}
+
+	fill = '#f00';
+	console.log(dataset[i][0])
+
+	var bars = d3.select('svg').append('rect').attr('width',barWidth).attr('height', parseInt((dataset[i][0])/100000)).attr('fill','#333').attr('x',i*barWidth).attr('y',xAxis-parseInt((dataset[i][0])/100000)).attr('class','bars');
+
+	var labels = d3.select('svg').append('text').text(states[i]).attr('x',i*barWidth).attr('y',labelPos).attr('class','labels').attr('font-family','courier').style('font-size','10px');
+}
+*/
+
+
+width=3000;
+height=500;
+
+barWidth=width/dataset.length;
+
+var xAxis = 400;
+
+var svg = d3.select('body').append('svg').attr('width', width).attr('height',height);
+
+var background = d3.select('svg').append('rect').attr('width',width).attr('height',height).attr('fill',"#eee").attr('x',0).attr('y',0);
+
+var drawAxis = d3.select('svg').append('line').attr('x1',0).attr('y1',xAxis).attr('x2',width).attr('y2',xAxis).attr('stroke','#000','stroke-width',3);
+
+var myScale = d3.scaleLinear().domain([0,50000000]).range([0,400])
+
+
+
+var bars = d3.select('svg').selectAll('.bars').data(dataset).enter().append('rect').attr('width',barWidth).attr('height', function(d,i){return myScale(d[0])}).attr('fill','#333').attr('x',function(d,i){return i*barWidth}).attr('y', function(d,i){return xAxis- myScale(d[0])}  ).attr('class','bars').on('mouseover', function(d,i){
+		d3.select(this).transition().duration(300).attr('fill','#666');
+		d3.select('#myLabel').transition().duration(300).style('opacity','1').text( fips[d[1]] + " : " + d[0]);
+	}).on('mouseout', function(d){
+		d3.select(this).transition().duration(300).attr('fill','#333');
+		d3.select('#myLabel').transition().duration(300).style('opacity','0').text( fips[d[1]] + " : " + d[0]);
+
+	});
+
+var labels = d3.select('svg').selectAll('.labels').data(dataset).enter().append('text').text(function(d){return fips[d[1]]}).attr('width',barWidth).attr('fill','#333').attr('x',function(d,i){return i*barWidth}).attr('y', function(d,i){ if(i % 2 == 0 ){return xAxis + 30} else{return xAxis+ 60} }  ).attr('class','labels').style('font-size','8pt').style('font-family','courier');
+
+
+//	var labels = d3.select('svg').append('text').text(states[i]).attr('x',i*barWidth).attr('y',labelPos).attr('class','labels').attr('font-family','courier').style('font-size','10px');
+
+
+
+
+</script>
+
+<p id="myLabel" style="font-family:courier"></p>
+
+</body>
