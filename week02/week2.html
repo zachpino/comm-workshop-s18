@@ -1,6 +1,3 @@
--
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,6 +58,8 @@ d3.csv('https://api.census.gov/data/2016/acs/acs1/profile?get=DP02_0070E&for=sta
 
 var dataset = [["4782529","01"],["718419","02"],["6824645","04"],["2934272","05"],["38763815","06"],["5447760","08"],["3525154","09"],["937935","10"],["670985","11"],["20294479","12"],["10120788","13"],["1378730","15"],["1662867","16"],["12620388","17"],["6534914","18"],["3091437","19"],["2850862","20"],["4354380","21"],["4577182","22"],["1317148","23"],["5918535","24"],["6736017","25"],["9818099","26"],["5462438","27"],["2924168","28"],["5977199","29"],["1027510","30"],["1877654","31"],["2905767","32"],["1316467","33"],["8837578","34"],["2046001","35"],["19505596","36"],["9957830","37"],["741486","38"],["11439848","39"],["3845697","40"],["4054353","41"],["12579422","42"],["1040259","44"],["4861188","45"],["848774","46"],["6546914","47"],["27386023","48"],["3024767","49"],["618622","50"],["8199576","51"],["7184110","53"],["1802572","54"],["5706681","55"],["576027","56"]];
 
+var total=0;
+for(i in dataset) { total += parseInt(dataset[i][0]); };
 
 
 var fips = {
@@ -164,20 +163,37 @@ var drawAxis = d3.select('svg').append('line').attr('x1',0).attr('y1',xAxis).att
 
 var myScale = d3.scaleLinear().domain([0,50000000]).range([0,400])
 
+var circleScale = d3.scaleLinear().domain([0,total]).range([0,barWidth]);
+
 var tooltip = d3.select('svg').append('text').attr('width',200).attr('height','50').attr('x',100).attr('y',100).attr('opacity',0).attr('id','tooltip').text('hello').style('font-family','courier');
+
+var totalCircle = d3.select('svg').append('circle').attr('cx', barWidth).attr('cy', barWidth).attr('r',circleScale(total)).attr('fill','#333');
+var portionCircle = d3.select('svg').append('circle').attr('cx', barWidth).attr('cy', barWidth).attr('r',0).attr('fill','#ccc').attr('id','portionCircle');
+
+var percentage = d3.select('svg').append('text').attr('width',200).attr('height','50').attr('x',barWidth*2.5).attr('y',barWidth*1.125).attr('opacity',0).attr('id','percentage').text('hello').style('font-family','courier');
+
 
 var bars = d3.select('svg').selectAll('.bars').data(dataset).enter().append('rect').attr('width',barWidth).attr('height', function(d,i){return myScale(d[0])}).attr('fill','#333').attr('x',function(d,i){return i*barWidth}).attr('y', function(d,i){return xAxis- myScale(d[0])}  ).attr('class','bars').on('mouseover', function(d,i){
 		
 		d3.select(this).transition().duration(300).attr('fill','#666');
 		d3.select('#myLabel').transition().duration(300).style('opacity','1').text( fips[d[1]] + " : " + d[0]);
 		d3.select('#tooltip').text(fips[d[1]] + " : " + d[0]).attr('x', barWidth*i).attr('y', xAxis-myScale(d[0])-20).transition().duration(300).style('opacity',1);
+		d3.select('#portionCircle').transition().duration(300).attr('r',circleScale(d[0]));
+		
+		d3.select('#percentage').text(fips[d[1]] + " : " + ((d[0]/total)*100).toFixed(2) + '%').transition().duration(300).style('opacity',1);
+
 
 	}).on('mouseout', function(d){
 		d3.select(this).transition().duration(300).attr('fill','#333');
 		d3.select('#myLabel').transition().duration(300).style('opacity','0').text( fips[d[1]] + " : " + d[0]);
 		d3.select('#tooltip').transition().duration(300).style('opacity',0);
 		d3.select('#tooltip').transition().duration(300).style('opacity',0);
+		d3.select('#portionCircle').transition().duration(300).attr('r',0);
+
+		d3.select('#percentage').transition().duration(300).style('opacity',0);
+
 	});
+
 
 var labels = d3.select('svg').selectAll('.labels').data(dataset).enter().append('text').text(function(d){return fips[d[1]]}).attr('width',barWidth).attr('fill','#333').attr('x',function(d,i){return i*barWidth}).attr('y', function(d,i){ if(i % 2 == 0 ){return xAxis + 30} else{return xAxis+ 50} }  ).attr('class','labels').style('font-size','6pt').style('font-family','courier');
 

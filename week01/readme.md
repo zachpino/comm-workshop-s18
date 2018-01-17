@@ -6,17 +6,17 @@ The [US Census](https://en.wikipedia.org/wiki/United_States_Census) — an extra
 
 Though an effort is made to deliver a wholistic and objective count with financial punishment for those who do not complete the census form ($100/household in 2010) and a promise of total confidentiality and indemnity, participation in the census is estimated at 74%, with some populations statistically underreporting. For instance, undocumented immigrant families are less likely to participate for fear of governmental reprisal. This skew has been modeled, and serves as a statistical adjustment in some of the census datasets which do not report raw numbers. Most census datasets, however, report nothing more than pure integer counts, and contextual offsets are left up to the data modeler. 
 
-Modeled on an Ancient Roman equivalent that tracked citizenry for military draft purposes (*censore* in Latin means *to determine value of something*), the success of the US census has served as a model for similar efforts across the globe and supported by the United Nations. Many countries complete their own censuses, and provide them to citizens in a similar way to the United States model. 
+Modeled on an Ancient Roman equivalent that tracked citizenry for military draft purposes (*censore* in Latin and its derivative in most romance languages means *to determine value of something*), the success of the US census has served as a model for similar efforts across the globe and supported by the United Nations. Many countries complete their own censuses, and provide them to citizens in a similar way to the United States model. 
 
 
 #### Criticisms and Limitations of the Census
-Historical census data, valuable and available, is tarnished by historical realities. The censuses of the early United States did not count women, people of color, or indigineous peoples, until the landmark census of 1850 — which was administered by the ahead-of-his-time sociopoltical activist and Civil War cartographer and strategist [Joseph C.G. Kennedy](https://en.wikipedia.org/wiki/Joseph_C._G._Kennedy). The census of 1940 was used surreptitiously to identify potential Italian, German, and Japanese sympathizers. The 2020 census is already being accused of similar potential misuse, and despite its importance, is under threat of defunding by both political sides.
+Historical census data, valuable and available, is tarnished by historical realities. The censuses of the early United States did not count women, people of color, or indigineous peoples, until the landmark census of 1850 — which was administered by the ahead-of-his-time sociopoltical activist and Civil War cartographer and strategist [Joseph C.G. Kennedy](https://en.wikipedia.org/wiki/Joseph_C._G._Kennedy). The census of 1940 was used surreptitiously to identify potential Italian, German, and Japanese sympathizers. The 2020 census is already being accused of similar potential misuse, and despite its importance, is under threat of defunding by both political sides. Additionally, contemporary gross population trends are much more dynamic than the every 10 year original model designed for the on-horseback census worker. As a result, the census data collection efforts have expanded.
 
 
 #### American Community Survey
 Since the early aughts, the 10 year cadence of the census — clearly an outdated model in an era of constant data production and collection — has been supported by a motley assortment of supplemental data gathering efforts. One of the more successful attempts has been the American Community Survey, which aims to provide census-level details of a statistical sampling of the full American population at a higher frequency for large population centers. The ACS occurs once every year with a (relatively) small sample size (population centers of 65,000 individuals or greater), and every five years with a larger sampling (population centers of 20,000 individuals or greater).
 
-The ACS tracks around 65,000 *variables*, and provides projections and estimates for another 20,000 or so. The data is voluminous, to say the least. Many of these indicators are aimed at constructing a picture of the United States' identity makeup — gender, race, ethnicity, derivation, age. Others are financial — income, employment status, employment industry, labor force participation. Further indicators support a better understanding of the American household — children/family, household size, number of rooms, rent/mortgage cost, frequency of housing changes, languages spoken at home. A large proportion of these variables have been tracked in the same way over many years, allowing data scientists and visualizers to track and understand the increasingly tumultuous social dynamics of the United States.
+The ACS tracks around 65,000 *variables*, and provides projections and estimates for another 20,000 or so. The data is voluminous, to say the least. Many of these indicators are aimed at constructing a picture of the United States' identity makeup — gender, race, ethnicity, derivation, age. Others are financial — income, employment status, employment industry, labor force participation. Further indicators support a better understanding of the American household — children/family, household size, number of rooms, rent/mortgage cost, frequency of housing changes, languages spoken at home. A large proportion of these variables have been tracked in the same way over many years, allowing data scientists and visualizers to trace and understand the increasingly tumultuous social dynamics of the United States.
 
 This course will provide walkthroughs for accessing this ACS data, cleaning and transforming it, combining it with other datasets, finding insights, using statistical tools for proving those insights, and rendering it visual through the D3 data visualization library.
 
@@ -128,7 +128,7 @@ We already have many of the necessary pieces. The unique name of the data set is
 
 Thousands of geographic areas are encoded with the [FIPS encoding system](https://en.wikipedia.org/wiki/Federal_Information_Processing_Standards) and accessible for querying. Every state, county, metropolitan area, congressional district, and census tract has a unique numerical id, which can be [found here](https://www.census.gov/geo/reference/codes/cou.html). A list of [state FIPS codes](https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code) is also avaiable for easy browsing. The state of Illinois is `17`.
 
-So, our call would look like the 
+So, our call would look like this, make sure your substitute your API key instead!
 
 ```
 api.census.gov/data/2016/acs/acs1?get=C15010_003E&for=state:17&key=a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0
@@ -143,7 +143,7 @@ Entering that into any web browser will return the following text.
 
 The API confirms that `C15010_003E` was accessed at the `state` level. `283557` individuals have STEM related degrees in FIPS state `17`, Illinois.
 
-We could similarly ask for all states by using the wildcard operator `*`.
+We could similarly ask for all states by using the wildcard operator `*`. Again, ensure you substitute your API key.
 
 ```
 api.census.gov/data/2016/acs/acs1?get=C15010_003E&for=state:*&key=a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0
