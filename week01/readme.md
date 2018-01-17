@@ -10,7 +10,9 @@ Modeled on an Ancient Roman equivalent that tracked citizenry for military draft
 
 
 #### Criticisms and Limitations of the Census
-Historical census data, valuable and available, is tarnished by historical realities. The censuses of the early United States did not count women, people of color, or indigineous peoples, until the landmark census of 1850 — which was administered by the ahead-of-his-time sociopoltical activist and Civil War cartographer and strategist [Joseph C.G. Kennedy](https://en.wikipedia.org/wiki/Joseph_C._G._Kennedy). The census of 1940 was used surreptitiously to identify potential Italian, German, and Japanese sympathizers. The 2020 census is already being accused of similar potential misuse, and despite its importance, is under threat of defunding by both political sides. Additionally, contemporary gross population trends are much more dynamic than the every 10 year original model designed for the on-horseback census worker. As a result, the census data collection efforts have expanded.
+Historical census data, valuable and available, is tarnished by historical realities. The censuses of the early United States did not count women, people of color, or indigineous peoples, until the landmark census of 1850 — which was administered by the ahead-of-his-time sociopoltical activist and Civil War cartographer and strategist [Joseph C.G. Kennedy](https://en.wikipedia.org/wiki/Joseph_C._G._Kennedy). The census of 1940 was used surreptitiously to identify potential Italian, German, and Japanese sympathizers. Because the census strives to offer consistent data over time, it often uses non-contemporary terminology and selection biases. For instance, the census still maintains binary gender definitions, counts same-sex marriages in some states and not others, and mixes up racial and ethic identity, Counting people, inherently, requires the drawing of lines between people — and that is often done by the census in unenlighted, conservative ways with consistency as the ultimate goal.
+
+Moreover, because of the role of the census in determining House of Representative seat counts, census data collection is often politicized. The 2020 census is already being accused of potential misuse mostly surrounding the counting of undocumented immigrants, and despite its importance, is under threat of defunding by both political sides. Additionally, contemporary gross population trends are much more dynamic than the every 10 year original model designed for the on-horseback census worker. As a result, the census data collection efforts have expanded.
 
 
 #### American Community Survey
@@ -55,7 +57,7 @@ Despite census data being fully public, API access is gated to prevent abuse and
 
 [Request an API Key](https://api.census.gov/data/key_signup.html), which will be sent to the email address you provide within 15 minutes or so. It may go to your spam folder.
 
-Keep this 40 character string to yourself, and never share it online. Doing so could allow someone else to masquerade as you and hammer the Census API servers. Make sure you copy the string somewhere so that it will be easily accessible.
+Keep this 40 character string to yourself, and never share it online. Doing so could allow someone else to masquerade as you and hammer the Census API servers. Make sure you copy the string somewhere so that it will be easily accessible. Each API Key is limited to 500 requests per day.
 
 
 #### Browsing the API Data
@@ -94,14 +96,18 @@ All of the columns hold important information.
 - Name : The unique identifier for each data set. This is necessary for calling an API.
 - Label : The unique, human readable name for each data set. Most ACS fields will display 'Estimate' since not everyone is being counted.
 - Concept : The overall idea of what is being tracked within the dataset, usually understandable.
-- Required : As this is an ACS and not a decennial census, no data is notionally 'required' of participants.
+- Required : If some specific variable was required in order to make a query resolive, it would be marked as such here.
 - Attributes : The name + 'M' is an accounting for the margin of error data point for the data set. The name + "EA" is any statement available about how the estimate or average was calculated.
 - Limit : If there was a limit on the number of respondents. 0 means 'no limit.'
 - Predicate Type : What kind of data is in the data set. Most ACS fields are 'int,' integers, or 'strings,' textual descriptions. 
 - Group : Most data sets belong to a group of related datasets.
 - Valid Value : Some data sets only permit certain responses. Links here describe those options.
 
+By selecting the [Examples and Supported Geographies](https://api.census.gov/data/2016/acs/acs1.html) link it is possible to find many examples of what you can query the API for, and how. These are great resources! 
+
+
 -----
+
 
 #### Calling an API
 
@@ -207,5 +213,154 @@ api.census.gov/data/2016/acs/acs1?get=C15010_003E&for=state:*&key=a0a0a0a0a0a0a0
 
 Note that there 52 data points. The District of Columbia and Puerto Rico are included.
 
-We'll soon look at how to visualize this data using [D3](www.d3js.org).
 
+-----
+
+
+#### Complex Variable Queries
+
+We can, as mentioned previously, make a query for many variables at a time — indexed by the same geographic indicator. All named variables are separated by commas, with a total limit on 50 simultaneous requests.
+
+```
+api.census.gov/data/2016/acs/acs1/subject?get=S0101_C01_001E,S1301_C01_027E&for=state:*&key=a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0
+```
+
+Note how, in the structure of the response, all of the values assosicated with each geographic entity are included within a singular array. This makes data comparison and visualization significantly simpler.
+
+```
+[["S0101_C01_001E","S1301_C01_027E","state"],
+["4863300","767186","01"],
+["741894","126943","02"],
+["6931071","1075161","04"],
+["2988248","454419","05"],
+["39250017","6460931","06"],
+["5540545","971927","08"],
+["3576452","619189","09"],
+["952065","156352","10"],
+["681170","159962","11"],
+["20612439","3218671","12"],
+["10310371","1774843","13"],
+["1428557","232595","15"],
+["1683140","254534","16"],
+["12801539","2244485","17"],
+["6633053","1104601","18"],
+["3134693","542718","19"],
+["2907289","483292","20"],
+["4436974","713641","21"],
+["4681666","756663","22"],
+["1331479","216703","23"],
+["6016447","1091523","24"],
+["6811779","1252641","25"],
+["9928300","1617472","26"],
+["5519952","1000123","27"],
+["2988726","473194","28"],
+["6093000","1021327","29"],
+["1042520","166619","30"],
+["1907116","331800","31"],
+["2940058","493437","32"],
+["1334795","228046","33"],
+["8944469","1483120","34"],
+["2081015","311860","35"],
+["19745289","3365361","36"],
+["10146788","1707687","37"],
+["757953","133009","38"],
+["11614373","1930498","39"],
+["3923561","614422","40"],
+["4093465","680386","41"],
+["12784227","2085198","42"],
+["1056426","183760","44"],
+["4961119","827826","45"],
+["865454","142503","46"],
+["6651194","1074159","47"],
+["27862596","4572528","48"],
+["3051217","516699","49"],
+["624594","105764","50"],
+["8411808","1463542","51"],
+["7288000","1204063","53"],
+["1831102","260352","54"],
+["5778709","1015308","55"],
+["585501","95244","56"],
+["3411307","464671","72"]]
+```
+
+
+-----
+
+
+#### Complex Geographic Queries
+
+The same logic applies to multiple geographic entitities. For instance, we can ask for specific states like Illinois, Wisconsin, and Michigan — all separated by commas.
+
+```
+api.census.gov/data/2016/acs/acs1/subject?get=S0101_C01_001E,S1301_C01_027E&for=state:17,55,26&key=a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0
+```
+
+This will return a subset of the result above.
+
+```
+[["S0101_C01_001E","S1301_C01_027E","state"],
+["12801539","2244485","17"],
+["9928300","1617472","26"],
+["5778709","1015308","55"]]
+```
+
+We also can use the `in` keyword to include smaller geographic entities constrained by larger ones. For example, perhaps we could ask the API for data for all of the school districts in Illinois. Note that `congressional district` has its space replaced by `%20`, which is the HTML encoding for a space. All spaces found in supported geographies will be similarly replaced.
+
+```
+api.census.gov/data/2016/acs/acs1/subject?get=S0101_C01_001E,S1301_C01_027E&for=congressional%20district:*&in=state:17&key=a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0a0
+```
+
+The results will include all 18 congressional districts that Illinois currently holds. Illinois will likely lose a congressional seat as a result of the 2020, so be careful when comparing this kind of flexible geographic determiner over time.
+
+```
+[["S0101_C01_001E","S1301_C01_027E","state","congressional district"],
+["691474","123193","17","01"],
+["713917","129478","17","02"],
+["720930","111337","17","03"],
+["695098","129652","17","04"],
+["723373","163307","17","05"],
+["722323","117611","17","06"],
+["723481","155457","17","07"],
+["717789","122853","17","08"],
+["724071","118239","17","09"],
+["710610","117834","17","10"],
+["730480","135068","17","11"],
+["693736","114221","17","12"],
+["704699","124485","17","13"],
+["736397","128187","17","14"],
+["700549","108530","17","15"],
+["687998","116278","17","16"],
+["691212","112978","17","17"],
+["713402","115777","17","18"]]
+```
+
+Be sure to explore the many other examples available in the 'Examples and Supported Geographies' links found under each data presentation on the [ACS page](https://census.gov/data/developers/data-sets/acs-1year.html).
+
+
+-----
+
+
+#### Saving Results and Data Structure
+
+The arrays that result from a census query can be copied and pasted elsehwere from your browser, or alternatively, saved into a file. By default, your browser will likely append the `.json` extension, short for 'Javascript Object Notation.' The census uses a nonstandard form of JSON in order to be compatible with spreadsheet programs like Microsoft Excel or Apple Numbers. Once you have downloaded the file, changing the extension to `.csv`, 'Comma-Separated Values,' will allow spreadsheet programs to read and manipulate the queried data in a more familiar context. However, as you spend time exploring data without the crutch of spreadsheet programs, your ability to identify structures and find flaws and inconsistencies within datasets will quickly improve and ease your visualization work down the line.
+
+As has been visible throughout the queries above, the data that is returned from the census takes on the form of a 2-dimensional matrix.
+
+```
+[
+	["value","geoID"],
+	["value","geoID"],
+	["value","geoID"],
+]
+
+```
+
+A query returns a single *parent* array (the top and bottom square brackets). Within that array, each geographic *child* entity is its own array in the matrix, and each requested data point is contained in that array. Often, towards data visualization goals, this data model is too simplistic — and the work of the data visualizer often is to match, manipulate, and reconstruct the data in order to match their intended presentation.
+
+
+-----
+
+
+#### Looking Forward and Review
+
+We'll soon look at how to visualize this data using [D3](www.d3js.org). You can find more information and details at the many links above, and in [this guide](https://www.census.gov/content/dam/Census/data/developers/api-user-guide/api-guide.pdf) produced by the census development team — it's a highly recommended read.
