@@ -350,7 +350,7 @@ As has been visible throughout the queries above, the data that is returned from
 [
 	["value","geoID"],
 	["value","geoID"],
-	["value","geoID"],
+	["value","geoID"]
 ]
 
 ```
