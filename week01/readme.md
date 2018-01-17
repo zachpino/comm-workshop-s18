@@ -355,7 +355,7 @@ As has been visible throughout the queries above, the data that is returned from
 
 ```
 
-A query returns a single *parent* array (the top and bottom square brackets). Within that array, each geographic *child* entity is its own array in the matrix, and each requested data point is contained in that array. Often, towards data visualization goals, this data model is too simplistic — and the work of the data visualizer often is to match, manipulate, and reconstruct the data in order to match their intended presentation.
+A query returns a single *parent* array (the top and bottom square brackets). Within that array, each geographic *child* entity is its own array in the matrix, and each requested data point is contained in that array. Often, towards data visualization goals, this data model is too simplistic — and the work of the data visualizer often is to match, manipulate, and reconstruct the data in order to serve the intended presentations. This is another reason to avoid using spreadsheet programs, as these software tools only permit 2-dimensional matrices and not the often complex, nested, and multidimensionally hierarchical data structures enabled by a *plain text* approach to data.
 
 
 -----
