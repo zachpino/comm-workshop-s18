@@ -336,7 +336,7 @@ The results will include all 18 congressional districts that Illinois currently 
 
 Be sure to explore the many other examples available in the 'Examples and Supported Geographies' links found under each data presentation on the [ACS page](https://census.gov/data/developers/data-sets/acs-1year.html).
 
-Also, note that all geographies are FIPS encoded. Here are some resources to map names to FIPS codes.
+Also, note that all geographies are *FIPS encoded*. Here are some resources to map names to FIPS codes.
 - [States and Regions](state-regions-fips.xls)
 - [Counties](counties-fips.xls)
 - [Metropolitan, Micropolitan, and Combined Statistical Areas](metropolitan-csa-fips.xls)
@@ -368,3 +368,5 @@ A query returns a single *parent* array (the top and bottom square brackets). Wi
 #### Looking Forward and Review
 
 We'll soon look at how to visualize this data using [D3](www.d3js.org). You can find more information and details at the many links above, and in [this guide](https://www.census.gov/content/dam/Census/data/developers/api-user-guide/api-guide.pdf) produced by the census development team — it's a highly recommended read.
+
+Try your hand at accessing the APIs decribed above by completing this [scavenger hunt](scavhunt.md).

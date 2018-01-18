@@ -4,12 +4,11 @@ Documentation and Resources for the Spring 2018 IIT Institute of Design Communic
 - [Week 01 · Accessing the Census API](week01/readme.md) 	
 	> Classtime: Pull down data from various census endpoints, talk through FIPS codes, and discuss how to manipulate raw and csv text.
 	
-	> Homework: Explore census data. Pull down assigned census datasets and find specific answers to questions T+Z devise
+	> Homework: Explore census data. Complete [Census Scavenger Hunt](week01/scavhunt.md) and submit to Blackboard.
 
 - [Week 02 · Accessing the Census API with Specificity from the Terminal](week02/readme.md) 
 	> Classtime: Access data based on lon-lat coordinates, geocoded regions, and in batches
 	
-	> Homework: Explore census data. Pull down assigned census datasets and find specific answers to questions T+Z devise
 
 - [Week 03 · Data and List Management in JS and Drawing with SVG](week03/readme.md)
 	> Classtime: Foundational javascript and html with a simple census dataset, drawing a scatter plot, statistics basics?
