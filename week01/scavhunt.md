@@ -12,7 +12,7 @@ All questions pertain to the **2016** American Community Survey
 
 1. How many **foreign born** people entered the United States **between 2000 and 2009** in the state of **California**? How does that compare to the state of **New York**? What percentage of the population is that for both states? Did that percentage increase or decrease from foreign born entrances **between 1990 to 1999.**
 
-1. What **unified school district** in **Illinois** has the lowest **income to poverty level ratio**? Where is that school district? How many **minors** live in that school district? Same questions, but for the highest income to poverty level ration?
+1. What **unified school district** in **Illinois** has the lowest **income to poverty level ratio**? Where is that school district? How many **minors** live in that school district? Same questions, but for the highest income to poverty level ratio?
 
 1. What **unified school district** in **Illinois** has the highest percentage of people living **under the poverty line**? Where is that school district? How many **minors** live in that school district?
 
