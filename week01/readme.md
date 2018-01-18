@@ -336,6 +336,10 @@ The results will include all 18 congressional districts that Illinois currently 
 
 Be sure to explore the many other examples available in the 'Examples and Supported Geographies' links found under each data presentation on the [ACS page](https://census.gov/data/developers/data-sets/acs-1year.html).
 
+Also, note that all geographies are FIPS encoded. Here are some resources to map names to FIPS codes.
+- [States and Regions](state-regions-fips.xls)
+- [Counties](counties-fips.xls)
+- [Metropolitan, Micropolitan, and Combined Statistical Areas](metropolitan-csa-fips.xls)
 
 -----
 
