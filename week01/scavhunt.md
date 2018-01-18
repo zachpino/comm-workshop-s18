@@ -12,9 +12,9 @@ All questions pertain to the **2016** American Community Survey
 
 1. How many **foreign born** people entered the United States **between 2000 and 2009** in the state of **California**? How does that compare to the state of **New York**? What percentage of the population is that for both states? Did that percentage increase or decrease from foreign born entrances **between 1990 to 1999.**
 
-1. What **elementary school district **in **Illinois **has the lowest **income to poverty level ratio**? Where is that school district? How many **minors** live in that school district? Same questions, but for the highest income to poverty level ration?
+1. What **unified school district** in **Illinois** has the lowest **income to poverty level ratio**? Where is that school district? How many **minors** live in that school district? Same questions, but for the highest income to poverty level ration?
 
-1. What **elementary school district **in **Illinois **has the highest percentage of people living **under the poverty line**? Where is that school district? How many **minors** live in that school district?
+1. What **unified school district **in **Illinois **has the highest percentage of people living **under the poverty line**? Where is that school district? How many **minors** live in that school district?
 
 1. How many people speak **English****‘very well’ and Spanish** in the **Chicago combined statistical area**? How about in the **New York and Los Angeles combined statistical areas**?
 
@@ -24,19 +24,19 @@ All questions pertain to the **2016** American Community Survey
 
 1. Which Great Lakes bordering state — **Minnesota, Wisconsin, Illinois, Indiana, Michigan, Ohio, Pennsylvania, or New York** — has the highest number of individuals with graduate or professional degrees? What state in that set has the highest proportion of individuals with graduate or professional degrees?
 
-1. What state had the greatest number of children **move into it from another state or abroad **between the ages of 1 and 4?
+1. What state had the greatest number of children **move into it from another state or abroad** between the ages of 1 and 4?
 
 1.  Which **Illinois congressional districts** had the highest and lowest number of people **driving to work alone**? Who is the congressional representative of those two districts? Bonus: How much money did those representatives receive from transportation lobbying groups?  
 
-1. Do people **leave earlier in the morning** to go to work in **Los Angeles, Seattle, Austin, Denver, Atlanta, Chicago, or New York****combined statistical areas**?
+1. Do people **leave earlier in the morning** to go to work in **Los Angeles, Seattle, Austin, Denver, Atlanta, Chicago, or New York** **combined statistical areas**?
 
 1. Do more men or women in the United States have **vision difficulty**?
 
-1. Which state has the highest percentage of its **households with a child****under the age of 18** on some sort of **public assistance program**? How much money does that state allocate to public assistance programs?
+1. Which state has the highest percentage of its **households with a child under the age of 18** on some sort of **public assistance program**? How much money does that state allocate to public assistance programs?
 
 1. Which **unified school districts** in **Illinois** have the greatest and fewest number of school-age children with **ambulatory disabilities**? How much funding do those school districts receive?
 
-1. Which **unified****school districts** in **Illinois** have the greatest and fewest number of school-age children with **cognitive disabilities**? How much funding do those school districts receive?
+1. Which **unified school districts** in **Illinois** have the greatest and fewest number of school-age children with **cognitive disabilities**? How much funding do those school districts receive?
 
 1. In another way of looking at the gender pay gap – in the states of **Illinois, New York, and California**, how many more men than women earn **$100,000 or more per year**?
 
