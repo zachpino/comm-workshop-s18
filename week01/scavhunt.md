@@ -1,7 +1,7 @@
 ### Scavenger Hunt
 Get some experience working with the census API by attempting to answer these questions. Keep a record of your work by pasting the API query/queries you called along with the answers — feel free to add any explanations that helped your reach your determination as well.
 
-All questions pertain to the **2016** American Community Survey, **1 year** cadence. Check all results against your expectations — if the numbers seem off, it is possible that your variable and geography are generating the results of incomplete surveys. If that happens, compare your questionable results against the **2015** American Community Survey, **5 year** cadence.
+All questions should reference the [2015 American Community Survey, **5 year** cadence](https://www.census.gov/data/developers/data-sets/acs-5year.2015.html). Check all results against your expectations — if the numbers seem off, do some quick secondary research and vetting. Some of these questions, especially those relating to funding, require research external to the Census API.
 
 -----
 
