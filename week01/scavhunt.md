@@ -32,7 +32,7 @@ All questions should reference the [2015 American Community Survey, **5 year** c
 
 1. Do more men or women in the United States have **vision difficulty**?
 
-1. Which state has the highest percentage of its **households with a child under the age of 18** on some sort of **public assistance program**? How much money does that state allocate to public assistance programs?
+1. Which state has the highest percentage of its **households with a child under the age of 18** on some sort of **public assistance program** such as **food stamps** or **supplemental security income**? How much money does that state allocate to such public assistance programs?
 
 1. Which **unified school districts** in **Illinois** have the greatest and fewest number of school-age children with **ambulatory disabilities**? How much funding do those school districts receive?
 
