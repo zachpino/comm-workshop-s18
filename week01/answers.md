@@ -45,7 +45,7 @@ These sum to *1,500,276 people*.
 
 *1,500,276 / 6,556,862 = 22.88%*
 
-### Illinois has a higher ratio of young females.
+##### Illinois has a higher ratio of young females.
 
 -----
 
@@ -119,7 +119,7 @@ The response:
 
 These values sum to *5,572,312 people*.
 
-### There are more people in the USA that self-identify as single ancestry Mediterranean than South-East Asian, by 5,741,945 people.
+##### There are more people in the USA that self-identify as single ancestry Mediterranean than South-East Asian, by 5,741,945 people.
 
 -----
 
@@ -160,7 +160,7 @@ California from 1990-1999: 2600323 / 33499200 = 7.762% of the population
 New York from 2000-2009: 1198605 / 19307100 = 6.208% of the population
 New York from 1990-1999: 1150072 / 18882700 = 6.090% of the population
 
-### California increased, New York decreased.
+##### California increased, New York decreased.
 
 -----
 
@@ -182,7 +182,7 @@ Counting minors requires some summing.
 https://api.census.gov/data/2015/acs/acs5?get=NAME,B01001_003E,B01001_004E,B01001_005E,B01001_006E,B01001_027E,B01001_028E,B01001_029E,B01001_030E&for=school%20district%20(unified):09930&in=state:17&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
 ```
 
-### The Chicago Public School District 299 has the highest count of children living under the poverty line, with 185,678 children, of a total of 603,463. This is a proportion of 30.768%. The district is the whole of metropolitan Chicago.
+##### The Chicago Public School District 299 has the highest count of children living under the poverty line, with 185,678 children, of a total of 603,463. This is a proportion of 30.768%. The district is the whole of metropolitan Chicago.
 
 -----
 
@@ -194,7 +194,7 @@ https://api.census.gov/data/2015/acs/acs5?get=NAME,B01001_003E,B01001_004E,B0100
 https://api.census.gov/data/2015/acs/acs5?get=NAME,B06007_004E&for=combined%20statistical%20area:176,348,408&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
 ```
 
-### Chicago has 891,717 bilingual English/Spanish individuals, Los Angeles has 3,484,207, and New York has 2,226,355.
+##### Chicago has 891,717 bilingual English/Spanish individuals, Los Angeles has 3,484,207, and New York has 2,226,355.
 
 -----
 
@@ -207,7 +207,7 @@ https://api.census.gov/data/2015/acs/acs5?get=NAME,B06007_004E&for=combined%20st
 https://api.census.gov/data/2015/acs/acs5?get=NAME,B06008_004E,B06008_003E&for=state:*&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
 ```
 
-### Utah has the highest ratio, 6.045x more married people than divorced people. Washington DC has the lowest ration, 2.930x more married people than divorced.
+##### Utah has the highest ratio, 6.045x more married people than divorced people. Washington DC has the lowest ration, 2.930x more married people than divorced.
 
 -----
 
@@ -219,13 +219,13 @@ https://api.census.gov/data/2015/acs/acs5?get=NAME,B06008_004E,B06008_003E&for=s
 https://api.census.gov/data/2015/acs/acs5?get=NAME,B15012_009E&for=state:*&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
 ```
 
-### California has the most people with science and engineering bachelor's degrees: 670,716 people. 
+##### California has the most people with science and engineering bachelor's degrees: 670,716 people. 
 
 ```
 https://api.census.gov/data/2015/acs/acs5?get=NAME,B15012_009E&for=county:*&in=state:06&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
 ```
 
-### Within California, Los Angeles County has the most, with 162,004 individuals. Perhaps *Hollywood* and its large opportunity count for individuals with expertise in audio and visual content has something to do with its rank? In addition, the [large concentration of technical universities](https://en.wikipedia.org/wiki/Category:Universities_and_colleges_in_Los_Angeles_County,_California), including Caltech and its NASA JPL relationship, certainly contributes.
+##### Within California, Los Angeles County has the most, with 162,004 individuals. Perhaps *Hollywood* and its large opportunity count for individuals with expertise in audio and visual content has something to do with its rank? In addition, the [large concentration of technical universities](https://en.wikipedia.org/wiki/Category:Universities_and_colleges_in_Los_Angeles_County,_California), including Caltech and its NASA JPL relationship, certainly contributes.
 
 -----
 
@@ -250,7 +250,7 @@ https://api.census.gov/data/2015/acs/acs5?get=NAME,B06009_006E,B01001_001E&for=s
 ["Wisconsin","363838","5742117","55"]]
 ```
 
-### New York has the most individuals with advanced degrees: 19,673,174. It also has the highest proportion: 10.126%. Illinois is a close second in both, and Minnesota overperforms for its population count.
+##### New York has the most individuals with advanced degrees: 19,673,174. It also has the highest proportion: 10.126%. Illinois is a close second in both, and Minnesota overperforms for its population count.
 
 10. The concept "GEOGRAPHICAL MOBILITY IN THE PAST YEAR BY AGE FOR CURRENT RESIDENCE IN THE UNITED STATES" holds these numbers.
 
@@ -261,7 +261,7 @@ Moved from abroad, 1 to 4 years: B07001_082E
 https://api.census.gov/data/2015/acs/acs5?get=NAME,B07001_066E,B07001_082E&for=state:*&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
 ```
 
-### 49,868 young children moved into Texas, and is the most mobile state for children by a significant margin.
+##### 49,868 young children moved into Texas, and is the most mobile state for children by a significant margin.
 
 -----
 
@@ -273,13 +273,13 @@ Total that Drove Alone via Car, Truck, or Van: B08006_003E
 https://api.census.gov/data/2015/acs/acs5?get=NAME,B08006_003E&for=congressional%20district:*&in=state:17&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
 ```
 
-### The 7th Congressional District in Illinois (Downtown Chicago and the west side) has the fewest solo drivers, and the 14th (North and West suburbs of Chicago) has the most solo drivers.
+##### The 7th Congressional District in Illinois (Downtown Chicago and the west side) has the fewest solo drivers, and the 14th (North and West suburbs of Chicago) has the most solo drivers.
 
-### The representatives are Danny Davis (D-IL-7) and Randy Hultgren (R-IL-14).
+##### The representatives are Danny Davis (D-IL-7) and Randy Hultgren (R-IL-14).
 
 [OpenSecrets](http://www.opensecrets.org) is a wonderful resource for discovering how much money congressional representatives receive. 
 
-### Danny Davis receives $10,500 from transportation sector lobbying groups (of which $5,000 is railroad related), and Randy Hultgren receives $18,500 (no railroad contributions, all automobile-related).
+##### Danny Davis receives $10,500 from transportation sector lobbying groups (of which $5,000 is railroad related), and Randy Hultgren receives $18,500 (no railroad contributions, all automobile-related).
 
 -----
 
@@ -294,13 +294,6 @@ https://api.census.gov/data/2015/acs/acs5?get=NAME,B08006_003E&for=congressional
 - 8:00 a.m. to 8:29 a.m.: B08011_009E
 - 8:30 a.m. to 8:59 a.m.: B08011_010E
 
-- Atlanta: 122
-- Chicago: 176
-- Denver: 216
-- Houston: 288
-- LA: 348
-- NYC: 408
-- Seattle: 500
 
 ```
 https://api.census.gov/data/2015/acs/acs5?get=NAME,B08011_003E,B08011_004E,B08011_005E,B08011_006E,B08011_007E,B08011_008E,B08011_009E,B08011_010E&for=combined%20statistical%20area:122,176,216,288,348,408,500&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
@@ -340,7 +333,17 @@ And then arrive at percentages.
 |NYC   	|3.79%|4.68%|10.60%|11.34%|20.55%|16.10%|22.09%|10.85%|
 |Seattle|6.74%|8.48%|13.34%|13.95%|18.76%|15.41%|14.71%|8.61%|
 
+General patterns are already obvious, but we can do some weighted averaging to get a full ranking. By assigning consistently larger numbers to each time domain, we can then multiply that number by the percentage in each cell, and sum for each city.
 
+|   	|1	  |2	|3	   |4     |5   	 |6   	|7   	|8   	||Sum   | Rank
+|---	|---  |---	|---   |---	  |---	 |---	|---	|---	||---   |
+|Atlanta|0.0472|0.1206|0.3970|0.5430|1.0874|0.9509|1.2087|0.6067||4.9614|6
+|Chicago|0.0625|0.1423|0.4204|0.5354|1.0240|0.9190|1.1194|0.5960||4.8190|3
+|Denver |0.0499|0.1343|0.3937|0.5921|1.0513|0.9949|1.0540|0.6164||4.8866|5
+|Houston|0.0680|0.1632|0.4763|0.5788|1.0469|0.8370|0.9744|0.4706||4.6153|1 (Earliest Drivers)
+|LA 	|0.0705|0.1405|0.4035|0.4865|1.0255|0.8628|1.1999|0.6626||4.8519|4
+|NYC   	|0.0379|0.0936|0.3179|0.4535|1.0275|0.9659|1.5466|0.8684||5.3112|7 (Latest Drivers)
+|Seattle|0.0674|0.1695|0.4001|0.5581|0.9381|0.9246|1.0298|0.6891||4.7767|2
 
 -----
 
@@ -353,7 +356,7 @@ And then arrive at percentages.
 https://api.census.gov/data/2015/acs/acs5?get=NAME,B18103_002E,B18103_021E&for=us&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
 ```
 
-### There are 159,396,497 women in America with vision difficulties, and 152,119,835 men. 7,276,662 more women have vision difficulties.
+##### There are 159,396,497 women in America with vision difficulties, and 152,119,835 men. 7,276,662 more women have vision difficulties.
 
 -----
 
@@ -376,7 +379,7 @@ California has 1,504,067 high-earning men and 619,676 high-earning women, a diff
 Illinois has 467,166 high-earning men and 163,503 high-earning women, a difference of 303,663 people. 2.857x more men than women earn more than $100,000.
 New York has 761,823 high-earning men and 354,982 high-earning women, a difference of 406,841 people 2.146x more men than women earn more than $100,000.
 
-### California has the biggest difference between the genders, but Illinois has the highest percentage gap.
+##### California has the biggest difference between the genders, but Illinois has the highest percentage gap.
 
 -----
 
@@ -397,7 +400,7 @@ https://api.census.gov/data/2015/acs/acs5?get=NAME,B24121_143E,B24121_144E,B2412
 ```
 
 
-### Unanswerable, though data is collected.
+##### Unanswerable, though data is collected.
 
 -----
 
@@ -422,7 +425,7 @@ https://api.census.gov/data/2015/acs/acs5?get=NAME,B25034_001E,B25036_003E,B2503
 - Los Angeles CSA: Of 6,346,543 countable structures, 2,434 were built after 2014 (.0383%) and 605,701 before 1939 (9.543%).
 - New York CSA: Of 9,319,133 countable structures, 2,390 were built after 2014 (.0256%) and 2,577,416 before 1939 (27.657%).
 
-### New York has the highest percentage of old homes, and Los Angeles has the highest percentage of new homes. Chicago is intermediate in both.
+##### New York has the highest percentage of old homes, and Los Angeles has the highest percentage of new homes. Chicago is intermediate in both.
 
 -----
 
@@ -437,4 +440,4 @@ https://api.census.gov/data/2016/acs/acs1?get=NAME,B28002_001E,B28002_004E&for=c
 
 Note that not all counties are tabulated in the 1 year ACS, and so only a small subset of the 102 Illinois counties are publicized.
 
-### McHenry County does the best with internet access, at 91.66% penetration. Williamson County, near the southern tip of the state, is the worst at 74.62% broadband access. Cook County households, home to Chicago, has only an 80.573% broadband connection rate.
+##### McHenry County does the best with internet access, at 91.66% penetration. Williamson County, near the southern tip of the state, is the worst at 74.62% broadband access. Cook County households, home to Chicago, has only an 80.573% broadband connection rate.
