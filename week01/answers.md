@@ -14,14 +14,14 @@ For clarity, four calls will be used.
 
 Total women in the USA:
 ```
-https://api.census.gov/data/2015/acs/acs5?get=NAME,B01001_026E&for=us&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+https://api.census.gov/data/2015/acs/acs5?get=NAME,B01001_026E&for=us&key=...
 ```
 
 Results in 160,780,741 people.
 
 Women 18-34 in the USA:
 ```
-https://api.census.gov/data/2015/acs/acs5?get=NAME,B01001_031E,B01001_032E,B01001_033E,B01001_034E,B01001_035E,B01001_036E&for=us&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+https://api.census.gov/data/2015/acs/acs5?get=NAME,B01001_031E,B01001_032E,B01001_033E,B01001_034E,B01001_035E,B01001_036E&for=us&key=...
 ```
 
 Sums to 36,562,943 people.
@@ -30,7 +30,7 @@ Sums to 36,562,943 people.
 
 Total women in Illinois:
 ```
-https://api.census.gov/data/2015/acs/acs5?get=NAME,B01001_026E&for=state:17&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+https://api.census.gov/data/2015/acs/acs5?get=NAME,B01001_026E&for=state:17&key=...
 ```
 
 Results in 6,556,862 people.
@@ -38,7 +38,7 @@ Results in 6,556,862 people.
 Women 18-34 in Illinois:
 
 ```
-https://api.census.gov/data/2015/acs/acs5?get=NAME,B01001_031E,B01001_032E,B01001_033E,B01001_034E,B01001_035E,B01001_036E&for=state:17&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+https://api.census.gov/data/2015/acs/acs5?get=NAME,B01001_031E,B01001_032E,B01001_033E,B01001_034E,B01001_035E,B01001_036E&for=state:17&key=...
 ```
 
 These sum to 1,500,276 people.
@@ -78,7 +78,7 @@ We could optionally try to capture the Montenegrin population via the "Yugloslav
 The call would thus look like this to capture the people with "Mediterranean" ancestry:
 
 ```
-https://api.census.gov/data/2015/acs/acs5?get=NAME,B04004_007E,B04004_010E,B04004_011E,B04004_040E,B04004_044E,B04004_050E,B04004_051E,B04004_029E,B04004_030E,B04004_091E,B04004_071E,B04004_050E,B04004_013E,B04004_003E,B04004_056E,B04004_020E,B03001_028E,B04004_107E&for=us&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+https://api.census.gov/data/2015/acs/acs5?get=NAME,B04004_007E,B04004_010E,B04004_011E,B04004_040E,B04004_044E,B04004_050E,B04004_051E,B04004_029E,B04004_030E,B04004_091E,B04004_071E,B04004_050E,B04004_013E,B04004_003E,B04004_056E,B04004_020E,B03001_028E,B04004_107E&for=us&key=...
 ```
 
 This returns...
@@ -107,7 +107,7 @@ There is unfortunately no way to capture the East Timorese, Bruneian, and Singap
 The call: 
 
 ```
-https://api.census.gov/data/2015/acs/acs5?get=NAME,B02015_022E,B02015_013E,B02015_006E,B02015_021E,B02015_005E,B02015_010E,B02015_014E,B02015_008E,B02015_009E&for=us&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+https://api.census.gov/data/2015/acs/acs5?get=NAME,B02015_022E,B02015_013E,B02015_006E,B02015_021E,B02015_005E,B02015_010E,B02015_014E,B02015_008E,B02015_009E&for=us&key=...
 ```
 
 The response:
@@ -131,7 +131,7 @@ These values sum to 5,572,312 people.
 Those who entered 2000-2009 in California (06) and New York (36).
 
 ```
-https://api.census.gov/data/2015/acs/acs5?get=NAME,B05005_009E&for=state:06,36&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+https://api.census.gov/data/2015/acs/acs5?get=NAME,B05005_009E&for=state:06,36&key=...
 ```
 
 ```
@@ -143,7 +143,7 @@ https://api.census.gov/data/2015/acs/acs5?get=NAME,B05005_009E&for=state:06,36&k
 Those who entered 1990-1999 in California (06) and New York (36).
 
 ```
-https://api.census.gov/data/2015/acs/acs5?get=NAME,B05005_014E&for=state:06,36&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+https://api.census.gov/data/2015/acs/acs5?get=NAME,B05005_014E&for=state:06,36&key=...
 ```
 
 ```
@@ -172,7 +172,7 @@ New York from 1990-1999: 1150072 / 18882700 = 6.090% of the population
 - Children Living above double the Poverty Line (2.0 * Poverty Level < Income): B05010_018E
 
 ```
-https://api.census.gov/data/2015/acs/acs5?get=NAME,B05010_002E,B05010_018E&for=school%20district%20(unified):*&in=state:17&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+https://api.census.gov/data/2015/acs/acs5?get=NAME,B05010_002E,B05010_018E&for=school%20district%20(unified):*&in=state:17&key=...
 ```
 
 Dividing one value by the other yields a rankable list of numbers.
@@ -186,7 +186,7 @@ Population under 18 is available in its own concept, "POPULATION UNDER 18 YEARS 
 - Minors: B09001_001E
 
 ```
-https://api.census.gov/data/2015/acs/acs5?get=NAME,B09001_001E&for=school%20district%20(unified):23640,14050&in=state:17&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+https://api.census.gov/data/2015/acs/acs5?get=NAME,B09001_001E&for=school%20district%20(unified):23640,14050&in=state:17&key=...
 ```
 
 ##### Brooklyn Community Unit School District 188 serves 23,640 minors. 
@@ -200,13 +200,13 @@ https://api.census.gov/data/2015/acs/acs5?get=NAME,B09001_001E&for=school%20dist
 Total children under 18 years of age with less than a 1.0 income to poverty ratio : B05010_002E
 
 ```
-https://api.census.gov/data/2015/acs/acs5?get=NAME,B05010_002E&for=school%20district%20(unified):*&in=state:17&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+https://api.census.gov/data/2015/acs/acs5?get=NAME,B05010_002E&for=school%20district%20(unified):*&in=state:17&key=...
 ```
 
 Counting minors requires some summing, or can be queried directly as in question 4. This would be the call for a summable set of numbers.
 
 ```
-https://api.census.gov/data/2015/acs/acs5?get=NAME,B01001_003E,B01001_004E,B01001_005E,B01001_006E,B01001_027E,B01001_028E,B01001_029E,B01001_030E&for=school%20district%20(unified):09930&in=state:17&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+https://api.census.gov/data/2015/acs/acs5?get=NAME,B01001_003E,B01001_004E,B01001_005E,B01001_006E,B01001_027E,B01001_028E,B01001_029E,B01001_030E&for=school%20district%20(unified):09930&in=state:17&key=...
 ```
 
 ##### The Chicago Public Schools (Illinois District 299) has the highest count of children living under the poverty line, with 185,678 children, of a total of 603,463. This is a proportion of 30.768%. The district is the whole of metropolitan Chicago.
@@ -218,7 +218,7 @@ https://api.census.gov/data/2015/acs/acs5?get=NAME,B01001_003E,B01001_004E,B0100
 - Speak Spanish and Speak English "very well": B06007_004E
 
 ```
-https://api.census.gov/data/2015/acs/acs5?get=NAME,B06007_004E&for=combined%20statistical%20area:176,348,408&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+https://api.census.gov/data/2015/acs/acs5?get=NAME,B06007_004E&for=combined%20statistical%20area:176,348,408&key=...
 ```
 
 ##### Chicago has 891,717 bilingual English/Spanish individuals, Los Angeles has 3,484,207, and New York has 2,226,355.
@@ -231,7 +231,7 @@ https://api.census.gov/data/2015/acs/acs5?get=NAME,B06007_004E&for=combined%20st
 - Total Married: B06008_003E
 
 ```
-https://api.census.gov/data/2015/acs/acs5?get=NAME,B06008_004E,B06008_003E&for=state:*&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+https://api.census.gov/data/2015/acs/acs5?get=NAME,B06008_004E,B06008_003E&for=state:*&key=...
 ```
 
 ##### Utah has the highest ratio, 6.045x more married people than divorced people. Washington DC has the lowest ration, 2.930x more married people than divorced.
@@ -243,13 +243,13 @@ https://api.census.gov/data/2015/acs/acs5?get=NAME,B06008_004E,B06008_003E&for=s
 - Science and Engineering Related Fields: B15012_009E
 
 ```
-https://api.census.gov/data/2015/acs/acs5?get=NAME,B15012_009E&for=state:*&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+https://api.census.gov/data/2015/acs/acs5?get=NAME,B15012_009E&for=state:*&key=...
 ```
 
 ##### California has the most people with science and engineering bachelor's degrees: 670,716 people. 
 
 ```
-https://api.census.gov/data/2015/acs/acs5?get=NAME,B15012_009E&for=county:*&in=state:06&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+https://api.census.gov/data/2015/acs/acs5?get=NAME,B15012_009E&for=county:*&in=state:06&key=...
 ```
 
 ##### Within California, Los Angeles County has the most, with 162,004 individuals. Perhaps *Hollywood* and its large opportunity count for individuals with expertise in audio and visual content has something to do with its rank? In addition, the [large concentration of technical universities](https://en.wikipedia.org/wiki/Category:Universities_and_colleges_in_Los_Angeles_County,_California), including Caltech and its NASA JPL relationship, certainly contributes.
@@ -262,7 +262,7 @@ https://api.census.gov/data/2015/acs/acs5?get=NAME,B15012_009E&for=county:*&in=s
 - Total population: B01001_001E
 
 ```
-https://api.census.gov/data/2015/acs/acs5?get=NAME,B06009_006E,B01001_001E&for=state:27,55,17,18,26,39,42,36&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+https://api.census.gov/data/2015/acs/acs5?get=NAME,B06009_006E,B01001_001E&for=state:27,55,17,18,26,39,42,36&key=...
 ```
 
 ```
@@ -285,7 +285,7 @@ Moved from different state, 1 to 4 years: B07001_066E
 Moved from abroad, 1 to 4 years: B07001_082E
 
 ```
-https://api.census.gov/data/2015/acs/acs5?get=NAME,B07001_066E,B07001_082E&for=state:*&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+https://api.census.gov/data/2015/acs/acs5?get=NAME,B07001_066E,B07001_082E&for=state:*&key=...
 ```
 
 ##### 49,868 young children moved into Texas, and is the most mobile state for children by a significant margin.
@@ -297,7 +297,7 @@ https://api.census.gov/data/2015/acs/acs5?get=NAME,B07001_066E,B07001_082E&for=s
 Total that Drove Alone via Car, Truck, or Van: B08006_003E
 
 ```
-https://api.census.gov/data/2015/acs/acs5?get=NAME,B08006_003E&for=congressional%20district:*&in=state:17&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+https://api.census.gov/data/2015/acs/acs5?get=NAME,B08006_003E&for=congressional%20district:*&in=state:17&key=...
 ```
 
 ##### The 7th Congressional District in Illinois (Downtown Chicago and the west side) has the fewest solo drivers, and the 14th (North and West suburbs of Chicago) has the most solo drivers.
@@ -323,7 +323,7 @@ https://api.census.gov/data/2015/acs/acs5?get=NAME,B08006_003E&for=congressional
 
 
 ```
-https://api.census.gov/data/2015/acs/acs5?get=NAME,B08011_003E,B08011_004E,B08011_005E,B08011_006E,B08011_007E,B08011_008E,B08011_009E,B08011_010E&for=combined%20statistical%20area:122,176,216,288,348,408,500&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+https://api.census.gov/data/2015/acs/acs5?get=NAME,B08011_003E,B08011_004E,B08011_005E,B08011_006E,B08011_007E,B08011_008E,B08011_009E,B08011_010E&for=combined%20statistical%20area:122,176,216,288,348,408,500&key=...
 ```
 
 This returns...
@@ -384,7 +384,7 @@ General patterns are already obvious, but we can do some weighted averaging to g
 - Female: B18103_021E
 
 ```
-https://api.census.gov/data/2015/acs/acs5?get=NAME,B18103_002E,B18103_021E&for=us&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+https://api.census.gov/data/2015/acs/acs5?get=NAME,B18103_002E,B18103_021E&for=us&key=...
 ```
 
 ##### There are 159,396,497 women in America with vision difficulties, and 152,119,835 men. 7,276,662 more women have vision difficulties.
@@ -397,7 +397,7 @@ https://api.census.gov/data/2015/acs/acs5?get=NAME,B18103_002E,B18103_021E&for=u
 - Household Receiving Public Assistance with Children under 18 : B09010_002E
 
 ```
-https://api.census.gov/data/2015/acs/acs5?get=NAME,B09010_001E,B09010_002E&for=state:*&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+https://api.census.gov/data/2015/acs/acs5?get=NAME,B09010_001E,B09010_002E&for=state:*&key=...
 ```
 
 ##### Simple division shows that a bit more than half, 50.177% of Puerto Rican households receive some sort of federal assistance. It is the highest state in this respect. It receives around [$21 billion in aid from the US federal goverment, much less than it would receive if it were a full state](https://en.wikipedia.org/wiki/Welfare_in_Puerto_Rico#Federal_aid).
@@ -410,7 +410,7 @@ https://api.census.gov/data/2015/acs/acs5?get=NAME,B09010_001E,B09010_002E&for=s
 - Female, 5-17, with an Ambulatory Impairment: B18105_020E
 
 ```
-https://api.census.gov/data/2015/acs/acs5?get=NAME,B18105_004E,B18105_020E&for=school%20district%20(unified)&in=state:17&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+https://api.census.gov/data/2015/acs/acs5?get=NAME,B18105_004E,B18105_020E&for=school%20district%20(unified)&in=state:17&key=...
 ```
 
 ##### The highest school district in Illinois in terms of students with ambulatory impairments is not a school district at all, but rather "Remainder of Illinois," which here can be parsed as a combination of [homeschooled children and places where there exists elementary schools but not a matching secondary school](https://www.census.gov/geo/reference/gtc/gtc_sd.html). Chicago Public Schools (Illinois Unified School District 299) have the second highest number of children with ambulatory impairments, with 3,416 students needing mobility assistance.
@@ -425,7 +425,7 @@ CPS recently reworked their algorithm for disbursing the $900 million budget for
 - Female, 5-17, with an Cognitive Impairment: B18104_020E
 
 ```
-https://api.census.gov/data/2015/acs/acs5?get=NAME,B18104_004E,B18104_020E&for=school%20district%20(unified)&in=state:17&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+https://api.census.gov/data/2015/acs/acs5?get=NAME,B18104_004E,B18104_020E&for=school%20district%20(unified)&in=state:17&key=...
 ```
 
 ##### Same as above, with "Remainder of Illinois" first and CPS second, with 12,198 students needing cognitive assistance.
@@ -438,7 +438,7 @@ https://api.census.gov/data/2015/acs/acs5?get=NAME,B18104_004E,B18104_020E&for=s
 - Female, With income $100,000 or more: B19325_072E
 
 ```
-https://api.census.gov/data/2015/acs/acs5?get=NAME,B19325_025E,B19325_072E&for=state:06,17,36&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+https://api.census.gov/data/2015/acs/acs5?get=NAME,B19325_025E,B19325_072E&for=state:06,17,36&key=...
 ```
 
 California has 1,504,067 high-earning men and 619,676 high-earning women, a difference of 884,392 people. 2.427x more men than women earn more than $100,000.
@@ -456,13 +456,13 @@ Designers: B24121_144E
 Musicians: B24121_149E
 
 ```
-https://api.census.gov/data/2015/acs/acs5?get=NAME,B24121_143E,B24121_144E,B24121_149E&for=state:*&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+https://api.census.gov/data/2015/acs/acs5?get=NAME,B24121_143E,B24121_144E,B24121_149E&for=state:*&key=...
 ```
 
 But null data results! So sad. Whenever 'null' is returned, that means that the data is [suppressed](https://www.census.gov/programs-surveys/acs/technical-documentation/data-suppression.html) for some specific sociopolitical reason, or is only used to track other variables and isn't designed for consumption. In this case, the data is only collected to track wage changes per industry, and so the raw counts are not made available. The data is, though, not suppressed at the USA level.
 
 ```
-https://api.census.gov/data/2015/acs/acs5?get=NAME,B24121_143E,B24121_144E,B24121_149E&for=us&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+https://api.census.gov/data/2015/acs/acs5?get=NAME,B24121_143E,B24121_144E,B24121_149E&for=us&key=...
 ```
 
 
@@ -477,7 +477,7 @@ https://api.census.gov/data/2015/acs/acs5?get=NAME,B24121_143E,B24121_144E,B2412
 - Built 1939 or Earlier: B25034_011E
 
 ```
-https://api.census.gov/data/2015/acs/acs5?get=NAME,B25034_001E,B25036_003E,B25034_011E&for=combined%20statistical%20area:176,348,408&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+https://api.census.gov/data/2015/acs/acs5?get=NAME,B25034_001E,B25036_003E,B25034_011E&for=combined%20statistical%20area:176,348,408&key=...
 ```
 
 ```
@@ -501,7 +501,7 @@ Total Households: B28002_001E
 With a Broadband Internet Subscription: B28002_004E
 
 ```
-https://api.census.gov/data/2016/acs/acs1?get=NAME,B28002_001E,B28002_004E&for=county&in=state:17&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+https://api.census.gov/data/2016/acs/acs1?get=NAME,B28002_001E,B28002_004E&for=county&in=state:17&key=...
 ```
 
 Note that not all counties are tabulated in the 1 year ACS, and so only a small subset of the 102 Illinois counties are publicized.
