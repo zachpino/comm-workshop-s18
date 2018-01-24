@@ -17,23 +17,23 @@ Total women in the USA:
 https://api.census.gov/data/2015/acs/acs5?get=NAME,B01001_026E&for=us&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
 ```
 
-Results in *160,780,741 people*.
+Results in 160,780,741 people.
 
 Women 18-34 in the USA:
 ```
 https://api.census.gov/data/2015/acs/acs5?get=NAME,B01001_031E,B01001_032E,B01001_033E,B01001_034E,B01001_035E,B01001_036E&for=us&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
 ```
 
-Sums to *36,562,943 people*.
+Sums to 36,562,943 people.
 
-*36,562,943 / 160,780,741 = 22.74%*
+36,562,943 / 160,780,741 = 22.74%
 
 Total women in Illinois:
 ```
 https://api.census.gov/data/2015/acs/acs5?get=NAME,B01001_026E&for=state:17&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
 ```
 
-Results in *6,556,862 people*.
+Results in 6,556,862 people.
 
 Women 18-34 in Illinois:
 
@@ -41,9 +41,9 @@ Women 18-34 in Illinois:
 https://api.census.gov/data/2015/acs/acs5?get=NAME,B01001_031E,B01001_032E,B01001_033E,B01001_034E,B01001_035E,B01001_036E&for=state:17&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
 ```
 
-These sum to *1,500,276 people*.
+These sum to 1,500,276 people.
 
-*1,500,276 / 6,556,862 = 22.88%*
+1,500,276 / 6,556,862 = 22.88%
 
 ##### Illinois has a higher ratio of young females.
 
@@ -88,7 +88,7 @@ This returns...
 ["United States","185873","236422","69413","1836991","582315","88952","6652806","153011","4817","138494","60043","88952","80135","156531","16582","24802","756552","181566","1"]]
 ```
 
-These values sum to *11,314,257 people*.
+These values sum to 11,314,257 people.
 
 We can similarly look at the datapoints within the concept "ASIAN ALONE BY SELECTED GROUPS" for many of the South-East Asian countries.
 
@@ -117,7 +117,7 @@ The response:
 ["United States","1710547","207999","263396","188673","126590","71451","18803","2717844","267009","1"]]
 ```
 
-These values sum to *5,572,312 people*.
+These values sum to 5,572,312 people.
 
 ##### There are more people in the USA that self-identify as single ancestry Mediterranean than South-East Asian, by 5,741,945 people.
 
@@ -155,16 +155,43 @@ https://api.census.gov/data/2015/acs/acs5?get=NAME,B05005_014E&for=state:06,36&k
 [Quick Google searches](https://www.google.com/publicdata/explore?ds=kf7tgg1uo9ude_&met_y=population&hl=en&dl=en) yield a total population in 2009 for California of 36,961,200 and in 1999 a population of 33,499,200. 
 
 California from 2000-2009: 2559124 / 36961200 = 6.923% of the population
+
 California from 1990-1999: 2600323 / 33499200 = 7.762% of the population
 
 New York from 2000-2009: 1198605 / 19307100 = 6.208% of the population
+
 New York from 1990-1999: 1150072 / 18882700 = 6.090% of the population
 
 ##### California increased, New York decreased.
 
 -----
 
-4. 
+4. In the concept "RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS BY NATIVITY OF CHILDREN UNDER 18 YEARS IN FAMILIES AND SUBFAMILIES BY LIVING ARRANGEMENTS AND NATIVITY OF PARENTS," we can find the answer to this question.
+
+- Children Living under the Poverty Line (Poverty Level > Income): B05010_002E
+- Children Living above double the Poverty Line (2.0 * Poverty Level < Income): B05010_018E
+
+```
+https://api.census.gov/data/2015/acs/acs5?get=NAME,B05010_002E,B05010_018E&for=school%20district%20(unified):*&in=state:17&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+```
+
+Dividing one value by the other yields a rankable list of numbers.
+
+##### Brooklyn Community Unit School District 188 (23640) has 30x more students below the poverty line than above 2x the poverty line. It is located within the St. Louis metropolitan area, east of the Missippi.
+
+##### Elmwood Community Unit School District 322 (14050) has an effectively infinite ratio, as it has 0 students below the poverty line, and 603 above 2x the poverty line. It is located in Central Illinois, northwest of Bloomington.
+
+Population under 18 is available in its own concept, "POPULATION UNDER 18 YEARS BY AGE".
+
+- Minors: B09001_001E
+
+```
+https://api.census.gov/data/2015/acs/acs5?get=NAME,B09001_001E&for=school%20district%20(unified):23640,14050&in=state:17&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+```
+
+##### Brooklyn Community Unit School District 188 serves 23,640 minors. 
+
+##### Elmwood Community Unit School District 322 serves 14,050 minors. 
 
 -----
 
@@ -173,16 +200,16 @@ New York from 1990-1999: 1150072 / 18882700 = 6.090% of the population
 Total children under 18 years of age with less than a 1.0 income to poverty ratio : B05010_002E
 
 ```
-https://api.census.gov/data/2015/acs/acs5?get=NAME,B05010_002E&for=school%20district%20(unified)&in=state:17&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+https://api.census.gov/data/2015/acs/acs5?get=NAME,B05010_002E&for=school%20district%20(unified):*&in=state:17&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
 ```
 
-Counting minors requires some summing.
+Counting minors requires some summing, or can be queried directly as in question 4. This would be the call for a summable set of numbers.
 
 ```
 https://api.census.gov/data/2015/acs/acs5?get=NAME,B01001_003E,B01001_004E,B01001_005E,B01001_006E,B01001_027E,B01001_028E,B01001_029E,B01001_030E&for=school%20district%20(unified):09930&in=state:17&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
 ```
 
-##### The Chicago Public School District 299 has the highest count of children living under the poverty line, with 185,678 children, of a total of 603,463. This is a proportion of 30.768%. The district is the whole of metropolitan Chicago.
+##### The Chicago Public Schools (Illinois District 299) has the highest count of children living under the poverty line, with 185,678 children, of a total of 603,463. This is a proportion of 30.768%. The district is the whole of metropolitan Chicago.
 
 -----
 
@@ -345,11 +372,15 @@ General patterns are already obvious, but we can do some weighted averaging to g
 |NYC   	|0.0379|0.0936|0.3179|0.4535|1.0275|0.9659|1.5466|0.8684|5.3112|7 (Latest Drivers) 				|
 |Seattle|0.0674|0.1695|0.4001|0.5581|0.9381|0.9246|1.0298|0.6891|4.7767|2 				|
 
+##### Houston drivers leave earliest, which is helped by the fact that the city is decently impacted by a poorly matching timezone. New Yorkers leave latest.
+
+![timezone drift](http://i.kinja-img.com/gawker-media/image/upload/19ghg6nbgk7f1png.png)
+
 -----
 
 13. The aptly named concept "SEX BY AGE BY VISION DIFFICULTY" gives this easily.
 
-- Male: B18103_002E
+- Male: B18105_004E
 - Female: B18103_021E
 
 ```
@@ -360,11 +391,46 @@ https://api.census.gov/data/2015/acs/acs5?get=NAME,B18103_002E,B18103_021E&for=u
 
 -----
 
-14.
+14. All public assistance programs show up under "RECEIPT OF SUPPLEMENTAL SECURITY INCOME (SSI), CASH PUBLIC ASSISTANCE INCOME, OR FOOD STAMPS/SNAP IN THE PAST 12 MONTHS BY HOUSEHOLD TYPE FOR CHILDREN UNDER 18 YEARS IN HOUSEHOLDS".
 
-15.
+- Household Count with Children under 18: B09010_001E
+- Household Receiving Public Assistance with Children under 18 : B09010_002E
 
-16.
+```
+https://api.census.gov/data/2015/acs/acs5?get=NAME,B09010_001E,B09010_002E&for=state:*&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+```
+
+##### Simple division shows that a bit more than half, 50.177% of Puerto Rican households receive some sort of federal assistance. It is the highest state in this respect. It receives around [$21 billion in aid from the US federal goverment, much less than it would receive if it were a full state](https://en.wikipedia.org/wiki/Welfare_in_Puerto_Rico#Federal_aid).
+
+-----
+
+15. Data on walking and other gross motor impairments can be found in the "SEX BY AGE BY AMBULATORY DIFFICULTY" concept.
+
+- Male, 5-17, with an Ambulatory Impairment: B18105_004E
+- Female, 5-17, with an Ambulatory Impairment: B18105_020E
+
+```
+https://api.census.gov/data/2015/acs/acs5?get=NAME,B18105_004E,B18105_020E&for=school%20district%20(unified)&in=state:17&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+```
+
+##### The highest school district in Illinois in terms of students with ambulatory impairments is not a school district at all, but rather "Remainder of Illinois," which here can be parsed as a combination of [homeschooled children and places where there exists elementary schools but not a matching secondary school](https://www.census.gov/geo/reference/gtc/gtc_sd.html). Chicago Public Schools (Illinois Unified School District 299) have the second highest number of children with ambulatory impairments, with 3,416 students needing mobility assistance.
+
+CPS recently reworked their algorithm for disbursing the $900 million budget for special education, and then reversed course twice after [public outcry](https://www.wbez.org/shows/wbez-news/wbez-investigation-cps-secretly-overhauled-special-education-at-students-expense/2f6907ea-6ad2-4557-9a03-7da60710f8f9).
+
+-----
+
+16.  Data on cognitive impairments can be found in the "SEX BY AGE BY COGNITIVE DIFFICULTY" concept.
+
+- Male, 5-17, with an Cognitive Impairment: B18104_004E
+- Female, 5-17, with an Cognitive Impairment: B18104_020E
+
+```
+https://api.census.gov/data/2015/acs/acs5?get=NAME,B18104_004E,B18104_020E&for=school%20district%20(unified)&in=state:17&key=e0f41b3ce147e2d2ca2d7ee4085fbefd43c142a5
+```
+
+##### Same as above, with "Remainder of Illinois" first and CPS second, with 12,198 students needing cognitive assistance.
+	
+-----
 
 17. The hyper-specific concept "SEX BY WORK EXPERIENCE IN THE PAST 12 MONTHS BY INCOME IN THE PAST 12 MONTHS (IN 2016 INFLATION-ADJUSTED DOLLARS) FOR THE POPULATION 15 YEARS AND OVER" helps answer this.
 
