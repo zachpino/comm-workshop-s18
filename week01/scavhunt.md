@@ -28,7 +28,7 @@ All questions should reference the [2015 American Community Survey, **5 year** c
 
 1.  Which **Illinois congressional districts** had the highest and lowest number of people **driving to work alone**? Who is the congressional representative of those two districts? Bonus: How much money did those representatives receive from transportation lobbying groups?  
 
-1. Do people **leave earlier in the morning** to go to work in **Los Angeles, Seattle, Austin, Denver, Atlanta, Chicago, or New York** **combined statistical areas**?
+1. Do people **leave earlier in the morning** to go to work in **Los Angeles, Seattle, Houston, Denver, Atlanta, Chicago, or New York** **combined statistical areas**?
 
 1. Do more men or women in the United States have **vision difficulty**?
 
