@@ -6,11 +6,11 @@ Documentation and Resources for the Spring 2018 IIT Institute of Design Communic
 	
 	> Homework: Explore census data. Complete half of the [Census Scavenger Hunt](week01/scavhunt.md) and record any questions for class discussion.
 
-- Week 02 · Data and List Management in JS and Drawing with SVG
-	> Classtime: Foundational javascript and html with a simple census dataset, drawing a scatter plot and bar chart
+- [Week 02 · Data and List Management in JS and Drawing with SVG](week02/readme.md)
+	> Classtime: Foundational javascript and html with a simple census dataset, drawing a bar chart
 
 	> Homework: Explore census data. Complete [Census Scavenger Hunt](week01/scavhunt.md) and submit to Blackboard.
-	> Homework: Draw a circle chart 
+	> Homework: [Draw a census bar chart](week02/homework.md) 
 
 - Week 02 · Accessing the Census API with Specificity from the Terminal
 	> Classtime: Access data based on lon-lat coordinates, geocoded regions, and statistics basics
