@@ -10,6 +10,7 @@ Documentation and Resources for the Spring 2018 IIT Institute of Design Communic
 	> Classtime: Foundational javascript and html with a simple census dataset, drawing a bar chart
 
 	> Homework: Explore census data. Complete [Census Scavenger Hunt](week01/scavhunt.md) and submit to Blackboard.
+	
 	> Homework: [Draw a census bar chart](week02/homework.md) 
 
 - Week 02 · Accessing the Census API with Specificity from the Terminal
