@@ -4,19 +4,21 @@ Documentation and Resources for the Spring 2018 IIT Institute of Design Communic
 - [Week 01 · Accessing the Census API](week01/readme.md) 	
 	> Classtime: Pull down data from various census endpoints, talk through FIPS codes, and discuss how to manipulate raw and csv text.
 	
+	> Homework: Explore census data. Complete half of the [Census Scavenger Hunt](week01/scavhunt.md) and record any questions for class discussion.
+
+- Week 02 · Data and List Management in JS and Drawing with SVG
+	> Classtime: Foundational javascript and html with a simple census dataset, drawing a scatter plot and bar chart
+
 	> Homework: Explore census data. Complete [Census Scavenger Hunt](week01/scavhunt.md) and submit to Blackboard.
+	> Homework: Draw a circle chart 
 
 - Week 02 · Accessing the Census API with Specificity from the Terminal
-	> Classtime: Access data based on lon-lat coordinates, geocoded regions, and in batches
-	
-
-- Week 03 · Data and List Management in JS and Drawing with SVG
-	> Classtime: Foundational javascript and html with a simple census dataset, drawing a scatter plot, statistics basics?
+	> Classtime: Access data based on lon-lat coordinates, geocoded regions, and statistics basics
 	
 	> Homework: Draw line, bar, and radial chart with assigned dataset
 
 - Week 04 · Intro to D3 Proper, Styling Simple Charts with CSS
-	> Classtime: Intro to `.enter()` and other D3 fundamentals, foundational CSS for typography and color, Color Brewer, importance of axes and labels 
+	> Classtime: Intro to `.enter()` and other D3 fundamentals, foundational CSS for typography and color, Color Brewer, drawing axes and labels with scales
 	
 	> Homework: Visualize a self-selected dataset in a set of charts that *look good*
 
