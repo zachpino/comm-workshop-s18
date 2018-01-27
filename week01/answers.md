@@ -360,7 +360,7 @@ And then arrive at percentages.
 |NYC   	|3.79%|4.68%|10.60%|11.34%|20.55%|16.10%|22.09%|10.85%|
 |Seattle|6.74%|8.48%|13.34%|13.95%|18.76%|15.41%|14.71%|8.61%|
 
-General patterns are already obvious, but we can do some weighted averaging to get a full ranking. By assigning consistently larger numbers to each time domain, we can then multiply that number by the percentage in each cell, and sum for each city.
+General patterns are already obvious, but we can do some [weighted averaging](https://en.wikipedia.org/wiki/Weighted_arithmetic_mean) to get a full ranking. By assigning consistently larger numbers to each time domain, we can then multiply that number by the percentage in each cell, and sum for each city.
 
 |   	|1	  |2	|3	   |4     |5   	 |6   	|7   	|8   	|Sum   | Rank 				|
 |---	|---  |---	|---   |---	  |---	 |---	|---	|---	|---   |---  				|
