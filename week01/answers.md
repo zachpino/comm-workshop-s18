@@ -194,7 +194,7 @@ https://api.census.gov/data/2015/acs/acs5?get=NAME,B09001_001E&for=school%20dist
 ##### Elmwood Community Unit School District 322 serves 812 minors. 
 
 
-###An alternative approach from Jessica Lee (Thanks Jessica!)
+### A cool alternative approach from Jessica Lee (Thanks Jessica!)
 
 Find the "RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS" for all of the school districts.
 
@@ -244,8 +244,9 @@ Summing the results per row yields a rankable indicator (held in the rightmost c
 
 ### The highest aggregate ratio is Chicago Public School District 299, with 4,127,259.
 
-Finding the minor counts for these districts is detailed above.
+Finding the minor counts for these districts is detailed above. 
 
+This method uses a different logic for defining poverty, and is based on evaluating *individuals* rather than *households*. Depending on the story you seek to tell, one or the other method might be more appropriate.
 
 -----
 
