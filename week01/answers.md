@@ -193,8 +193,9 @@ https://api.census.gov/data/2015/acs/acs5?get=NAME,B09001_001E&for=school%20dist
 
 ##### Elmwood Community Unit School District 322 serves 812 minors. 
 
+---
 
-### A cool alternative approach from Jessica Lee (Thanks Jessica!)
+#### A cool alternative approach to question 4 from Jessica Lee (Thanks Jessica!)
 
 Find the "RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS" for all of the school districts.
 
@@ -240,9 +241,9 @@ Apply the same weighted averaging method as detailed in question 12 below to eac
 
 Summing the results per row yields a rankable indicator (held in the rightmost cell of each row above). The higher this number, the higher the income to poverty ratio is for that district. 
 
-### The lowest aggregate ratio is Brooklyn Community Unit School District 188, with an indicator of 847.
+##### The lowest aggregate ratio is Brooklyn Community Unit School District 188, with an indicator of 847.
 
-### The highest aggregate ratio is Chicago Public School District 299, with 4,127,259.
+##### The highest aggregate ratio is Chicago Public School District 299, with 4,127,259.
 
 Finding the minor counts for these districts is detailed above. 
 
