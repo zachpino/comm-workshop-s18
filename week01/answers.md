@@ -194,7 +194,7 @@ https://api.census.gov/data/2015/acs/acs5?get=NAME,B09001_001E&for=school%20dist
 ##### Elmwood Community Unit School District 322 serves 812 minors. 
 
 
-###An alternative approach from Jessica Lee
+###An alternative approach from Jessica Lee (Thanks Jessica!)
 
 Find the "RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS" for all of the school districts.
 
@@ -209,6 +209,7 @@ Find the "RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS" for all of the
 ```
 api.census.gov/data/2015/acs/acs5?get=NAME,C17002_002E,C17002_003E,C17002_004E,C17002_005E,C17002_006E,C17002_007E,C17002_008E&for=school%20district%20(unified):*&in=state:17&key=...
 ```
+
 |NAME	|Under .5	|.5 - .99	|1 - 1.24	|1.25 - 1.49	|1.5 - 1.84	|1.85 - 1.99	|Over 2.0	|school district (unified) # |
 |---	|---	|---	|---	|---	|---	|---	|---	|---	|
 |River Ridge Community Unit School District | 210	|139	|185	|104	|82	|250	|85	|2634	|00001|
@@ -235,8 +236,16 @@ Apply the same weighted averaging method as detailed in question 12 below to eac
 | Goreville Community Unit School District 1 |	22.5|	240.8|	120.96|	264.41|	203.74|	374.4|	5700 | 6926.81|
 | Joppa-Maple Grove Unit District 38 |	28|	122.5|	42.56|	60.28|	325.65|	161.28|	1734 | 2474.27|
 | Gibson City-Melvin-Sibley Community Unit School District 5|	54	| 485.1|	309.12|	439.77|	634.6|	257.28|	7488 | 9667.87|
+...
 
-Summing the results per row yields a rankable indicator. The higher this number, the higher the income to poverty ratio is for that district. 
+Summing the results per row yields a rankable indicator (held in the rightmost cell of each row above). The higher this number, the higher the income to poverty ratio is for that district. 
+
+### The lowest aggregate ratio is Brooklyn Community Unit School District 188, with an indicator of 847.
+
+### The highest aggregate ratio is Chicago Public School District 299, with 4,127,259.
+
+Finding the minor counts for these districts is detailed above.
+
 
 -----
 
