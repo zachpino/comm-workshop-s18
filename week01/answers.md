@@ -189,9 +189,52 @@ Population under 18 is available in its own concept, "POPULATION UNDER 18 YEARS 
 https://api.census.gov/data/2015/acs/acs5?get=NAME,B09001_001E&for=school%20district%20(unified):23640,14050&in=state:17&key=...
 ```
 
-##### Brooklyn Community Unit School District 188 serves 23,640 minors. 
+##### Brooklyn Community Unit School District 188 serves 325 minors. 
 
-##### Elmwood Community Unit School District 322 serves 14,050 minors. 
+##### Elmwood Community Unit School District 322 serves 812 minors. 
+
+
+###An alternative approach from Jessica Lee
+
+Find the "RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS" for all of the school districts.
+
+- Under .50 Income to Poverty Level Ratio: C17002_002E 
+- 0.50 to 0.99 Income to Poverty Level Ratio: C17002_003E 
+- 1.00 to 1.24 Income to Poverty Level Ratio: C17002_004E 
+- 1.25 to 1.49 Income to Poverty Level Ratio: C17002_005E 
+- 1.50 to 1.84 Income to Poverty Level Ratio: C17002_006E 
+- 1.85 to 1.99 Income to Poverty Level Ratio: C17002_007E 
+- 2.00 and over Income to Poverty Level Ratio: C17002_008E 
+
+```
+api.census.gov/data/2015/acs/acs5?get=NAME,C17002_002E,C17002_003E,C17002_004E,C17002_005E,C17002_006E,C17002_007E,C17002_008E&for=school%20district%20(unified):*&in=state:17&key=...
+```
+|NAME	|Under .5	|.5 - .99	|1 - 1.24	|1.25 - 1.49	|1.5 - 1.84	|1.85 - 1.99	|Over 2.0	|school district (unified) # |
+|River Ridge Community Unit School District | 210	|139	|185	|104	|82	|250	|85	|2634	|00001|
+|Casey-Westfield Community Unit School District | 4C	|360	|380	|320	|207	|710	|221	|3878	|00002|
+|Blue Ridge Community Unit School District | 18	|193	|259	|102	|250	|327	|165	|3599	|00003|
+|Norris City-Omaha-Enfield Community Unit School District | 3	|412	|205	|269	|299	|337	|78	|2970	|00004|
+|Prairie Central Community Unit School District | 8	|492	|695	|580	|473	|632	|443	|7191	|00005|
+|Eastland Community Unit School District | 308	|125	|200	|129	|293	|339	|169	|3010	|00007|
+|Goreville Community Unit School District | 1	|90	|344	|108	|193	|122	|195	|2850	|00014|
+|Joppa-Maple Grove Unit District | 38	|112	|175	|38	|44	|195	|84	|867	|00015|
+|Gibson City-Melvin-Sibley Community Unit School District | 5	|216	|693	|276	|321	|380	|134	|3744	|00041|
+...
+
+Apply the same weighted averaging method as detailed in question 12 below to each income bucket. Multiply each population count that the API returns by the average of the range of income percentages (the 1.5 to 1.84 bucket is multipled by 1.67)
+
+| Multiplier ->	| 0.25|	0.7|	1.12|	1.37|	1.67|	1.92|	2 | Ranking Sum
+| River Ridge Community Unit School District 210 |	34.75 |	129.5|	116.4|	112.34|	417.5|	163.2|	5268 | 6241.77 |
+| Casey-Westfield Community Unit School District 4C |	90	|266|	358.4|	283.59|	1185.7|	424.32|	7756 | 10364.01|
+| Blue Ridge Community Unit School District 18 |	48.25	|181.3|	114.24|	342.5|	546.09|	316.8|	7198 | 8747.18|
+| Norris City-Omaha-Enfield Community Unit School District 3 |	103|	143.5|	301.28|	409.63|	562.79|	149.76	| 5940 |7609.96|
+| Prairie Central Community Unit School District 8 |	123| 486.5|	649.6|	648.01|	1055.44|	850.56|	14382 | 18195.11|
+| Eastland Community Unit School District 308 |	31.25|	140|	144.48|	401.41|	566.13|	324.48|	6020 |7627.75|
+| Goreville Community Unit School District 1 |	22.5|	240.8|	120.96|	264.41|	203.74|	374.4|	5700 | 6926.81|
+| Joppa-Maple Grove Unit District 38 |	28|	122.5|	42.56|	60.28|	325.65|	161.28|	1734 | 2474.27|
+| Gibson City-Melvin-Sibley Community Unit School District 5|	54	| 485.1|	309.12|	439.77|	634.6|	257.28|	7488 | 9667.87|
+
+Summing the results per row yields a rankable indicator. The higher this number, the higher the income to poverty ratio is for that district. 
 
 -----
 
