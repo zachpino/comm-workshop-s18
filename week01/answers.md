@@ -210,6 +210,7 @@ Find the "RATIO OF INCOME TO POVERTY LEVEL IN THE PAST 12 MONTHS" for all of the
 api.census.gov/data/2015/acs/acs5?get=NAME,C17002_002E,C17002_003E,C17002_004E,C17002_005E,C17002_006E,C17002_007E,C17002_008E&for=school%20district%20(unified):*&in=state:17&key=...
 ```
 |NAME	|Under .5	|.5 - .99	|1 - 1.24	|1.25 - 1.49	|1.5 - 1.84	|1.85 - 1.99	|Over 2.0	|school district (unified) # |
+|---	|---	|---	|---	|---	|---	|---	|---	|---	|
 |River Ridge Community Unit School District | 210	|139	|185	|104	|82	|250	|85	|2634	|00001|
 |Casey-Westfield Community Unit School District | 4C	|360	|380	|320	|207	|710	|221	|3878	|00002|
 |Blue Ridge Community Unit School District | 18	|193	|259	|102	|250	|327	|165	|3599	|00003|
@@ -223,7 +224,8 @@ api.census.gov/data/2015/acs/acs5?get=NAME,C17002_002E,C17002_003E,C17002_004E,C
 
 Apply the same weighted averaging method as detailed in question 12 below to each income bucket. Multiply each population count that the API returns by the average of the range of income percentages (the 1.5 to 1.84 bucket is multipled by 1.67)
 
-| Multiplier ->	| 0.25|	0.7|	1.12|	1.37|	1.67|	1.92|	2 | Ranking Sum
+| Multiplier ->	| 0.25|	0.7|	1.12|	1.37|	1.67|	1.92|	2 | Ranking Sum |
+|---	|---	|---	|---	|---	|---	|---	|---	|---	|
 | River Ridge Community Unit School District 210 |	34.75 |	129.5|	116.4|	112.34|	417.5|	163.2|	5268 | 6241.77 |
 | Casey-Westfield Community Unit School District 4C |	90	|266|	358.4|	283.59|	1185.7|	424.32|	7756 | 10364.01|
 | Blue Ridge Community Unit School District 18 |	48.25	|181.3|	114.24|	342.5|	546.09|	316.8|	7198 | 8747.18|
