@@ -162,7 +162,7 @@ New York from 2000-2009: 1198605 / 19307100 = 6.208% of the population
 
 New York from 1990-1999: 1150072 / 18882700 = 6.090% of the population
 
-##### California increased, New York decreased.
+##### California decreased, New York increased.
 
 -----
 
