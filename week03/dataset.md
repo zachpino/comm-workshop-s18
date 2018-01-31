@@ -10,7 +10,6 @@ Some of these sites have purchasable in addition to free data, and others might 
 - https://www.data.gov
 - http://www.zanran.com/q/
 - https://www.reddit.com/r/datasets/   (and check out the linked subreddits too!)
-- https://www.exversion.com/search/
 - https://github.com/toddmotto/public-apis
 - https://www.google.com/publicdata/directory
 - https://en.wikipedia.org/wiki/List_of_datasets_for_machine_learning_research
@@ -27,11 +26,10 @@ Some of these sites have purchasable in addition to free data, and others might 
 - http://www.ndbc.noaa.gov
 - https://www.ncdc.noaa.gov/cdo-web/
 - http://weather.rap.ucar.edu
-- http://earthquake.usgs.gov/earthquakes/feed/v1.0/
+- https://earthquake.usgs.gov/data/
 - http://www.ssec.wisc.edu/data/
 - https://cfpub.epa.gov/surf/locate/index.cfm
 - http://volcano.ssec.wisc.edu
-- https://www.opensensors.io
 
 -----
 
@@ -43,8 +41,8 @@ Some of these sites have purchasable in addition to free data, and others might 
 -----
 
 ##### Transportation
+- https://github.com/graphhopper/open-traffic-collection
 - http://opentraffic.io
-- https://www.radarbox24.com
 - https://jblevins.org/notes/airline-data
 - https://www.fra.dot.gov/Page/P0365
 
@@ -52,7 +50,6 @@ Some of these sites have purchasable in addition to free data, and others might 
 
 ##### Social
 - https://meta.wikimedia.org/wiki/Datasets
-- https://wikitech.wikimedia.org/wiki/RCStream
 - https://developers.facebook.com/docs/graph-api
 - https://www.google.com/trends/explore
 - https://dev.twitter.com/streaming/overview
