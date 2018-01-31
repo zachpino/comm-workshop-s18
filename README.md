@@ -6,27 +6,25 @@ Documentation and Resources for the Spring 2018 IIT Institute of Design Communic
 	
 	> Homework: Explore census data. Complete half of the [Census Scavenger Hunt](week01/scavhunt.md) and record any questions for class discussion.
 
-- [Week 02 · Data and List Management in JS and Drawing with SVG](week02/readme.md)
-	> Classtime: Foundational javascript and html with a simple census dataset, drawing a bar chart
+- Week 02 · Data and List Management in JS and Drawing with SVG
+	> Classtime: Work through scavenger hunt problems
 
 	> Homework: Explore census data. Complete [Census Scavenger Hunt](week01/scavhunt.md) and submit to Blackboard.
+
+- [Week 03 · Data and List Management in JS and Drawing with SVG](week03/readme.md)
+	> Classtime: Foundational javascript and html with a simple census dataset, drawing a bar chart
 	
 	> Homework: [Draw a census bar chart](week02/homework.md) 
-
-- Week 02 · Accessing the Census API with Specificity from the Terminal
-	> Classtime: Access data based on lon-lat coordinates, geocoded regions, and statistics basics
-	
-	> Homework: Draw line, bar, and radial chart with assigned dataset
 
 - Week 04 · Intro to D3 Proper, Styling Simple Charts with CSS
 	> Classtime: Intro to `.enter()` and other D3 fundamentals, foundational CSS for typography and color, Color Brewer, drawing axes and labels with scales
 	
 	> Homework: Visualize a self-selected dataset in a set of charts that *look good*
 
-- Week 05 · Drawing Custom Shapes and Plots
-	> Classtime: SVG paths, bezier and quadratic/quartic curves, and shapes examples
+- Week 05 · Accessing the Census API with Specificity from the Terminal
+	> Classtime: Access data based on lon-lat coordinates, geocoded regions, and statistics basics
 	
-	> Homework: Visualize a self-selected, simple dataset in a more complex way (area chart, flow diagram, sankey, spider...)
+	> Homework: Draw line, bar, and radial chart with assigned dataset
 
 - Week 06 · Geo-Data and Drawing Maps
 	> Classtime: Sourcing and manipulating shapefiles from census mapping system TIGER. 
@@ -48,26 +46,26 @@ Documentation and Resources for the Spring 2018 IIT Institute of Design Communic
 	
 	> Homework: Draw a choropleth with multiple transitioning datasets based on assigned dataset 
 
-- Week 10 · Time Math
+- Week 10· Drawing Custom Shapes and Plots
+	> Classtime: SVG paths, bezier and quadratic/quartic curves, and shapes examples
+	
+	> Homework: Visualize a self-selected, simple dataset in a more complex way (area chart, flow diagram, sankey, spider...)
+	
+- Week 11 · Time Math
 	> Classtime: Time series visualization using D3 time modules
 	
 	> Homework: Draw a set of time series visualization based on assigned dataset from week 9.
 
-- Week 11 · Hierarchical Diagrams
+- Week 12 · Hierarchical Diagrams
 	> Classtime: Work with hierarchical dataset to draw nested connections between content (sankey and network diagrams)
 	
 	> Homework: Find data appropriate for a network visualization and draw it.
 
-- Week 12 · Web Page Layout
+- Week 13 · Web Page Layout
 	> Classtime: Responsive HTML page layout construction, image and media tags, advanced CSS typography
 	
 	> Homework: Create page structure and add supporting content to choropleth from week 9 and time series from week 10.
-
-- Week 13 · Work!
-	> Classtime: Open
 	
-	> Homework: Work!
-
 - Week 14 · Final Presentation!
 	> Classtime: Critique
 	
