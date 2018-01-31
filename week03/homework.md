@@ -13,3 +13,5 @@ Use the lessons from this week to draw a horizontal barchart to answer this ques
 
 	> Bonus: Can you use Javascript mathematical manipulation to draw population percentages rather than the number of people?	
 	> Bonus: Can you use Javascript mathematical manipulation to color the bars with their data too?
+	> Bonus: Can you use label the bars with the abbreviated names of the states? Google 'javascript substring' for the necessary code. 
+
