@@ -1,4 +1,4 @@
-### Week 2: Simple Data Visualization
+### Week 3: Simple Data Visualization
 
 This set of tutorials introduces 3 of the 4 programming languages necessary for interactive web data visualizations: HTML, JS, and SVG. Take these lessons slowly, and practice by tweaking the examples.
 

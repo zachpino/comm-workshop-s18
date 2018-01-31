@@ -15,11 +15,8 @@ Documentation and Resources for the Spring 2018 IIT Institute of Design Communic
 	> Classtime: Foundational javascript and html with a simple census dataset, drawing a bar chart
 	
 	> Homework: [Draw a census bar chart](week03/homework.md) 
-<<<<<<< HEAD
 	
 	> Homework: [Research datasets](week03/dataset.md)
-=======
->>>>>>> 3de2144bb18b7ce5de08c20dff9e59d940eb9cf9
 
 - Week 04 · Intro to D3 Proper, Styling Simple Charts with CSS
 	> Classtime: Intro to `.enter()` and other D3 fundamentals, foundational CSS for typography and color, Color Brewer, drawing axes and labels with scales
