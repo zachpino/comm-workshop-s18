@@ -13,6 +13,7 @@ Some of these sites have purchasable in addition to free data, and others might 
 - https://github.com/toddmotto/public-apis
 - https://www.google.com/publicdata/directory
 - https://en.wikipedia.org/wiki/List_of_datasets_for_machine_learning_research
+- https://tinyletter.com/data-is-plural
 
 -----
 
