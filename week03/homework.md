@@ -1,6 +1,8 @@
 ### Homework for 2/7/18
 
-Pulldown a dataset from the Census API to answer this question:
+In addition to looking for your [dataset and story](dataset.md)...
+
+Pull down a dataset from the Census API to answer this question:
 
 #### How many people walk to work, circa 2015, in each state?
 
