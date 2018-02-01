@@ -63,7 +63,7 @@ This chunk of code draws an SVG rectangle for each item in a list of numbers, co
 
 ```
 
-A more complex example, to draw a horizontal chart with labels using the SVG `<text>` tag, which is defined similarly to a `<rect>`.
+A more complex example, to draw a horizontal chart with labels using the SVG `<text>` tag, which is defined similarly to a `<rect>`. Note how, because svg rectangles are drawn from the upper left corner, we need to do some subtraction to align the bottoms of the bars.
 
 ![horizontal bar chart](horizontal_bar.png)
 
