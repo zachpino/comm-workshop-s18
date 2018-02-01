@@ -4,6 +4,8 @@ Begin researching a data topic area! Here are a few places to start, but know th
 
 Some of these sites have purchasable in addition to free data, and others might require you to make a free account before seeing what is available.
 
+Also, take a look at [Zach's favorite Twitter Bot](https://twitter.com/datasaurs?lang=en).
+
 -----
 
 ##### Data Search Engines and General Directories
