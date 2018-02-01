@@ -19,11 +19,11 @@ This chunk of code draws an SVG rectangle for each item in a list of numbers, co
 		var dataset = [120,230,40,70,150,100,25];
 
 		//two variables for the size of the svg container
-		width = 500;
-		height = 500;
+		var width = 500;
+		var height = 500;
 
 		//a variable to specify how tall the bars are
-		barWidth = 50;
+		var barWidth = 50;
 
 		//this line of code uses d3 to find the <body> tag on the page, and then injects, with .append(), an <svg> object into it
 		//.attr() sets the attributes of the svg tag.
