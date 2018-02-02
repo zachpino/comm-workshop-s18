@@ -18,7 +18,7 @@ Documentation and Resources for the Spring 2018 IIT Institute of Design Communic
 	
 	> Homework: [Research datasets](week03/dataset.md)
 
-- Week 04 · Intro to D3 Proper, Styling Simple Charts with CSS
+- Week 04 · Intro to D3 Proper and Time-Series Data, D3 Transistions and Scales, and Styling Simple Charts
 	> Classtime: Intro to `.enter()` and other D3 fundamentals, foundational CSS for typography and color, Color Brewer, drawing axes and labels with scales
 	
 	> Homework: Visualize a self-selected dataset in a set of charts that *look good*
