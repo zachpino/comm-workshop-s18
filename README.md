@@ -23,7 +23,7 @@ Documentation and Resources for the Spring 2018 IIT Institute of Design Communic
 	
 	> Homework: Visualize a self-selected dataset in a set of charts that *look good*
 
-- Week 05 · Accessing the Census API with Specificity from the Terminal
+- Week 05 · Accessing the Census API with Specificity in D3
 	> Classtime: Access data based on lon-lat coordinates, geocoded regions, and statistics basics
 	
 	> Homework: Draw line, bar, and radial chart with assigned dataset
