@@ -17,9 +17,9 @@ Use the lessons from this week to draw a horizontal barchart to answer this ques
 
 Here are some other challenges to add sophistication and legibility to your chart.
 
-	> Bonus: Can you use Javascript mathematical manipulation to draw population percentages rather than the number of people? (not pictured below)	
-	> Bonus: Can you use Javascript mathematical manipulation to color the bars with their data too?
-	> Bonus: The color format 'rgb(#,#,#)' requires integers. If you try to combine the above two goals (percentage bars and data-inferred color), your bars will be black because the percentages are really small floats (numbers with trailing decimals). Use 'Math.round()' to convert your percentages into integers, something like 'Math.round( 1000 * (dataset[i][1]/dataset[i][2]) )'. Google 'Math.round()' for more info. Thanks to Sam for catching this! 
-	> Bonus: Can you use label the bars with the abbreviated names of the states? Google 'javascript substring' for the necessary code. 
+- Bonus: Can you use Javascript mathematical manipulation to draw population percentages rather than the number of people? (not pictured below)	
+- Bonus: Can you use Javascript mathematical manipulation to color the bars with their data too?
+- Bonus: The color format 'rgb(#,#,#)' requires integers. If you try to combine the above two goals (percentage bars and data-inferred color), your bars will be black because the percentages are really small floats (numbers with trailing decimals). Use 'Math.round()' to convert your percentages into integers, something like 'Math.round( 1000 * (dataset[i][1]/dataset[i][2]) )'. Google 'Math.round()' for more info. Thanks to Sam for catching this! 
+- Bonus: Can you use label the bars with the abbreviated names of the states? Google 'javascript substring' for the necessary code. 
 
 ![bonus version](bonus.png)
