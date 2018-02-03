@@ -18,12 +18,12 @@ Documentation and Resources for the Spring 2018 IIT Institute of Design Communic
 	
 	> Homework: [Research datasets](week03/dataset.md)
 
-- Week 04 · Intro to D3 Proper and Time-Series Data, D3 Transistions and Scales, and Styling Simple Charts
-	> Classtime: Intro to `.enter()` and other D3 fundamentals, foundational CSS for typography and color, Color Brewer, drawing axes and labels with scales
+- Week 04 · Intro to D3 Proper and Time-Series Data, Scales, Scatter Plots, and Styling Simple Charts
+	> Classtime: Intro to `.enter()` and other D3 fundamentals, foundational CSS for typography and color, Color Brewer, Drawing axes and labels with scales
 	
 	> Homework: Visualize a self-selected dataset in a set of charts that *look good*
 
-- Week 05 · Accessing the Census API with Specificity in D3
+- Week 05 · Accessing the Census API with Specificity in D3, Transitions
 	> Classtime: Pull data directly in Javascript from the ACS. Access data based on lon-lat coordinates, geocoded regions, and statistics basics
 	
 	> Homework: Draw line, bar, and radial chart with assigned dataset
