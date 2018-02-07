@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.button{padding:10px;background-color: #555;margin:10px;width:40px;color:#fff; }
+
+	</style>
+</head>
+<body>
+	<!-- this imports the D3 library -->
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+
+	<script>
+		//state,total,drivealone,transit,bike,walk
+		
+		var dataset = [
+["Alabama","1995472","1705107","8452","2453","22288","01"],
+["Alaska","356987","242403","5849","3583","27734","02"],
+["Arizona","2777754","2125151","58024","27816","56694","04"],
+["Arkansas","1236999","1021276","5462","1847","21673","05"],
+["California","16869052","12380153","881550","188736","458523","06"],
+["Colorado","2606591","1962576","82902","34698","77376","08"],
+["Connecticut","1748352","1369767","84597","5426","53146","09"],
+["Delaware","427787","346802","13058","1313","9258","10"],
+["District of Columbia","335224","113113","125413","13434","43226","11"],
+["Florida","8432513","6712165","178238","57987","125170","12"],
+["Georgia","4341894","3455809","90961","10009","68134","13"],
+["Hawaii","678279","452594","44269","7272","30644","15"],
+["Idaho","704276","549180","5338","6831","21161","16"],
+["Illinois","5983836","4393725","544295","37314","185070","17"],
+["Indiana","2986176","2479311","32462","14773","62432","18"],
+["Iowa","1546601","1245918","17465","8133","54613","19"],
+["Kansas","1393853","1145739","6757","4584","32837","20"],
+["Kentucky","1864524","1536993","20322","4327","43877","21"],
+["Louisiana","1986355","1636409","26929","10029","37652","22"],
+["Maine","635475","495743","4032","2617","25475","23"],
+["Maryland","2942352","2167448","265615","9138","70705","24"],
+["Massachusetts","3346749","2390090","327144","25680","161164","25"],
+["Michigan","4279616","3534773","60635","19582","94664","26"],
+["Minnesota","2776528","2166347","97633","22727","78431","27"],
+["Mississippi","1189806","1004254","4759","1547","18179","28"],
+["Missouri","2775023","2264180","41297","6722","54216","29"],
+["Montana","478238","359455","3955","6768","23410","30"],
+["Nebraska","956034","776332","6814","4784","26868","31"],
+["Nevada","1251879","976190","45505","5417","27147","32"],
+["New Hampshire","682019","552977","5775","1683","19449","33"],
+["New Jersey","4190538","3010947","464074","14214","129023","34"],
+["New Mexico","871117","694457","9671","6536","19523","35"],
+["New York","9064986","4825249","2521039","55577","580469","36"],
+["North Carolina","4361591","3537155","48600","10772","78111","37"],
+["North Dakota","385843","309449","1810","1518","15087","38"],
+["Ohio","5263292","4391489","87319","15903","120843","39"],
+["Oklahoma","1705849","1406995","8058","4259","30266","40"],
+["Oregon","1751088","1249804","77759","42231","70555","41"],
+["Pennsylvania","5879935","4499726","326404","28274","227520","42"],
+["Rhode Island","507116","405157","14714","2007","18859","44"],
+["South Carolina","2062681","1706872","12661","6618","45996","45"],
+["South Dakota","425712","337032","2242","2373","16811","46"],
+["Tennessee","2843629","2381529","23360","4068","38119","47"],
+["Texas","11966019","9596193","188363","33176","192491","48"],
+["Utah","1319944","1002263","33219","11339","33396","49"],
+["Vermont","318435","239706","3824","2541","18360","50"],
+["Virginia","4020679","3117644","183183","16263","92849","51"],
+["Washington","3236166","2348414","195559","29888","113083","53"],
+["West Virginia","735009","604619","6040","956","20660","54"],
+["Wisconsin","2835551","2284262","53879","22049","94202","55"],
+["Wyoming","289747","222412","4753","2570","11190","56"],
+["Puerto Rico","1026779","832332","25816","2116","34652","72"]
+];
+
+
+
+		//two variables for the size of the svg container
+		var width = 1000;
+		var height = 800;
+
+		//two variables for the chart
+		var barWidth = width/dataset.length;
+
+		//this line of code uses d3 to find the <body> tag on the page, and then injects, with .append(), an <svg> object into it
+		//.attr() sets the attributes of the svg tag.
+		var svg = d3.select('body')
+					.append('svg')
+					.attr('width', width)
+					.attr('height', height)
+		;
+		
+		//draw a rectangle as large as the svg container for background color choice
+		var background = d3.select('svg')
+						.append('rect')
+						.attr('width', width)
+						.attr('height', height)
+						.attr('x', 0)
+						.attr('y', 0)
+						.attr('fill', "#eee")
+		;
+
+		var margin = 50;
+
+		var yScale = d3.scaleLinear()
+                     .domain([0, d3.max(dataset, function(d) { return parseInt(d[1]); })])
+                     .range([0, height-(2*margin)])
+                     ;
+		
+		var bars = d3.select('svg')
+						.selectAll('.bars')
+						.data(dataset)
+						.enter()
+						.append('rect')
+						.attr('width', barWidth)
+						.attr('height', function(d,i){return yScale(d[1])})
+						.attr('x', function(d,i){return i*barWidth})
+						.attr('y', function(d,i){return height-margin - yScale(d[1])})
+						.attr('opacity', 1)
+						.attr('class','bars')
+						
+			;
+
+			//draw text labels
+			var labels = d3.select('svg')
+						.selectAll('.labels')
+						.data(dataset)
+						.enter()
+						.append('text')
+						.text( function(d,i){return d[0].substring(0,2)} )
+						.attr('x', function(d,i){return i*barWidth + (barWidth *.25)})
+						.attr('y', height - 30)
+						.attr('font-family','courier')
+						.attr('font-size','10px')
+			;
+
+
+			var drive = d3.select('body').append('div').attr('class',"button").text('drive').on("click", function() {
+
+				d3.selectAll('.bars').data(dataset).transition().attr('height', function(d,i){return yScale(d[2])}).attr('y', function(d,i){return height-margin - yScale(d[2])});
+
+			});
+
+			var transit = d3.select('body').append('div').attr('class',"button").text('transit').on("click", function() {
+					
+					d3.selectAll('.specBars').transition().attr('height', 0).attr('y', height-margin);
+
+					d3.selectAll('.specBars').remove();
+
+					d3.selectAll('.bars').transition().duration(1000).attr('opacity', .6);
+
+					var barsT = d3.select('svg')
+						.selectAll('.barsT')
+						.data(dataset)
+						.enter()
+						.append('rect')
+						.attr('width', barWidth)
+						.attr('height', 0)
+						.attr('x', function(d,i){return i*barWidth})
+						.attr('y', height-margin)
+						.attr('class','barsT')
+						.classed('specBars',true)
+						;
+
+
+					d3.selectAll('.barsT')
+						.transition().duration(1000)
+						.attr('height', function(d,i){return yScale(d[2])})
+						.attr('y', function(d,i){return height-margin - yScale(d[2])})
+
+						;
+
+			});
+
+			var bike = d3.select('body').append('div').attr('class',"button").text('bike').on("click", function() {
+
+					d3.selectAll('.specBars').transition().attr('height', 0).attr('y', height-margin);
+
+					d3.selectAll('.specBars').remove();
+					
+					d3.selectAll('.bars').transition().duration(1000).attr('opacity', .6);
+
+					var barsT = d3.select('svg')
+						.selectAll('.barsT')
+						.data(dataset)
+						.enter()
+						.append('rect')
+						.attr('width', barWidth)
+						.attr('height', 0)
+						.attr('x', function(d,i){return i*barWidth})
+						.attr('y', height-margin)
+						.attr('class','barsB')
+						.classed('specBars',true)
+						;
+
+
+					d3.selectAll('.barsB')
+						.transition().duration(1000)
+						.attr('height', function(d,i){return yScale(d[3])})
+						.attr('y', function(d,i){return height-margin - yScale(d[3])})
+
+						;
+			});
+
+			var walk = d3.select('body').append('div').attr('class',"button").text('walk').on("click", function() {
+
+				d3.selectAll('.bars').data(dataset).transition().attr('height', function(d,i){return yScale(d[5])}).attr('y', function(d,i){return height-margin - yScale(d[5])});
+
+			});
+
+			var total = d3.select('body').append('div').attr('class',"button").text('total').on("click", function() {
+
+				d3.selectAll('.bars').data(dataset).transition().attr('height', function(d,i){return yScale(d[1])}).attr('y', function(d,i){return height-margin - yScale(d[1])});
+
+			});
+
+	</script>
+	<!--
+	<div class="button" id="total">total</div>
+	<div class="button" id="drive">drive</div>
+	<div class="button" id="transit">transit</div>
+	<div class="button" id="bike">bike</div>
+	<div class="button" id="walk">walk</div>
+	-->
+</body>
+</html>
