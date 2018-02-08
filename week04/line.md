@@ -128,10 +128,10 @@ Make sure you remove the first item of the dataset, to ensure you don't encounte
 		var extents = d3.extent(dataset, function(d){
 								
 						//total minor population
-						var minorPop = d[1] + d[3];
+						var minorPop = parseInt(d[1]) + parseInt(d[3]);
 						
 						//total population of minors with amb. disabilities
-						var ambdisPop = d[2] + d[4];
+						var ambdisPop = parseInt(d[2]) + parseInt(d[4]);
 
 						//percentage of minors with amb. disabilities
 						var ambdisPercentage = ambdisPop / minorPop;
@@ -149,10 +149,10 @@ Make sure you remove the first item of the dataset, to ensure you don't encounte
 		for( var i=0 ; i < dataset.length ; i++ ){
 
 			//total minor population
-			var minorPop = dataset[i][1] + dataset[i][3];
+			var minorPop = parseInt(dataset[i][1]) + parseInt(dataset[i][3]);
 			
 			//total population of minors with amb. disabilities
-			var ambdisPop = dataset[i][2] + dataset[i][4]
+			var ambdisPop = parseInt(dataset[i][2]) + parseInt(dataset[i][4]);
 
 			//percentage of minors with amb. disabilities
 			var ambdisPercentage = ambdisPop / minorPop;

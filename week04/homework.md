@@ -14,6 +14,8 @@ Ensure that these charts *look good* by settings `.attr` and `.style` on your el
 
 Try to imagine which datapoints (in combination) might be a good match to each plot type. In addition, for each chart, try to articulate some specific learnings that the visualization manifests. Include this learning somewhere in the web page `<body>`.
 
+Make sure you `parseInt(value)` to ensure anything that should be an integer is treated as an integer during addition. Use `parseFloat(value)` for handling the equivalent situation for numbers with trailing decimals.
+
 -----
 
 Here are some other challenges to add sophistication to your chart.

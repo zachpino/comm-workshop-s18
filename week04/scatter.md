@@ -247,10 +247,10 @@ var dots = d3.select('svg')
 		var ambdisExtents = d3.extent(dataset, function(d){
 								
 								//total minor population
-								var minorPop = d[1] + d[3];
+								var minorPop = parseInt(d[1]) + parseInt(d[3]);
 								
 								//total population of minors with amb. disabilities
-								var ambdisPop = d[2] + d[4];
+								var ambdisPop = parseInt(d[2]) + parseInt(d[4]);
 
 								//percentage of minors with amb. disabilities
 								var ambdisPercentage = ambdisPop / minorPop;
@@ -289,10 +289,10 @@ var dots = d3.select('svg')
 					.append('circle')
 					.attr('cx', function(d){
 						//total minor population
-						var minorPop = d[1] + d[3];
+						var minorPop = parseInt(d[1]) + parseInt(d[3]);
 			
 						//total population of minors with amb. disabilities
-						var ambdisPop = d[2] + d[4];
+						var ambdisPop = parseInt(d[2]) + parseInt(d[4]);
 
 						//percentage of minors with amb. disabilities
 						var ambdisPercentage = ambdisPop / minorPop;
@@ -308,10 +308,10 @@ var dots = d3.select('svg')
 					.attr('class','dots')
 					.attr('fill', function(d,i){
 						//total minor population
-						var minorPop = d[1] + d[3];
+						var minorPop = parseInt(d[1]) + parseInt(d[3]);
 			
 						//total population of minors with amb. disabilities
-						var ambdisPop = d[2] + d[4];
+						var ambdisPop = parseInt(d[2]) + parseInt(d[4]);
 
 						//percentage of minors with amb. disabilities
 						var ambdisPercentage = ambdisPop / minorPop;
@@ -332,10 +332,10 @@ var dots = d3.select('svg')
 					.append('text')
 					.attr('x', function(d){
 						//total minor population
-						var minorPop = d[1] + d[3];
+						var minorPop = parseInt(d[1]) + parseInt(d[3]);
 			
 						//total population of minors with amb. disabilities
-						var ambdisPop = d[2] + d[4];
+						var ambdisPop = parseInt(d[2]) + parseInt(d[4]);
 
 						//percentage of minors with amb. disabilities
 						var ambdisPercentage = ambdisPop / minorPop;
