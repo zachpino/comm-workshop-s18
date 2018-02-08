@@ -2,6 +2,8 @@
 
 In addition to continuing to refine your [dataset and story](../week03/dataset.md)...
 
+Take a look at the [scatter plot](scatter.md) example and make sure it makes some sense. Join me Tuesday at 2 with any questions.
+
 Pull down several datasets from the Census API that are related to your chosen topic space(s).
 
 Use the lessons from this and last week to draw three charts, one per html page. Post these to Blackboard as a zipped folder containing all code and screenshots of the charts. Please use one meaningfully different dataset in each chart (even if it means stretching to adjacencies of your original questions) for practice working with a variety of real data. 
