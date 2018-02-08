@@ -4,7 +4,6 @@ This set of tutorials continues our work in HTML, JS, and SVG and introduces som
 
 -----
 
-- [Questions and Data](data.md)
 - [Creating an HTML Container for D3](container.md)
 
 -----

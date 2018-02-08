@@ -1,4 +1,4 @@
-# Communication Design Workshop · Data Visualization · Census + 
+## Communication Design Workshop · Data Viz · Census + 
 
 Documentation and Resources for the Spring 2018 IIT Institute of Design Communication Design Workshop
 
