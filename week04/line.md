@@ -10,6 +10,8 @@ Let's imagine we want to plot this dataset, which uses the following datapoints 
 - Minor females: B18105_019E
 - Minor females with ambulatory disability: B18105_020E
 
+The `cx` position of circles on the line will be determined by these values.
+
 ```
 https://api.census.gov/data/2016/acs/acs1?get=NAME,B18105_003E,B18105_004E,B18105_019E,B18105_020E&for=state:*
 ```
