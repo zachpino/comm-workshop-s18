@@ -24,7 +24,8 @@ This set of tutorials continues our work in HTML, JS, and SVG and introduces som
 ---
 
 Official D3 References
-	- [D3 Selections](https://github.com/d3/d3-selection#d3-selection)
-	- [D3 Append](https://github.com/d3/d3-selection#selection_append)
-	- [D3 Scales](https://github.com/d3/d3-scale)
-	- [D3 Binding Data](https://github.com/d3/d3-selection#selection_data)
+
+- [D3 Selections](https://github.com/d3/d3-selection#d3-selection)
+- [D3 Append](https://github.com/d3/d3-selection#selection_append)
+- [D3 Scales](https://github.com/d3/d3-scale)
+- [D3 Binding Data](https://github.com/d3/d3-selection#selection_data)
