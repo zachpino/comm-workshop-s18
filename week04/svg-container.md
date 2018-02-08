@@ -53,7 +53,7 @@ First, we set-up some variables to store reusable values for `width` and `height
 
 Since an svg element has now been created, we can search for it, and append *inside of it* an SVG `<rect>` with its four mandatory attributes `width`, `height`, `x`, and `y`. An additional `fill` attribute is set so we can specify the color of this background rectangle. Not mandatory at all, but a nice-to-have.
 
-#### `.append()` always creates an object *inside* of the element(s) previously selected, it creates *children*. not *siblings*.
+#### `.append()` creates an object *inside* of the element(s) previously selected, it creates *children*, not *siblings*.
 
 With the svg container created, let's move on to considering [our data and how it will be mapped to pixels](scale.md).
 

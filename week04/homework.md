@@ -1,29 +1,24 @@
-### Homework for 2/7/18
+### Homework for 2/15/18
 
-In addition to looking for your [dataset and story](dataset.md)...
+In addition to continuing to refine your [dataset and story](../week03/dataset.md)...
 
-Pull down a dataset from the Census API to answer this question:
+Pull down several datasets from the Census API that are related to your chosen topic space(s).
 
-#### How many people walk to work, circa 2015, in each state?
+Use the lessons from this and last week to draw three charts, one per html page. Post these to Blackboard as a zipped folder containing all code and screenshots of the charts. Please use one meaningfully different dataset in each chart (even if it means stretching to adjacencies of your original questions) for practice working with a variety of real data. 
 
-Use the lessons from this week to draw a horizontal barchart to answer this question. Post to Blackboard, along with your scavenger hunt examples.
+Ensure that these charts *look good* by settings `.attr` and `.style` on your elements. They should look at least as considered as this week's scatterplot example (a low bar to clear).
 
-	> Hint: You will need to divide the numbers in the dataset when drawing, as otherwise, the bars will be thousands of pixels tall! For instance `(d[i][1] / 2000`
-	> Hint: Your svg container needs to be really wide to accomodate all the states! 
+- One horizontal or vertical bar chart 
+- One line chart 
+- One scatter plot
 
-![census bar chart](homework.png)
+Try to imagine which datapoints (in combination) might be a good match to each plot type. In addition, for each chart, try to articulate some specific learnings that the visualization manifests. Include this learning somewhere in the web page `<body>`.
 
 -----
 
-Here are some other challenges to add sophistication and legibility to your chart.
+Here are some other challenges to add sophistication to your chart.
 
-- Bonus: Can you use Javascript mathematical manipulation to draw population percentages rather than the number of people? (not pictured below)	
-- Bonus: Can you use Javascript mathematical manipulation to color the bars with their data too?
-- Bonus: The color format `rgb(#,#,#)` requires integers. If you try to combine the above two goals (percentage bars and data-inferred color), your bars will be black because the percentages are really small floats (numbers with trailing decimals). Use `Math.round()` to convert your float percentages into integers. Google `Math.round()` for more info. Thanks to Sam for catching this! 
-
-	> ```Math.round( 1000 * (dataset[i][1]/dataset[i][2]) )```
+- Bonus: Can you do all of these charts without any `for` loops?
+- Bonus: Can your line chart have bubbles of different sizes to encode another datapoint? Can you use color scales to add another datapoint into the scatterplot? Could we draw several bars per datapoint for compoound comparison? In other words, try to add more dimensions than expected to each chart. 
+- Bonus: Can the data you are plotting be more complex than just a mapped datapoint? Partitive percentages like we did with ambulatory disability percentages? Can we define our own synthesized datapoints from weighting and summing other datapoints?
 	
-
-- Bonus: Can you use label the bars with the abbreviated names of the states? Google `javascript substring` for the necessary code. 
-
-![bonus version](bonus.png)

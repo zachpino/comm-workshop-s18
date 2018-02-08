@@ -20,7 +20,7 @@ This image and description match *linear scales* which scale data from the domai
 
 D3 uses scales, made up of domains and ranges, most commonly to map data to intended screen coordinates. They are often called *maps* or *remapping* functions in other programming languages, and all they do is cross-multiply!
 
-In this example, we might have numbers that fall between 25 and 50, and we want those mapped to pixels 200 through 400. Domains and ranges are passed to scales as an array of two objects.
+In this example, we might have numbers that fall between 25 and 50, and we want those values mapped to pixels 200 through 400. Domains and ranges are passed to scales as an array of two objects.
 
 ```js
 	var myScale = d3.scaleLinear().domain([25,50]).range([200, 400]);

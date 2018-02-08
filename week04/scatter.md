@@ -361,3 +361,5 @@ var dots = d3.select('svg')
 </html>
 ```
 
+
+[Practice time!](homework.md)

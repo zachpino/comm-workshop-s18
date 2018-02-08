@@ -1,6 +1,6 @@
 ### Line Plot
 
-Often used for simple rankings and event placements on timelines, line plots are simple ways to evaluate a single dimension of data spatially, and an infinite number of other additional dimensions are possible in shape, content, color, and any other retinal variables.
+Often used for rankings and event placements on timelines, line plots are simple ways to evaluate a single dimension of data spatially, and an infinite number of other additional dimensions are possible in shape, content, color, and any other retinal variables.
 
 Let's imagine we want to plot this dataset, which uses the following datapoints in the 2016 1 Year ACS, to understand how the states compare when it comes to the proportion of their youth population with walking impairments.
 
@@ -10,10 +10,15 @@ Let's imagine we want to plot this dataset, which uses the following datapoints 
 - Minor females: B18105_019E
 - Minor females with ambulatory disability: B18105_020E
 
-```https://api.census.gov/data/2016/acs/acs1?get=NAME,B18105_003E,B18105_004E,B18105_019E,B18105_020E&for=state:*```
+```
+https://api.census.gov/data/2016/acs/acs1?get=NAME,B18105_003E,B18105_004E,B18105_019E,B18105_020E&for=state:*
+```
 
-Make sure you remove the first item of the dataset, to ensure you don't encounter JS errors.
+Make sure you remove the first item of the dataset, to ensure you don't encounter JS `NaN` *not-a-number* errors.
 
+![line plot of ambulatory disability percentage by state](lineplot.png)
+
+-----
 
 ```html
 <html>
@@ -122,18 +127,18 @@ Make sure you remove the first item of the dataset, to ensure you don't encounte
 		//find the highest and lowest ambulatory disabilities percentages
 		var extents = d3.extent(dataset, function(d){
 								
-								//total minor population
-								var minorPop = d[1] + d[3];
-								
-								//total population of minors with amb. disabilities
-								var ambdisPop = d[2] + d[4];
+						//total minor population
+						var minorPop = d[1] + d[3];
+						
+						//total population of minors with amb. disabilities
+						var ambdisPop = d[2] + d[4];
 
-								//percentage of minors with amb. disabilities
-								var ambdisPercentage = ambdisPop / minorPop;
+						//percentage of minors with amb. disabilities
+						var ambdisPercentage = ambdisPop / minorPop;
 
-								//evaluate the percentage of each stae for ranking max and min
-								return ambdisPercentage
-							});
+						//evaluate the percentage of each stae for ranking max and min
+						return ambdisPercentage
+					});
 
 		//create scale
 		var ambdisScale = d3.scaleLinear().domain(extents).range([ margin, width - margin ]);
@@ -154,12 +159,12 @@ Make sure you remove the first item of the dataset, to ensure you don't encounte
 
 			//plot a circle for each datapoint, at the appropriate place on the line
 			var dots = d3.select('svg')
-						.append('circle')
-						.attr('cx', ambdisScale(ambdisPercentage))
-						.attr('cy', height/2)
-						.attr('r', 30)
-						.attr('opacity',.5)
-						;	
+				.append('circle')
+				.attr('cx', ambdisScale(ambdisPercentage))
+				.attr('cy', height/2)
+				.attr('r', 30)
+				.attr('opacity',.5)
+				;	
 
 			//a small, naive check to get better state abbreviations. 
 			//take the name, and split it at any spaces
@@ -178,17 +183,17 @@ Make sure you remove the first item of the dataset, to ensure you don't encounte
 
 			//draw labels for each state
 			var labels = d3.select('svg')
-						.append('text')
-						//the minus 5 is to center the text (text is drawn from lower left, so to make it centered, we need to subtract a bit)
-						.attr('x', ambdisScale(ambdisPercentage)-5)
-						//print label below the line	
-						.attr('y', (height/2)+60)
-						.text( label )
-						.attr('fill','white')
-						.style('text-transform','uppercase')
-						.attr('font-family', 'avenir')
-						.style('font-size',9)
-						;	
+				.append('text')
+				//the minus 5 is to center the text (text is drawn from lower left, so to make it centered, we need to subtract a bit)
+				.attr('x', ambdisScale(ambdisPercentage)-5)
+				//print label below the line	
+				.attr('y', (height/2)+60)
+				.text( label )
+				.attr('fill','white')
+				.style('text-transform','uppercase')
+				.attr('font-family', 'avenir')
+				.style('font-size',9)
+				;	
 		}				
 
 	</script>
@@ -197,4 +202,4 @@ Make sure you remove the first item of the dataset, to ensure you don't encounte
 </html>
 ```
 
-![line plot of ambulatory disability percentage by state](lineplot.png)
+Now, let's add a dimension by making a [scatter plot](scatter.md).

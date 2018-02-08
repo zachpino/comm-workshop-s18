@@ -1,12 +1,12 @@
 ### D3 Selecting
 
-Fundamental to all HTML work is understanding that all HTML tags (and SVG tags too!) sit within a structured, nested hierarchy. If you are careful with your indentation, that heirarchy is obvious.
+Fundamental to all web work is understanding that all HTML tags (and SVG tags too!) sit within a structured, nested hierarchy. If you are careful with your indentation, that heirarchy is obvious.
 
 For example (this is intentionally different from the code on the previous page), let's consider this page. The text is from a [traditional Munsee Lenape story](http://talk-lenape.org/stories?id=27), because the romance-language-biased lorem ipsum tool is overplayed and misleading to designers in our global and multilingual era! Note that we need to specify a different character set in the `<head>` of our webpage if we want accented or non-latin characters to show up correctly in browsers.
 
 Bonus census question! How many households who are exclusively native american have the internet subscription necessary to access that page in each state? Are those numbers surprising? Is the percentage of native american households who can access that page smaller or larger than the entire population's equivalent percentage?
 
-```
+```html
 <html>
 <head>
 	<meta charset="utf-8"/>
@@ -55,31 +55,31 @@ Open your web inspector and visit the console tab. There, we can enter this java
 
 - Find the *first* instance of a specific tag and change the background color to blue.
 
-```
+```js
 d3.select('p').style('background-color','blue')
 ```
 
 - Find all the instances of a specific tag and change the text color to red.
 
-```
+```js
 d3.selectAll('p').style('color','red')
 ```
 
 - Find all the instances of a specific class name and add a 3 pixel magenta stroke. Note the *dot* character (.), used to identify `class`es.
 
-```
+```js
 d3.selectAll('.story').style('border','3px solid magenta')
 ```
 
 - Find a specific tag by id and change the font. Note the *sharp* character (#), used to identify `id`s.
 
-```
+```js
 d3.selectAll('#climax').style('font-family','impact')
 ```
 
 - Find an element by hierarchy and capitalize all the letters. Here we find the first `<p>` that is the child of an element with an `id` of `third-block`. A space is used to step down the page hierarchy. Note that `<body>` has been always assumed.
 
-```
+```js
 d3.select('#third-block p').style('text-transform','uppercase')
 ```
 
