@@ -19,6 +19,6 @@ Try to imagine which datapoints (in combination) might be a good match to each p
 Here are some other challenges to add sophistication to your chart.
 
 - Bonus: Can you do all of these charts without any `for` loops?
-- Bonus: Can your line chart have bubbles of different sizes to encode another datapoint? Can you use color scales to add another datapoint into the scatterplot? Could we draw several bars per datapoint for compoound comparison? In other words, try to add more dimensions than expected to each chart. 
+- Bonus: Can your line chart have bubbles of different sizes to encode another datapoint? Can you use color scales to add another datapoint into the scatterplot? Could we draw several bars per element for internal and external comparison? In other words, try to add more dimensions than expected to each chart. 
 - Bonus: Can the data you are plotting be more complex than just a mapped datapoint? Partitive percentages like we did with ambulatory disability percentages? Can we define our own synthesized datapoints from weighting and summing other datapoints?
 	
