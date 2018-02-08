@@ -2,6 +2,8 @@
 
 In addition to continuing to refine your [dataset and story](../week03/dataset.md)...
 
+Take a look at the [scatter plot](scatter.md) example and make sure it makes some sense. Join me Tuesday at 2 with any questions.
+
 Pull down several datasets from the Census API that are related to your chosen topic space(s).
 
 Use the lessons from this and last week to draw three charts, one per html page. Post these to Blackboard as a zipped folder containing all code and screenshots of the charts. Please use one meaningfully different dataset in each chart (even if it means stretching to adjacencies of your original questions) for practice working with a variety of real data. 
@@ -12,7 +14,7 @@ Ensure that these charts *look good* by settings `.attr` and `.style` on your el
 - One line chart 
 - One scatter plot
 
-Try to imagine which datapoints (in combination) might be a good match to each plot type. In addition, for each chart, try to articulate some specific learnings that the visualization manifests. Include this learning somewhere in the web page `<body>`.
+Try to imagine which ACS datapoints (in combination) might be a good match to each plot type. In addition, for each chart, try to articulate some specific learnings that the visualization manifests. Include this learning somewhere in the web page `<body>`. Please limit everything to ACS/census data for now.
 
 Make sure you `parseInt(value)` to ensure anything that should be an integer is treated as an integer during addition. Use `parseFloat(value)` for handling the equivalent situation for numbers with trailing decimals.
 
