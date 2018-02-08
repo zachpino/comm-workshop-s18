@@ -1,0 +1,598 @@
+### Scatter Plot
+
+Let's add a dimension! 
+
+![]()
+
+The 2x2 is the most conventional, and most misused by designers, of all data visualizations. Let's get this one out of the way early in the semester, and ensure we're using the form correctly going forward.
+
+A 2x2 Scatter Plot (or *Scatter Matrix*) spatially arranges an arbitrary set of elements according to two dimensions, creating a set of quadrants that take on the characteristics of a mated pair of the dimensional poles. Elements that are more extreme in their attributes are placed further from the central intersection point of the two axes, so that outliers and buckets of like-data are easier to identify. In this way, 2x2 matrices attempt to graph correlated net *divergences* from an expected neutral condition. The more correlated the two axes, the more linear any relationship will appear in the plotted positions.
+
+It is important that the two poles of each axis be comparable to one another in some way, and *not simply the inverse*. If one plots an axis as an inverse, that axis loses its divergence potential and all buckets and correlations are suspect. For example, plotting people who walk to work as the *negative x pole* and people who drive to work as the *positive x pole* is great! We are comparing two diverging, though related counts. Moving away from zero on the x-axis, both values would be increasing. But, we wouldn't want to, for instance, mark the positive y pole of that chart as high income earners and the negative y pole as low income earners. That data doesn't diverge, it's just one continuous range! 
+
+The easy way to ensure this correlative mandate is to *make each pole a positive and nameable attribute* in its own right.
+
+-----
+
+Let's imagine we wanted to look at correlations in geographic mobility in 2016 -- how easy it is for people to change locales. The 1-Year Cadence 2016 ACS offers many datapoints, though a few are of particular interest, all referring to the last 12 calendar months on a rolling basis.
+
+- Total population who lived in the same home: B07003_004E
+- Total population who moved from within the same county: B07003_007E
+- Total population who moved from within the same state: B07003_010E
+- Total population who moved from a different state: B07003_013E
+- Total population who moved from abroad: B07003_016E
+
+```
+https://api.census.gov/data/2016/acs/acs1?get=NAME,B07003_004E,B07003_007E,B07003_010E,B07003_013E,B07003_016E&for=congressional%20district:*
+```
+
+We will take all of the people who moved in datapoints (*geographically mobile*), and compare that against the counts of the people who stayed in their homes. We could plot these values on the x-axis like we did on the line plot.
+
+```html
+<html>
+<head>
+  <style> 
+  </style>
+</head>
+
+<body>
+
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+
+	<script>
+		//dataset on geographic mobility
+		//district name, stayed in home, from same county, from same state, from different state, from abroad, state fips, district fips
+		var dataset = [
+				["Congressional District 1 (115th Congress), Alabama","620816","46076","9457","18015","2144","01","01"],
+				["Congressional District 2 (115th Congress), Alabama","569883","52158","28788","20829","2889","01","02"],
+				["Congressional District 3 (115th Congress), Alabama","596479","51333","23136","26524","2987","01","03"],
+				["Congressional District 4 (115th Congress), Alabama","595920","52029","19879","8547","1109","01","04"],
+				["Congressional District 5 (115th Congress), Alabama","592389","65040","24779","20282","1873","01","05"],
+				["Congressional District 6 (115th Congress), Alabama","607739","55834","22364","12244","1273","01","06"],
+				["Congressional District 7 (115th Congress), Alabama","558624","61112","18009","15779","3787","01","07"],
+				["Congressional District (at Large) (115th Congress), Alaska","593897","78966","21038","31300","6559","02","00"],
+				["Congressional District 1 (115th Congress), Arizona","625368","69038","33450","28148","3875","04","01"],
+				["Congressional District 2 (115th Congress), Arizona","567695","90789","15985","31405","7684","04","02"],
+				["Congressional District 3 (115th Congress), Arizona","605226","95712","11176","21356","7754","04","03"],
+				["Congressional District 4 (115th Congress), Arizona","593660","67762","31407","46996","6966","04","04"],
+				["Congressional District 5 (115th Congress), Arizona","623032","99120","12068","36664","5265","04","05"],
+				["Congressional District 6 (115th Congress), Arizona","630144","84946","3800","31884","6870","04","06"],
+				["Congressional District 7 (115th Congress), Arizona","666412","112770","3384","16860","4384","04","07"],
+				["Congressional District 8 (115th Congress), Arizona","664375","73821","4973","29162","4234","04","08"],
+				["Congressional District 9 (115th Congress), Arizona","610841","117756","10120","30782","6717","04","09"],
+				["Congressional District 1 (115th Congress), Arkansas","582254","87445","30170","15934","1792","05","01"],
+				["Congressional District 2 (115th Congress), Arkansas","644387","62771","26565","15164","1580","05","02"],
+				["Congressional District 3 (115th Congress), Arkansas","649966","74441","28650","23392","4416","05","03"],
+				["Congressional District 4 (115th Congress), Arkansas","608098","51421","23348","16593","1263","05","04"],
+				["Congressional District 1 (115th Congress), California","585462","64020","35814","8638","1993","06","01"],
+				["Congressional District 2 (115th Congress), California","609454","55780","28524","11182","4170","06","02"],
+				["Congressional District 3 (115th Congress), California","601730","66352","44371","11889","8682","06","03"],
+				["Congressional District 4 (115th Congress), California","616905","50660","47828","12228","2009","06","04"],
+				["Congressional District 5 (115th Congress), California","633258","53332","28329","9794","4054","06","05"],
+				["Congressional District 6 (115th Congress), California","627749","78339","29741","13748","4853","06","06"],
+				["Congressional District 7 (115th Congress), California","624888","65850","23565","10171","4228","06","07"],
+				["Congressional District 8 (115th Congress), California","593442","77069","25692","13733","5288","06","08"],
+				["Congressional District 9 (115th Congress), California","635576","75209","30539","5379","3744","06","09"],
+				["Congressional District 10 (115th Congress), California","633953","63080","27033","5679","4205","06","10"],
+				["Congressional District 11 (115th Congress), California","647465","49920","35018","9922","6769","06","11"],
+				["Congressional District 12 (115th Congress), California","645817","49209","22881","18504","11256","06","12"],
+				["Congressional District 13 (115th Congress), California","631555","52111","35875","15404","11925","06","13"],
+				["Congressional District 14 (115th Congress), California","654125","36777","31466","10364","9317","06","14"],
+				["Congressional District 15 (115th Congress), California","682392","38589","22352","8386","10826","06","15"],
+				["Congressional District 16 (115th Congress), California","605423","84252","21138","3893","2333","06","16"],
+				["Congressional District 17 (115th Congress), California","635966","64668","21560","17589","26424","06","17"],
+				["Congressional District 18 (115th Congress), California","633063","45888","21585","18729","11680","06","18"],
+				["Congressional District 19 (115th Congress), California","656872","67746","16473","6608","6433","06","19"],
+				["Congressional District 20 (115th Congress), California","647461","42674","25225","12840","6247","06","20"],
+				["Congressional District 21 (115th Congress), California","614005","68610","25008","5598","3463","06","21"],
+				["Congressional District 22 (115th Congress), California","641508","80854","14621","4230","3374","06","22"],
+				["Congressional District 23 (115th Congress), California","593465","91331","18234","8677","5276","06","23"],
+				["Congressional District 24 (115th Congress), California","591991","84593","34601","12079","7790","06","24"],
+				["Congressional District 25 (115th Congress), California","639286","61931","8630","7652","3146","06","25"],
+				["Congressional District 26 (115th Congress), California","640747","47364","17848","7801","4416","06","26"],
+				["Congressional District 27 (115th Congress), California","644991","46770","10025","5977","9981","06","27"],
+				["Congressional District 28 (115th Congress), California","621016","53340","7168","11540","10150","06","28"],
+				["Congressional District 29 (115th Congress), California","657154","48757","3992","4042","3338","06","29"],
+				["Congressional District 30 (115th Congress), California","666737","61327","10269","10922","4535","06","30"],
+				["Congressional District 31 (115th Congress), California","616257","70169","34063","7772","3371","06","31"],
+				["Congressional District 32 (115th Congress), California","647340","48862","7113","3390","5068","06","32"],
+				["Congressional District 33 (115th Congress), California","591709","71129","14280","20423","8843","06","33"],
+				["Congressional District 34 (115th Congress), California","657503","69790","8074","8554","5101","06","34"],
+				["Congressional District 35 (115th Congress), California","643493","49165","34645","4209","3592","06","35"],
+				["Congressional District 36 (115th Congress), California","650080","57358","19667","11802","2534","06","36"],
+				["Congressional District 37 (115th Congress), California","639621","55469","8046","10271","7388","06","37"],
+				["Congressional District 38 (115th Congress), California","642151","39415","11493","3899","3379","06","38"],
+				["Congressional District 39 (115th Congress), California","639838","46336","23771","4358","7273","06","39"],
+				["Congressional District 40 (115th Congress), California","662777","43786","2383","2066","2727","06","40"],
+				["Congressional District 41 (115th Congress), California","649438","59706","27655","7050","4227","06","41"],
+				["Congressional District 42 (115th Congress), California","676729","60409","36097","8000","1919","06","42"],
+				["Congressional District 43 (115th Congress), California","632373","61989","6039","4994","6711","06","43"],
+				["Congressional District 44 (115th Congress), California","657425","47383","2946","3066","2582","06","44"],
+				["Congressional District 45 (115th Congress), California","643685","73584","23722","12040","12081","06","45"],
+				["Congressional District 46 (115th Congress), California","637757","64682","13424","6258","4753","06","46"],
+				["Congressional District 47 (115th Congress), California","623648","54637","14501","7336","5364","06","47"],
+				["Congressional District 48 (115th Congress), California","630967","59522","16179","8888","5221","06","48"],
+				["Congressional District 49 (115th Congress), California","617918","69068","12875","23131","6705","06","49"],
+				["Congressional District 50 (115th Congress), California","624707","86561","11580","12178","6381","06","50"],
+				["Congressional District 51 (115th Congress), California","653033","65451","5924","4660","8031","06","51"],
+				["Congressional District 52 (115th Congress), California","606835","86827","14786","22337","10713","06","52"],
+				["Congressional District 53 (115th Congress), California","636073","85253","9630","14878","10745","06","53"],
+				["Congressional District 1 (115th Congress), Colorado","641394","67594","54372","34487","4335","08","01"],
+				["Congressional District 2 (115th Congress), Colorado","625582","82705","41400","40753","5875","08","02"],
+				["Congressional District 3 (115th Congress), Colorado","609888","69128","27879","21982","1988","08","03"],
+				["Congressional District 4 (115th Congress), Colorado","652603","60025","47445","25103","1764","08","04"],
+				["Congressional District 5 (115th Congress), Colorado","611273","84889","19055","51896","9326","08","05"],
+				["Congressional District 6 (115th Congress), Colorado","670267","59884","42778","25109","6625","08","06"],
+				["Congressional District 7 (115th Congress), Colorado","655060","54698","42860","23930","2976","08","07"],
+				["Congressional District 1 (115th Congress), Connecticut","620258","53486","14782","12265","5830","09","01"],
+				["Congressional District 2 (115th Congress), Connecticut","612000","43122","22755","18570","2910","09","02"],
+				["Congressional District 3 (115th Congress), Connecticut","624462","56104","11634","13072","6345","09","03"],
+				["Congressional District 4 (115th Congress), Connecticut","631699","59539","5513","19130","7553","09","04"],
+				["Congressional District 5 (115th Congress), Connecticut","628021","44462","11919","12549","3778","09","05"],
+				["Congressional District (at Large) (115th Congress), Delaware","817779","76715","8432","33400","5747","10","00"],
+				["Delegate District (at Large) (115th Congress), District of Columbia","538547","64166","0","58154","11155","11","98"],
+				["Congressional District 1 (115th Congress), Florida","622003","61596","24118","40708","4447","12","01"],
+				["Congressional District 2 (115th Congress), Florida","587719","58309","41764","22289","2673","12","02"],
+				["Congressional District 3 (115th Congress), Florida","594120","66676","36618","24069","4810","12","03"],
+				["Congressional District 4 (115th Congress), Florida","638764","63106","24934","32682","8925","12","04"],
+				["Congressional District 5 (115th Congress), Florida","557761","104256","34162","18466","4424","12","05"],
+				["Congressional District 6 (115th Congress), Florida","652122","56141","23733","21591","3091","12","06"],
+				["Congressional District 7 (115th Congress), Florida","626150","57387","44494","22243","5645","12","07"],
+				["Congressional District 8 (115th Congress), Florida","634035","56947","14293","27507","4835","12","08"],
+				["Congressional District 9 (115th Congress), Florida","693875","62165","24489","29374","14237","12","09"],
+				["Congressional District 10 (115th Congress), Florida","630875","94020","24904","19254","10766","12","10"],
+				["Congressional District 11 (115th Congress), Florida","647794","47126","26975","28816","2776","12","11"],
+				["Congressional District 12 (115th Congress), Florida","643795","58074","25331","23555","2995","12","12"],
+				["Congressional District 13 (115th Congress), Florida","599543","75234","18784","24512","3726","12","13"],
+				["Congressional District 14 (115th Congress), Florida","613481","86236","26360","24635","9906","12","14"],
+				["Congressional District 15 (115th Congress), Florida","638337","65808","25029","19732","5537","12","15"],
+				["Congressional District 16 (115th Congress), Florida","670620","65292","25406","29544","6179","12","16"],
+				["Congressional District 17 (115th Congress), Florida","658217","50003","21542","27919","6223","12","17"],
+				["Congressional District 18 (115th Congress), Florida","627408","63208","27250","25691","5694","12","18"],
+				["Congressional District 19 (115th Congress), Florida","677812","52674","18714","36287","7107","12","19"],
+				["Congressional District 20 (115th Congress), Florida","671848","69888","15198","8884","16941","12","20"],
+				["Congressional District 21 (115th Congress), Florida","637132","69873","15568","21523","8170","12","21"],
+				["Congressional District 22 (115th Congress), Florida","603441","76385","20259","21947","8373","12","22"],
+				["Congressional District 23 (115th Congress), Florida","626604","66413","20536","15754","12534","12","23"],
+				["Congressional District 24 (115th Congress), Florida","647301","63441","9635","7873","12831","12","24"],
+				["Congressional District 25 (115th Congress), Florida","651590","58278","8893","10846","25078","12","25"],
+				["Congressional District 26 (115th Congress), Florida","684853","59873","7294","10072","17045","12","26"],
+				["Congressional District 27 (115th Congress), Florida","639292","64726","7809","9245","17870","12","27"],
+				["Congressional District 1 (115th Congress), Georgia","574053","85743","31600","28762","3507","13","01"],
+				["Congressional District 2 (115th Congress), Georgia","547252","61361","32097","21015","2243","13","02"],
+				["Congressional District 3 (115th Congress), Georgia","623264","48154","28866","17699","3618","13","03"],
+				["Congressional District 4 (115th Congress), Georgia","616261","59876","35795","23387","7488","13","04"],
+				["Congressional District 5 (115th Congress), Georgia","579827","79551","43286","30617","5653","13","05"],
+				["Congressional District 6 (115th Congress), Georgia","620571","49035","33780","28596","15094","13","06"],
+				["Congressional District 7 (115th Congress), Georgia","673822","46799","23350","28365","8765","13","07"],
+				["Congressional District 8 (115th Congress), Georgia","594202","51936","33059","18685","3434","13","08"],
+				["Congressional District 9 (115th Congress), Georgia","640537","35542","38081","11175","3547","13","09"],
+				["Congressional District 10 (115th Congress), Georgia","609328","53762","48569","18832","1165","13","10"],
+				["Congressional District 11 (115th Congress), Georgia","624135","63974","35101","23101","6560","13","11"],
+				["Congressional District 12 (115th Congress), Georgia","590113","54191","38472","22906","4050","13","12"],
+				["Congressional District 13 (115th Congress), Georgia","607480","55036","51580","17618","3132","13","13"],
+				["Congressional District 14 (115th Congress), Georgia","614002","47994","24042","14282","1085","13","14"],
+				["Congressional District 1 (115th Congress), Hawaii","598940","59609","2635","25980","9143","15","01"],
+				["Congressional District 2 (115th Congress), Hawaii","618764","50100","5550","31249","8288","15","02"],
+				["Congressional District 1 (115th Congress), Idaho","700319","82360","29860","40964","1869","16","01"],
+				["Congressional District 2 (115th Congress), Idaho","669130","73783","28219","30592","6660","16","02"],
+				["Congressional District 1 (115th Congress), Illinois","611671","57529","5975","6471","3170","17","01"],
+				["Congressional District 2 (115th Congress), Illinois","620002","66347","10263","7520","1695","17","02"],
+				["Congressional District 3 (115th Congress), Illinois","641767","53541","10144","5405","2832","17","03"],
+				["Congressional District 4 (115th Congress), Illinois","609127","61458","3731","7578","2491","17","04"],
+				["Congressional District 5 (115th Congress), Illinois","600473","79887","9787","16756","7144","17","05"],
+				["Congressional District 6 (115th Congress), Illinois","637454","37980","23278","12910","3353","17","06"],
+				["Congressional District 7 (115th Congress), Illinois","585473","94465","9079","18378","5326","17","07"],
+				["Congressional District 8 (115th Congress), Illinois","617521","55398","21772","9240","5629","17","08"],
+				["Congressional District 9 (115th Congress), Illinois","625813","62188","5914","14216","7655","17","09"],
+				["Congressional District 10 (115th Congress), Illinois","614788","50523","13729","17329","5720","17","10"],
+				["Congressional District 11 (115th Congress), Illinois","640971","42340","25850","8240","4428","17","11"],
+				["Congressional District 12 (115th Congress), Illinois","587916","53933","24361","16831","2611","17","12"],
+				["Congressional District 13 (115th Congress), Illinois","566380","70332","40299","14155","5565","17","13"],
+				["Congressional District 14 (115th Congress), Illinois","640390","42999","32205","10531","2729","17","14"],
+				["Congressional District 15 (115th Congress), Illinois","602486","52272","26693","9068","1138","17","15"],
+				["Congressional District 16 (115th Congress), Illinois","579685","64039","28706","8847","1212","17","16"],
+				["Congressional District 17 (115th Congress), Illinois","588265","60337","21659","11915","1486","17","17"],
+				["Congressional District 18 (115th Congress), Illinois","626513","49269","19566","8323","1702","17","18"],
+				["Congressional District 1 (115th Congress), Indiana","610556","54985","14577","22157","2243","18","01"],
+				["Congressional District 2 (115th Congress), Indiana","619540","58583","21844","12479","1511","18","02"],
+				["Congressional District 3 (115th Congress), Indiana","610880","76606","23592","18012","1858","18","03"],
+				["Congressional District 4 (115th Congress), Indiana","600848","71349","43128","20209","4475","18","04"],
+				["Congressional District 5 (115th Congress), Indiana","654113","53577","29701","17624","4077","18","05"],
+				["Congressional District 6 (115th Congress), Indiana","609304","59253","26731","13575","4451","18","06"],
+				["Congressional District 7 (115th Congress), Indiana","638582","67716","19543","11694","3466","18","07"],
+				["Congressional District 8 (115th Congress), Indiana","604553","55812","33503","14210","1098","18","08"],
+				["Congressional District 9 (115th Congress), Indiana","631714","58815","32110","15822","3608","18","09"],
+				["Congressional District 1 (115th Congress), Iowa","652774","68657","23944","15324","2224","19","01"],
+				["Congressional District 2 (115th Congress), Iowa","653071","64939","25193","21170","4108","19","02"],
+				["Congressional District 3 (115th Congress), Iowa","674338","81280","32775","23188","2779","19","03"],
+				["Congressional District 4 (115th Congress), Iowa","642394","55393","31339","18581","3812","19","04"],
+				["Congressional District 1 (115th Congress), Kansas","569164","65888","34220","22790","6560","20","01"],
+				["Congressional District 2 (115th Congress), Kansas","587136","66810","27878","22845","3045","20","02"],
+				["Congressional District 3 (115th Congress), Kansas","630792","68043","18709","27976","4567","20","03"],
+				["Congressional District 4 (115th Congress), Kansas","607259","68809","19614","15219","3205","20","04"],
+				["Congressional District 1 (115th Congress), Kentucky","614948","51327","21982","19033","2662","21","01"],
+				["Congressional District 2 (115th Congress), Kentucky","618647","66940","30942","25208","4949","21","02"],
+				["Congressional District 3 (115th Congress), Kentucky","603460","92739","17174","16738","1461","21","03"],
+				["Congressional District 4 (115th Congress), Kentucky","637877","49538","32266","21594","4016","21","04"],
+				["Congressional District 5 (115th Congress), Kentucky","619437","42134","22244","10816","1083","21","05"],
+				["Congressional District 6 (115th Congress), Kentucky","604428","86973","39459","19849","5289","21","06"],
+				["Congressional District 1 (115th Congress), Louisiana","689693","57674","27818","14946","2734","22","01"],
+				["Congressional District 2 (115th Congress), Louisiana","674534","64148","22045","17248","4511","22","02"],
+				["Congressional District 3 (115th Congress), Louisiana","666620","72808","22979","10940","1439","22","03"],
+				["Congressional District 4 (115th Congress), Louisiana","649359","56221","18914","15708","2724","22","04"],
+				["Congressional District 5 (115th Congress), Louisiana","642144","56208","26641","13287","1529","22","05"],
+				["Congressional District 6 (115th Congress), Louisiana","671971","69586","31338","13242","3033","22","06"],
+				["Congressional District 1 (115th Congress), Maine","584328","47072","16011","21077","1890","23","01"],
+				["Congressional District 2 (115th Congress), Maine","561892","46460","20349","17513","2700","23","02"],
+				["Congressional District 1 (115th Congress), Maryland","640818","48279","20047","17577","2320","24","01"],
+				["Congressional District 2 (115th Congress), Maryland","646927","57234","24538","18759","6570","24","02"],
+				["Congressional District 3 (115th Congress), Maryland","638946","66431","25851","20775","4881","24","03"],
+				["Congressional District 4 (115th Congress), Maryland","643610","60220","12564","24120","4632","24","04"],
+				["Congressional District 5 (115th Congress), Maryland","659331","44960","21155","20447","5136","24","05"],
+				["Congressional District 6 (115th Congress), Maryland","641247","58618","23569","18920","7045","24","06"],
+				["Congressional District 7 (115th Congress), Maryland","613785","57671","27455","12392","4887","24","07"],
+				["Congressional District 8 (115th Congress), Maryland","655714","41227","16604","25657","8647","24","08"],
+				["Congressional District 1 (115th Congress), Massachusetts","636232","57520","11395","13769","3856","25","01"],
+				["Congressional District 2 (115th Congress), Massachusetts","636643","59191","24006","15632","6529","25","02"],
+				["Congressional District 3 (115th Congress), Massachusetts","668843","56027","12220","10997","6028","25","03"],
+				["Congressional District 4 (115th Congress), Massachusetts","664641","34636","23501","17622","7589","25","04"],
+				["Congressional District 5 (115th Congress), Massachusetts","646715","45904","19167","22043","17303","25","05"],
+				["Congressional District 6 (115th Congress), Massachusetts","681768","49009","13722","11272","3756","25","06"],
+				["Congressional District 7 (115th Congress), Massachusetts","609436","77674","31535","32020","18259","25","07"],
+				["Congressional District 8 (115th Congress), Massachusetts","658293","53996","27537","16860","8516","25","08"],
+				["Congressional District 9 (115th Congress), Massachusetts","663445","47552","12430","9193","1159","25","09"],
+				["Congressional District 1 (115th Congress), Michigan","599100","48056","31323","13190","990","26","01"],
+				["Congressional District 2 (115th Congress), Michigan","606964","68927","35829","11923","2670","26","02"],
+				["Congressional District 3 (115th Congress), Michigan","605223","75222","29183","13201","2017","26","03"],
+				["Congressional District 4 (115th Congress), Michigan","594584","46725","40567","9330","2233","26","04"],
+				["Congressional District 5 (115th Congress), Michigan","579552","68621","19612","5717","1100","26","05"],
+				["Congressional District 6 (115th Congress), Michigan","597997","62839","28649","15468","2753","26","06"],
+				["Congressional District 7 (115th Congress), Michigan","603325","46945","29517","11151","3239","26","07"],
+				["Congressional District 8 (115th Congress), Michigan","604109","67534","34818","11716","8013","26","08"],
+				["Congressional District 9 (115th Congress), Michigan","602338","63064","25940","8002","3172","26","09"],
+				["Congressional District 10 (115th Congress), Michigan","622952","54068","19414","7985","2293","26","10"],
+				["Congressional District 11 (115th Congress), Michigan","639092","43640","22971","11706","7346","26","11"],
+				["Congressional District 12 (115th Congress), Michigan","567914","78819","21828","19665","12413","26","12"],
+				["Congressional District 13 (115th Congress), Michigan","550855","74230","13310","7335","2605","26","13"],
+				["Congressional District 14 (115th Congress), Michigan","588407","67036","21946","9485","4009","26","14"],
+				["Congressional District 1 (115th Congress), Minnesota","566569","47477","32116","15123","3498","27","01"],
+				["Congressional District 2 (115th Congress), Minnesota","603874","41261","33027","9837","5393","27","02"],
+				["Congressional District 3 (115th Congress), Minnesota","610619","47165","23234","13462","6768","27","03"],
+				["Congressional District 4 (115th Congress), Minnesota","578776","51823","39850","18003","4478","27","04"],
+				["Congressional District 5 (115th Congress), Minnesota","555743","78978","36355","21552","4878","27","05"],
+				["Congressional District 6 (115th Congress), Minnesota","600788","38836","38924","8801","2419","27","06"],
+				["Congressional District 7 (115th Congress), Minnesota","579852","38992","24491","14735","1806","27","07"],
+				["Congressional District 8 (115th Congress), Minnesota","573006","45357","27278","9794","966","27","08"],
+				["Congressional District 1 (115th Congress), Mississippi","655086","56838","23435","18129","1345","28","01"],
+				["Congressional District 2 (115th Congress), Mississippi","615552","53488","16484","9798","1159","28","02"],
+				["Congressional District 3 (115th Congress), Mississippi","647390","49380","30224","14246","1742","28","03"],
+				["Congressional District 4 (115th Congress), Mississippi","637985","65372","29356","22466","1606","28","04"],
+				["Congressional District 1 (115th Congress), Missouri","597655","78574","24622","24110","2839","29","01"],
+				["Congressional District 2 (115th Congress), Missouri","663090","49960","25671","14571","3159","29","02"],
+				["Congressional District 3 (115th Congress), Missouri","669557","59819","33170","8888","763","29","03"],
+				["Congressional District 4 (115th Congress), Missouri","614852","64701","34911","31554","5683","29","04"],
+				["Congressional District 5 (115th Congress), Missouri","643735","66775","18165","23989","2223","29","05"],
+				["Congressional District 6 (115th Congress), Missouri","638007","59241","37421","22388","3033","29","06"],
+				["Congressional District 7 (115th Congress), Missouri","632801","69389","40719","22832","1728","29","07"],
+				["Congressional District 8 (115th Congress), Missouri","618972","64788","30865","14477","2468","29","08"],
+				["Congressional District (at Large) (115th Congress), Montana","863174","92044","36256","37775","3545","30","00"],
+				["Congressional District 1 (115th Congress), Nebraska","514104","68171","27896","14485","5347","31","01"],
+				["Congressional District 2 (115th Congress), Nebraska","544931","66441","17913","20594","2923","31","02"],
+				["Congressional District 3 (115th Congress), Nebraska","514091","43136","24561","16369","2025","31","03"],
+				["Congressional District 1 (115th Congress), Nevada","574087","106009","1462","26345","6309","32","01"],
+				["Congressional District 2 (115th Congress), Nevada","581628","77720","17371","25232","2866","32","02"],
+				["Congressional District 3 (115th Congress), Nevada","650533","77045","1848","40412","2530","32","03"],
+				["Congressional District 4 (115th Congress), Nevada","594561","87632","4971","25910","2772","32","04"],
+				["Congressional District 1 (115th Congress), New Hampshire","560933","56095","19180","25122","4278","33","01"],
+				["Congressional District 2 (115th Congress), New Hampshire","561135","49620","15708","27335","2695","33","02"],
+				["Congressional District 1 (115th Congress), New Jersey","639820","46828","22617","10923","2436","34","01"],
+				["Congressional District 2 (115th Congress), New Jersey","630074","56546","17525","11682","3025","34","02"],
+				["Congressional District 3 (115th Congress), New Jersey","658033","41199","16465","15677","2038","34","03"],
+				["Congressional District 4 (115th Congress), New Jersey","653854","39477","17762","9935","1892","34","04"],
+				["Congressional District 5 (115th Congress), New Jersey","669204","37730","13933","11249","3460","34","05"],
+				["Congressional District 6 (115th Congress), New Jersey","654268","42910","24084","11405","10531","34","06"],
+				["Congressional District 7 (115th Congress), New Jersey","665991","24898","20060","10681","4665","34","07"],
+				["Congressional District 8 (115th Congress), New Jersey","672047","53632","13912","17988","11124","34","08"],
+				["Congressional District 9 (115th Congress), New Jersey","685192","34186","12170","10428","10505","34","09"],
+				["Congressional District 10 (115th Congress), New Jersey","667925","51111","11408","11533","7423","34","10"],
+				["Congressional District 11 (115th Congress), New Jersey","666973","24435","19439","11106","4472","34","11"],
+				["Congressional District 12 (115th Congress), New Jersey","671308","36658","24652","11752","8030","34","12"],
+				["Congressional District 1 (115th Congress), New Mexico","584263","75490","12860","21520","2121","35","01"],
+				["Congressional District 2 (115th Congress), New Mexico","583965","54522","15380","23691","6063","35","02"],
+				["Congressional District 3 (115th Congress), New Mexico","599812","40961","15198","19591","2420","35","03"],
+				["Congressional District 1 (115th Congress), New York","670222","26904","7296","5107","3327","36","01"],
+				["Congressional District 2 (115th Congress), New York","663586","26109","10699","3975","2410","36","02"],
+				["Congressional District 3 (115th Congress), New York","677855","22190","16205","3492","6447","36","03"],
+				["Congressional District 4 (115th Congress), New York","670511","21768","16840","4637","2205","36","04"],
+				["Congressional District 5 (115th Congress), New York","732627","26079","14103","4860","8300","36","05"],
+				["Congressional District 6 (115th Congress), New York","681553","36012","12300","4765","10058","36","06"],
+				["Congressional District 7 (115th Congress), New York","669770","42775","20417","10845","7918","36","07"],
+				["Congressional District 8 (115th Congress), New York","690431","43940","15072","8398","4969","36","08"],
+				["Congressional District 9 (115th Congress), New York","670087","36984","11747","5027","5352","36","09"],
+				["Congressional District 10 (115th Congress), New York","604028","53740","10360","18565","12587","36","10"],
+				["Congressional District 11 (115th Congress), New York","672848","33425","12232","4570","4278","36","11"],
+				["Congressional District 12 (115th Congress), New York","584971","53745","21703","35239","12075","36","12"],
+				["Congressional District 13 (115th Congress), New York","720302","42309","14771","12711","12251","36","13"],
+				["Congressional District 14 (115th Congress), New York","624690","36167","11837","3674","8450","36","14"],
+				["Congressional District 15 (115th Congress), New York","699181","35452","10439","4082","9127","36","15"],
+				["Congressional District 16 (115th Congress), New York","656538","37849","17834","7692","7266","36","16"],
+				["Congressional District 17 (115th Congress), New York","655766","46842","16329","10166","6122","36","17"],
+				["Congressional District 18 (115th Congress), New York","638345","37049","28926","7067","3291","36","18"],
+				["Congressional District 19 (115th Congress), New York","619273","37822","22665","10614","2832","36","19"],
+				["Congressional District 20 (115th Congress), New York","604968","52333","33200","17094","7602","36","20"],
+				["Congressional District 21 (115th Congress), New York","608702","49880","28741","15098","2863","36","21"],
+				["Congressional District 22 (115th Congress), New York","609985","51689","23494","7544","3529","36","22"],
+				["Congressional District 23 (115th Congress), New York","595419","56353","25299","15027","4586","36","23"],
+				["Congressional District 24 (115th Congress), New York","601621","60434","21153","12742","5885","36","24"],
+				["Congressional District 25 (115th Congress), New York","595305","77799","20307","12527","6554","36","25"],
+				["Congressional District 26 (115th Congress), New York","608057","63672","13192","9300","4688","36","26"],
+				["Congressional District 27 (115th Congress), New York","638523","46548","21457","5905","1097","36","27"],
+				["Congressional District 1 (115th Congress), North Carolina","617371","66214","32456","21061","4360","37","01"],
+				["Congressional District 2 (115th Congress), North Carolina","699690","50891","32836","22644","3838","37","02"],
+				["Congressional District 3 (115th Congress), North Carolina","602843","59714","30289","47316","4210","37","03"],
+				["Congressional District 4 (115th Congress), North Carolina","661181","94752","40697","31057","10219","37","04"],
+				["Congressional District 5 (115th Congress), North Carolina","647339","49633","29144","15877","2383","37","05"],
+				["Congressional District 6 (115th Congress), North Carolina","665835","51162","24368","12645","1849","37","06"],
+				["Congressional District 7 (115th Congress), North Carolina","657442","56002","34858","20440","3140","37","07"],
+				["Congressional District 8 (115th Congress), North Carolina","642697","55383","29900","31661","4364","37","08"],
+				["Congressional District 9 (115th Congress), North Carolina","672210","49299","24236","20426","2997","37","09"],
+				["Congressional District 10 (115th Congress), North Carolina","639921","57995","29415","23605","968","37","10"],
+				["Congressional District 11 (115th Congress), North Carolina","644485","51539","24375","21737","1616","37","11"],
+				["Congressional District 12 (115th Congress), North Carolina","673148","93593","22115","41623","7377","37","12"],
+				["Congressional District 13 (115th Congress), North Carolina","636102","70555","29551","20804","2954","37","13"],
+				["Congressional District (at Large) (115th Congress), North Dakota","620891","66890","24120","29655","4715","38","00"],
+				["Congressional District 1 (115th Congress), Ohio","610130","73610","27027","15390","3789","39","01"],
+				["Congressional District 2 (115th Congress), Ohio","608970","68372","21815","14466","2530","39","02"],
+				["Congressional District 3 (115th Congress), Ohio","603080","119954","27202","19516","6358","39","03"],
+				["Congressional District 4 (115th Congress), Ohio","601273","61691","33287","8824","1337","39","04"],
+				["Congressional District 5 (115th Congress), Ohio","607510","61625","29561","11433","2654","39","05"],
+				["Congressional District 6 (115th Congress), Ohio","618522","49639","16591","12474","407","39","06"],
+				["Congressional District 7 (115th Congress), Ohio","631837","60013","18388","8071","1091","39","07"],
+				["Congressional District 8 (115th Congress), Ohio","603079","67111","32888","13312","3184","39","08"],
+				["Congressional District 9 (115th Congress), Ohio","576663","85464","17978","14088","2222","39","09"],
+				["Congressional District 10 (115th Congress), Ohio","593806","68783","26557","18195","4062","39","10"],
+				["Congressional District 11 (115th Congress), Ohio","570305","84834","12663","10245","5628","39","11"],
+				["Congressional District 12 (115th Congress), Ohio","638854","66677","28182","11376","5963","39","12"],
+				["Congressional District 13 (115th Congress), Ohio","607270","55506","23512","10086","4186","39","13"],
+				["Congressional District 14 (115th Congress), Ohio","634640","42378","17914","7750","1826","39","14"],
+				["Congressional District 15 (115th Congress), Ohio","619662","60691","42805","10688","1815","39","15"],
+				["Congressional District 16 (115th Congress), Ohio","629988","58317","21251","9482","1429","39","16"],
+				["Congressional District 1 (115th Congress), Oklahoma","647960","86592","29195","18831","4150","40","01"],
+				["Congressional District 2 (115th Congress), Oklahoma","640493","54641","28031","16789","643","40","02"],
+				["Congressional District 3 (115th Congress), Oklahoma","658429","50131","38665","20097","2454","40","03"],
+				["Congressional District 4 (115th Congress), Oklahoma","630570","79198","32969","26656","2925","40","04"],
+				["Congressional District 5 (115th Congress), Oklahoma","648026","103016","28332","19627","4812","40","05"],
+				["Congressional District 1 (115th Congress), Oregon","680212","73441","32358","28597","7392","41","01"],
+				["Congressional District 2 (115th Congress), Oregon","656489","83736","29965","29124","3148","41","02"],
+				["Congressional District 3 (115th Congress), Oregon","672316","88765","21144","34890","9407","41","03"],
+				["Congressional District 4 (115th Congress), Oregon","622687","105629","27952","30261","3609","41","04"],
+				["Congressional District 5 (115th Congress), Oregon","676101","70247","44713","16462","3576","41","05"],
+				["Congressional District 1 (115th Congress), Pennsylvania","604577","65943","17103","14432","8208","42","01"],
+				["Congressional District 2 (115th Congress), Pennsylvania","583728","71589","17981","22270","5974","42","02"],
+				["Congressional District 3 (115th Congress), Pennsylvania","602250","53195","20122","9244","2018","42","03"],
+				["Congressional District 4 (115th Congress), Pennsylvania","622555","54705","22795","15319","3085","42","04"],
+				["Congressional District 5 (115th Congress), Pennsylvania","580163","62573","33029","14801","3555","42","05"],
+				["Congressional District 6 (115th Congress), Pennsylvania","637714","52640","22961","13875","2476","42","06"],
+				["Congressional District 7 (115th Congress), Pennsylvania","636549","31886","17427","17025","3212","42","07"],
+				["Congressional District 8 (115th Congress), Pennsylvania","637038","35157","15534","12139","2789","42","08"],
+				["Congressional District 9 (115th Congress), Pennsylvania","604830","46447","23335","7465","1024","42","09"],
+				["Congressional District 10 (115th Congress), Pennsylvania","603055","46145","17532","13495","2532","42","10"],
+				["Congressional District 11 (115th Congress), Pennsylvania","609177","49584","23819","12378","4952","42","11"],
+				["Congressional District 12 (115th Congress), Pennsylvania","620831","42832","15693","9547","1957","42","12"],
+				["Congressional District 13 (115th Congress), Pennsylvania","629767","50876","18904","15191","7084","42","13"],
+				["Congressional District 14 (115th Congress), Pennsylvania","570859","76445","15026","20070","6153","42","14"],
+				["Congressional District 15 (115th Congress), Pennsylvania","610556","62355","24352","16801","3756","42","15"],
+				["Congressional District 16 (115th Congress), Pennsylvania","624799","60970","16058","11517","3551","42","16"],
+				["Congressional District 17 (115th Congress), Pennsylvania","606082","50451","17269","16263","3384","42","17"],
+				["Congressional District 18 (115th Congress), Pennsylvania","631831","43579","11959","10228","3091","42","18"],
+				["Congressional District 1 (115th Congress), Rhode Island","445138","52131","6127","21235","6246","44","01"],
+				["Congressional District 2 (115th Congress), Rhode Island","453436","35655","12812","11565","1346","44","02"],
+				["Congressional District 1 (115th Congress), South Carolina","636717","54933","23930","33790","3684","45","01"],
+				["Congressional District 2 (115th Congress), South Carolina","585848","47473","26923","32368","2340","45","02"],
+				["Congressional District 3 (115th Congress), South Carolina","577235","46984","33299","16704","2229","45","03"],
+				["Congressional District 4 (115th Congress), South Carolina","579971","79439","22282","21054","5059","45","04"],
+				["Congressional District 5 (115th Congress), South Carolina","616012","41954","14880","21897","1464","45","05"],
+				["Congressional District 6 (115th Congress), South Carolina","570660","49967","29770","19831","2881","45","06"],
+				["Congressional District 7 (115th Congress), South Carolina","610511","54420","16161","19586","1532","45","07"],
+				["Congressional District (at Large) (115th Congress), South Dakota","720262","66837","30910","31789","4034","46","00"],
+				["Congressional District 1 (115th Congress), Tennessee","616993","49884","22655","16385","2785","47","01"],
+				["Congressional District 2 (115th Congress), Tennessee","620772","63781","25839","19646","2610","47","02"],
+				["Congressional District 3 (115th Congress), Tennessee","626183","52611","20680","19398","1799","47","03"],
+				["Congressional District 4 (115th Congress), Tennessee","656231","61214","25424","15657","1107","47","04"],
+				["Congressional District 5 (115th Congress), Tennessee","624941","65827","25458","30486","5371","47","05"],
+				["Congressional District 6 (115th Congress), Tennessee","655132","54814","28523","14878","2318","47","06"],
+				["Congressional District 7 (115th Congress), Tennessee","658802","44028","22549","28927","4229","47","07"],
+				["Congressional District 8 (115th Congress), Tennessee","615080","52403","19161","10864","1318","47","08"],
+				["Congressional District 9 (115th Congress), Tennessee","569888","99797","7967","14626","1912","47","09"],
+				["Congressional District 1 (115th Congress), Texas","591530","59312","44846","10569","2538","48","01"],
+				["Congressional District 2 (115th Congress), Texas","636486","84291","21006","21851","7813","48","02"],
+				["Congressional District 3 (115th Congress), Texas","720301","47499","34957","22283","8843","48","03"],
+				["Congressional District 4 (115th Congress), Texas","634265","47332","32984","10331","2548","48","04"],
+				["Congressional District 5 (115th Congress), Texas","626340","77874","33860","10630","5203","48","05"],
+				["Congressional District 6 (115th Congress), Texas","639595","73514","26616","13904","5988","48","06"],
+				["Congressional District 7 (115th Congress), Texas","636782","81888","10135","12750","18622","48","07"],
+				["Congressional District 8 (115th Congress), Texas","681646","60170","38101","15906","6211","48","08"],
+				["Congressional District 9 (115th Congress), Texas","659195","72232","19400","13512","16809","48","09"],
+				["Congressional District 10 (115th Congress), Texas","698865","60825","29893","16473","7935","48","10"],
+				["Congressional District 11 (115th Congress), Texas","626117","68382","35873","16937","2258","48","11"],
+				["Congressional District 12 (115th Congress), Texas","621939","83969","28379","17118","6469","48","12"],
+				["Congressional District 13 (115th Congress), Texas","567857","65421","47050","17273","2101","48","13"],
+				["Congressional District 14 (115th Congress), Texas","627123","68910","35445","9137","2443","48","14"],
+				["Congressional District 15 (115th Congress), Texas","675808","59437","13192","9977","6470","48","15"],
+				["Congressional District 16 (115th Congress), Texas","606975","74035","9624","22096","10028","48","16"],
+				["Congressional District 17 (115th Congress), Texas","590340","94266","47534","14074","5104","48","17"],
+				["Congressional District 18 (115th Congress), Texas","628559","106337","16312","13265","7166","48","18"],
+				["Congressional District 19 (115th Congress), Texas","576507","82165","46440","11427","6824","48","19"],
+				["Congressional District 20 (115th Congress), Texas","658674","84981","19550","10304","5875","48","20"],
+				["Congressional District 21 (115th Congress), Texas","643050","85170","40072","20360","6538","48","21"],
+				["Congressional District 22 (115th Congress), Texas","756196","56525","30562","18122","9475","48","22"],
+				["Congressional District 23 (115th Congress), Texas","652158","61903","27447","14279","6541","48","23"],
+				["Congressional District 24 (115th Congress), Texas","620484","83157","42549","22998","10380","48","24"],
+				["Congressional District 25 (115th Congress), Texas","639099","53735","40588","16480","3529","48","25"],
+				["Congressional District 26 (115th Congress), Texas","681264","78073","44535","27799","4492","48","26"],
+				["Congressional District 27 (115th Congress), Texas","610702","66536","37224","8697","4078","48","27"],
+				["Congressional District 28 (115th Congress), Texas","646760","48443","15215","7593","5714","48","28"],
+				["Congressional District 29 (115th Congress), Texas","651873","79245","7547","5545","7270","48","29"],
+				["Congressional District 30 (115th Congress), Texas","655858","58868","14084","8065","3014","48","30"],
+				["Congressional District 31 (115th Congress), Texas","647119","80786","46936","35177","8777","48","31"],
+				["Congressional District 32 (115th Congress), Texas","612051","86759","20854","14695","7602","48","32"],
+				["Congressional District 33 (115th Congress), Texas","661208","58995","15403","8875","6094","48","33"],
+				["Congressional District 34 (115th Congress), Texas","642593","44273","16724","4459","3878","48","34"],
+				["Congressional District 35 (115th Congress), Texas","678715","77200","31204","17846","5831","48","35"],
+				["Congressional District 36 (115th Congress), Texas","601950","67523","37725","11189","4288","48","36"],
+				["Congressional District 1 (115th Congress), Utah","627382","62498","32686","18546","4770","49","01"],
+				["Congressional District 2 (115th Congress), Utah","606586","67384","29414","30318","6175","49","02"],
+				["Congressional District 3 (115th Congress), Utah","587537","87628","21828","32509","10384","49","03"],
+				["Congressional District 4 (115th Congress), Utah","652803","73519","21061","25710","3506","49","04"],
+				["Congressional District (at Large) (115th Congress), Vermont","535268","46864","13880","21262","2113","50","00"],
+				["Congressional District 1 (115th Congress), Virginia","656993","35942","42140","24477","8240","51","01"],
+				["Congressional District 2 (115th Congress), Virginia","590845","65064","35785","40637","4868","51","02"],
+				["Congressional District 3 (115th Congress), Virginia","597306","58697","41465","25843","4987","51","03"],
+				["Congressional District 4 (115th Congress), Virginia","625973","52193","53315","17948","5141","51","04"],
+				["Congressional District 5 (115th Congress), Virginia","631323","34800","40797","16932","4152","51","05"],
+				["Congressional District 6 (115th Congress), Virginia","623879","48984","45566","22402","5400","51","06"],
+				["Congressional District 7 (115th Congress), Virginia","664363","44064","39058","15279","4150","51","07"],
+				["Congressional District 8 (115th Congress), Virginia","634802","47173","31260","41791","17359","51","08"],
+				["Congressional District 9 (115th Congress), Virginia","601028","48643","34627","13178","2648","51","09"],
+				["Congressional District 10 (115th Congress), Virginia","720925","42312","26728","20455","7174","51","10"],
+				["Congressional District 11 (115th Congress), Virginia","661368","65950","26440","25222","14206","51","11"],
+				["Congressional District 1 (115th Congress), Washington","610268","66246","24874","18160","8984","53","01"],
+				["Congressional District 2 (115th Congress), Washington","591451","71333","30289","22492","5343","53","02"],
+				["Congressional District 3 (115th Congress), Washington","601548","69444","12696","29875","1632","53","03"],
+				["Congressional District 4 (115th Congress), Washington","601954","61074","22671","14614","4243","53","04"],
+				["Congressional District 5 (115th Congress), Washington","554544","79356","32028","30606","3990","53","05"],
+				["Congressional District 6 (115th Congress), Washington","579207","57465","26797","24597","2766","53","06"],
+				["Congressional District 7 (115th Congress), Washington","603494","91642","16436","35509","11368","53","07"],
+				["Congressional District 8 (115th Congress), Washington","619820","60683","21078","20126","5877","53","08"],
+				["Congressional District 9 (115th Congress), Washington","583954","96604","12373","26635","12476","53","09"],
+				["Congressional District 10 (115th Congress), Washington","578483","78007","27230","35114","4663","53","10"],
+				["Congressional District 1 (115th Congress), West Virginia","529778","42932","18105","17690","2205","54","01"],
+				["Congressional District 2 (115th Congress), West Virginia","538785","42119","17215","16774","1271","54","02"],
+				["Congressional District 3 (115th Congress), West Virginia","514255","42136","14446","12732","266","54","03"],
+				["Congressional District 1 (115th Congress), Wisconsin","616010","49856","23941","16530","1125","55","01"],
+				["Congressional District 2 (115th Congress), Wisconsin","613956","86199","23765","18332","4803","55","02"],
+				["Congressional District 3 (115th Congress), Wisconsin","596818","55769","39789","18542","2299","55","03"],
+				["Congressional District 4 (115th Congress), Wisconsin","571368","102262","13704","14080","3020","55","04"],
+				["Congressional District 5 (115th Congress), Wisconsin","623371","46062","31506","11612","2937","55","05"],
+				["Congressional District 6 (115th Congress), Wisconsin","616049","48468","29051","9465","1603","55","06"],
+				["Congressional District 7 (115th Congress), Wisconsin","612395","45745","24124","16613","1832","55","07"],
+				["Congressional District 8 (115th Congress), Wisconsin","626850","48719","27570","13640","2324","55","08"],
+				["Congressional District (at Large) (115th Congress), Wyoming","472996","61542","14453","26471","2105","56","00"]
+		];
+
+		//variables for svg container
+		var width = 750;
+		var height = 750;
+
+		// reusable value for uniform margins
+		var margin = 25;
+
+		//create svg container
+		var svg = d3.select('body')
+						.append('svg')
+						.attr('width', width)
+						.attr('height', height)
+						;
+
+		//draw a background rectangle 
+		var background = d3.select('svg')
+						.append('rect')
+						.attr('width', width)
+						.attr('height', height)
+						.attr('x',0)
+						.attr('y',0)
+						.attr('fill','#ccc')
+						;
+
+		//draw a horizontal line
+		var axis = d3.select('svg')
+						.append('line')
+						.attr('x1' , 0)
+						.attr('x2' , width)
+						.attr('y1' , height/2)
+						.attr('y2' , height/2)
+						.attr('stroke' , '#333')
+						.attr('stroke-width' , '3px')
+						;
+		
+		//find the highest and lowest ranking of geographic mobility
+		var extents = d3.extent(dataset, function(d){
+								
+						//total geographically mobile
+						var geoMobile = d[2] + d[3] + d[4] + d [5];
+
+						//total geographically static
+						var geoStatic = d[1];
+						
+						//relative comparison of mobile vs static populations
+						return (geoMobile - geoStatic);
+
+					});
+
+		//create scale
+		var geoScale = d3.scaleLinear().domain(extents).range([ width/2, width - margin ]);
+		
+
+
+
+		//loop through dataset
+		for( var i=0 ; i < dataset.length ; i++ ){
+
+			//total geographically mobile
+			var geoMobile = d[2] + d[3] + d[4] + d [5];
+
+			//total geographically static
+			var geoStatic = d[1];
+			
+			//relative comparison of mobile vs static populations
+			var geoValue = geoMobile - geoStatic;
+
+			//plot a circle for each datapoint, at the appropriate place on the line
+			var dots = d3.select('svg')
+						.append('circle')
+						.attr('cx', geoScale(geoValue))
+						.attr('cy', height/2)
+						.attr('r', 10)
+						.attr('opacity',.5)
+						;	
+
+			//a small, naive check to get better state abbreviations. 
+			//take the district name, and split it at any commas
+			var checkName = dataset[i][0].trim().split(",");
+			
+			var disName = dataset[i][0].trim().split(" ");
+
+			if ( disName[2].trim() == "(at" ){ 
+					var disNum = "at large"
+				}
+			else {
+					var disNum = disName[2].trim();
+			}
+
+			var label = checkName[1].trim() + " " + disNum;
+
+
+
+			//draw labels for each state
+			var labels = d3.select('svg')
+						.append('text')
+						//the minus 5 is to center the text (text is drawn from lower left, so to make it centered, we need to subtract a bit)
+						.attr('x', geoScale(geoValue) - 5 )
+						//print label below the line	
+						.attr('y', (height/2)+60)
+						.text( label )
+						.attr('fill','white')
+						.style('text-transform','uppercase')
+						.attr('font-family', 'avenir')
+						.style('font-size',9)
+						;	
+		}				
+
+	</script>
+  
+</body>
+</html>
+```
+
+![line plot of ambulatory disability percentage by state](lineplot.png)

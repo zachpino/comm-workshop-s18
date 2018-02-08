@@ -1,0 +1,179 @@
+<html>
+<head>
+  <style> 
+  </style>
+</head>
+
+<body>
+
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+
+	<script>
+		//dataset on ambulatory disabilities
+		//state name, total male minors, male minors with amb.dis., total female minors, female minors with amb.dis., fips
+		var dataset = [
+			["Alabama","420777","5135","390632","2597","01"],
+			["Alaska","72008","326","62336","513","02"],
+			["Arizona","608401","4340","584463","2838","04"],
+			["Arkansas","262159","2352","254280","1940","05"],
+			["California","3363620","21012","3233739","18135","06"],
+			["Colorado","477135","2174","445961","1736","08"],
+			["Connecticut","289966","1729","276464","955","09"],
+			["Delaware","74717","87","73746","635","10"],
+			["District of Columbia","38279","359","38488","48","11"],
+			["Florida","1540903","8963","1478070","8334","12"],
+			["Georgia","943187","6826","908261","6532","13"],
+			["Hawaii","111362","364","105493","129","15"],
+			["Idaho","165845","984","155642","1098","16"],
+			["Illinois","1095278","5722","1055095","5374","17"],
+			["Indiana","591206","4328","562352","3016","18"],
+			["Iowa","270610","1662","256900","1822","19"],
+			["Kansas","263594","1559","252102","1006","20"],
+			["Kentucky","377444","3565","359593","2227","21"],
+			["Louisiana","417051","3211","391443","3094","22"],
+			["Maine","97351","282","93431","414","23"],
+			["Maryland","501912","2441","479781","2659","24"],
+			["Massachusetts","518510","2820","496960","3583","25"],
+			["Michigan","824712","5742","791179","5418","26"],
+			["Minnesota","478164","1995","457097","2421","27"],
+			["Mississippi","270272","1957","264094","1143","28"],
+			["Missouri","520714","2793","494225","3002","29"],
+			["Montana","87044","532","79444","753","30"],
+			["Nebraska","174699","1557","165833","859","31"],
+			["Nevada","251378","4008","241696","2149","32"],
+			["New Hampshire","100831","879","94101","450","33"],
+			["New Jersey","745905","4813","713873","2875","34"],
+			["New Mexico","186274","1773","177198","977","35"],
+			["New York","1540107","10001","1471660","10702","36"],
+			["North Carolina","869233","6061","828746","4448","37"],
+			["North Dakota","61181","55","58051","282","38"],
+			["Ohio","974007","7581","939245","5457","39"],
+			["Oklahoma","357707","2133","338047","2287","40"],
+			["Oregon","321802","1592","310201","1588","41"],
+			["Pennsylvania","999018","7611","958007","4538","42"],
+			["Rhode Island","79161","408","74963","392","44"],
+			["South Carolina","412283","3046","395191","2386","45"],
+			["South Dakota","78840","372","73249","262","46"],
+			["Tennessee","566520","4073","530214","3602","47"],
+			["Texas","2689383","18356","2585811","15678","48"],
+			["Utah","341253","1913","324296","1460","49"],
+			["Vermont","44709","155","43178","410","50"],
+			["Virginia","696311","4766","664759","3752","51"],
+			["Washington","601231","3367","576129","3290","53"],
+			["West Virginia","138725","1459","135404","1071","54"],
+			["Wisconsin","484932","2992","464516","1708","55"],
+			["Wyoming","51362","476","51229","297","56"],
+			["Puerto Rico","275852","2822","260015","2811","72"]
+		];
+
+		//variables for svg container
+		var width = 2000;
+		var height = 750;
+
+		// reusable value for uniform margins
+		var margin = 50;
+
+		//create svg container
+		var svg = d3.select('body')
+						.append('svg')
+						.attr('width', width)
+						.attr('height', height)
+						;
+
+		//draw a background rectangle 
+		var background = d3.select('svg')
+						.append('rect')
+						.attr('width', width)
+						.attr('height', height)
+						.attr('x',0)
+						.attr('y',0)
+						.attr('fill','#aaa')
+						;
+
+		//draw a horizontal line
+		var axis = d3.select('svg')
+						.append('line')
+						.attr('x1' , 0)
+						.attr('x2' , width)
+						.attr('y1' , height/2)
+						.attr('y2' , height/2)
+						.attr('stroke' , '#333')
+						.attr('stroke-width' , '3px')
+						;
+		
+		//find the highest and lowest ambulatory disabilities percentages
+		var extents = d3.extent(dataset, function(d){
+								
+								//total minor population
+								var minorPop = d[1] + d[3];
+								
+								//total population of minors with amb. disabilities
+								var ambdisPop = d[2] + d[4];
+
+								//percentage of minors with amb. disabilities
+								var ambdisPercentage = ambdisPop / minorPop;
+
+								//evaluate the percentage of each stae for ranking max and min
+								return ambdisPercentage
+							});
+
+		//create scale
+		var ambdisScale = d3.scaleLinear().domain(extents).range([ margin, width - margin ]);
+		
+
+
+		//loop through dataset
+		for( var i=0 ; i < dataset.length ; i++ ){
+
+			//total minor population
+			var minorPop = dataset[i][1] + dataset[i][3];
+			
+			//total population of minors with amb. disabilities
+			var ambdisPop = dataset[i][2] + dataset[i][4]
+
+			//percentage of minors with amb. disabilities
+			var ambdisPercentage = ambdisPop / minorPop;
+
+			//plot a circle for each datapoint, at the appropriate place on the line
+			var dots = d3.select('svg')
+						.append('circle')
+						.attr('cx', ambdisScale(ambdisPercentage))
+						.attr('cy', height/2)
+						.attr('r', 30)
+						.attr('opacity',.5)
+						;	
+
+			//a small, naive check to get better state abbreviations. 
+			//take the name, and split it at any spaces
+			var checkName = dataset[i][0].trim().split(" ");
+			
+			//if there was a space, ie 'new york', then the split above will have made an array of length 2
+			//single word state names will just be 1 item long
+			if (checkName.length > 1) {
+				//for two word state names, take the first letter of both words as the abbreviation
+				var label = checkName[0].substring(0,1) + checkName[1].substring(0,1);
+			}
+			else{
+				//for one word state names, take the first two letters as before
+				var label = dataset[i][0].substring(0,2);
+			}
+
+			//draw labels for each state
+			var labels = d3.select('svg')
+						.append('text')
+						//the minus 5 is to center the text (text is drawn from lower left, so to make it centered, we need to subtract a bit)
+						.attr('x', ambdisScale(ambdisPercentage)-5)
+						//print label below the line	
+						.attr('y', (height/2)+60)
+						.text( label )
+						.attr('fill','white')
+						.style('text-transform','uppercase')
+						.attr('font-family', 'avenir')
+						.style('font-size',9)
+						;	
+		}				
+
+	</script>
+  
+</body>
+</html>

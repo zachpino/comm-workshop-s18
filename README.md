@@ -1,5 +1,8 @@
-# comm-workshop-s18
+# Communication Design Workshop · Data Visualization · Census + 
+
 Documentation and Resources for the Spring 2018 IIT Institute of Design Communication Design Workshop
+
+-----
 
 - [Week 01 · Accessing the Census API](week01/readme.md) 	
 	> Classtime: Pull down data from various census endpoints, talk through FIPS codes, and discuss how to manipulate raw and csv text.
@@ -18,10 +21,10 @@ Documentation and Resources for the Spring 2018 IIT Institute of Design Communic
 	
 	> Homework: [Research datasets](week03/dataset.md)
 
-- Week 04 · Intro to D3 Proper and Time-Series Data, Scales, Scatter Plots, and Styling Simple Charts
-	> Classtime: Intro to `.enter()` and other D3 fundamentals, foundational CSS for typography and color, Color Brewer, Drawing axes and labels with scales
+- [Week 04 · Intro to D3](week04/readme.md)
+	> Classtime: D3 fundamentals, D3 scales, line plot 
 	
-	> Homework: Visualize a self-selected dataset in a set of charts that *look good*
+	> Homework: [Visualize a self-selected dataset in a scatter or bar chart that *looks good*](week04/homework.md)
 
 - Week 05 · Accessing the Census API with Specificity in D3, Transitions
 	> Classtime: Pull data directly in Javascript from the ACS. Access data based on lon-lat coordinates, geocoded regions, and statistics basics
