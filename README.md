@@ -26,10 +26,10 @@ Documentation and Resources for the Spring 2018 IIT Institute of Design Communic
 	
 	> Homework: [Visualize a self-selected dataset in a scatter or bar chart that *looks good*](week04/homework.md)
 
-- Week 05 · Accessing the Census API with Specificity in D3, Transitions
-	> Classtime: Pull data directly in Javascript from the ACS. Access data based on lon-lat coordinates, geocoded regions, and statistics basics
+- [Week 05 · Accessing Data Directly with D3 and Animation](week05/readme.md)
+	> Classtime: Pull data directly from the ACS with D3. 2x2 Scatterplot
 	
-	> Homework: Draw line, bar, and radial chart with assigned dataset
+	> Homework: [Create a scatterplot comparing a set of census datapoints, with switchable data.](week05/homework.md)
 
 - Week 06 · Geo-Data and Drawing Maps
 	> Classtime: Sourcing and manipulating shapefiles from census mapping system TIGER. 
@@ -37,12 +37,12 @@ Documentation and Resources for the Spring 2018 IIT Institute of Design Communic
 	> Homework: Pull down a set of shapefiles and convert them into geojson and svg for editing in Illustrator
 
 - Week 07 · Choropleths and Showing Data on Maps
-	> Classtime: Draw a map and programmatically draw circles based on a dataset.  
+	> Classtime: Draw a map and programmatically draw circles based on a dataset. Geocoding
 	
 	> Homework: Plot multidimensional datapoints on map from week 6
 
-- Week 08 · Animation and Interactivity
-	> Classtime: Add intro animation to a simple chart, user-selection, click and hover handlers, tooltips
+- Week 08 · Correlation and Causation
+	> Classtime: Tooltips, Basis Statistics
 	
 	> Homework: Create T+Z defined animations with assigned dataset 
 

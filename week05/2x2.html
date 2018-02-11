@@ -1,0 +1,272 @@
+<html>
+<head>
+	<style> 
+	#switch{background-color:#333;color:white;padding:20;width:100;text-align:center;font-family:'courier';cursor:hand;}
+	#swtich:hover{}
+</style>
+</head>
+
+<body>
+
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+	<div id='switch'>Switch Dataset</div>
+
+
+	<script>
+
+		//variables for svg container
+		var width = 1200;
+		var height = 1200;
+
+		// reusable value for uniform margins
+		var margin = 75;
+
+		var counter = 0;
+
+		//create svg container
+		var svg = d3.select('body')
+		.append('svg')
+		.attr('width', width)
+		.attr('height', height)
+		;
+
+		//draw a background rectangle 
+		var background = d3.select('svg')
+		.append('rect')
+		.attr('width', width)
+		.attr('height', height)
+		.attr('x',0)
+		.attr('y',0)
+		.attr('fill','#333')
+		;
+
+		//draw a horizontal line
+		var xAxis = d3.select('svg')
+		.append('line')
+		.attr('x1' , margin)
+		.attr('x2' , width - margin)
+		.attr('y1' , height/2)
+		.attr('y2' , height/2)
+		.attr('stroke' , '#ccc')
+		.attr('stroke-width' , '2px')
+		;
+
+		//draw a vertical line
+		var yAxis = d3.select('svg')
+		.append('line')
+		.attr('x1' , width/2)
+		.attr('x2' , width/2)
+		.attr('y1' , margin)
+		.attr('y2' , height - margin)
+		.attr('stroke' , '#ccc')
+		.attr('stroke-width' , '2px')
+		;
+
+		//draw x r label
+		var xRightLabel = d3.select('svg')
+		.append('text')
+		.text('drive')
+		.attr('x' , width - margin/1.5)
+		.attr('y' , height/2)
+		.attr('font-family' , 'courier')
+		.attr('font-size' , '14px')
+		.attr('fill','white')
+		.attr('id','xRight')
+
+		;
+
+		//draw x l label
+		var xLeftLabel = d3.select('svg')
+		.append('text')
+		.text('public')
+		.attr('x' , 10)
+		.attr('y' , height/2)
+		.attr('font-family' , 'courier')
+		.attr('font-size' , '14px')
+		.attr('fill','white')
+		.attr('id','xLeft')
+		;
+
+
+
+		//draw y top label
+		var yTopLabel = d3.select('svg')
+		.append('text')
+		.text('short commute')
+		.attr('x' , width/2 - 55)
+		.attr('y' , margin/2)
+		.attr('font-family' , 'courier')
+		.attr('font-size' , '14px')
+		.attr('fill','white')
+		.attr('id','yTop')
+		;
+
+		//draw y bottom label
+		var yBottomLabel = d3.select('svg')
+		.append('text')
+		.text('long commute')
+		.attr('x' , width/2 - 50)
+		.attr('y' , height- margin/2)
+		.attr('font-family' , 'courier')
+		.attr('font-size' , '14px')
+		.attr('fill','white')
+		.attr('id','yBottom')
+		;
+
+		//draw key
+		var key = d3.select('svg')
+		.append('text')
+		.text('district')
+		.attr('x' , margin/2)
+		.attr('y' , margin/2)
+		.attr('font-family' , 'courier')
+		.attr('font-size' , '14px')
+		.attr('fill','white')
+		.attr('id','key')
+		;
+
+
+		d3.text("https://api.census.gov/data/2015/acs/acs5?get=NAME,B08006_003E,B08006_008E,B08006_014E,B08006_015E,B08006_016E,B08006_017E,B08006_004E,B08012_002E,B08012_003E,B08012_004E,B08012_005E,B08012_006E,B08012_007E,B08012_008E,B08012_009E,B08012_010E,B08012_011E,B08012_012E,B08012_013E,B08011_002E,B08011_003E,B08011_004E,B08011_005E,B08011_006E,B08011_007E,B08011_008E,B08011_009E,B08011_010E,B08011_011E,B08011_012E,B08011_013E,B08011_014E&for=congressional%20district", function(data) {
+
+			var e = data.replace(/[\[\]]+/g,'')
+
+			var dataset = d3.csvParse(e, function(d){
+
+
+				var publicTotal = parseInt(d.B08006_008E) + parseInt(d.B08006_014E) + parseInt(d.B08006_015E) + parseInt(d.B08006_016E) + parseInt(d.B08006_017E) + parseInt(d.B08006_004E);
+
+				var driveTotal = parseInt(d.B08006_003E);
+
+				var total = driveTotal + publicTotal;
+
+				var shortTravel = parseInt(d.B08012_002E) + parseInt(d.B08012_003E) + parseInt(d.B08012_004E) + parseInt(d.B08012_005E) + parseInt(d.B08012_006E) + parseInt(d.B08012_007E) ;
+
+				var longTravel = parseInt(d.B08012_008E) + parseInt(d.B08012_009E) + parseInt(d.B08012_010E) + parseInt(d.B08012_011E) + parseInt(d.B08012_012E) + parseInt(d.B08012_013E) ;
+
+				var travelTotal = shortTravel + longTravel;
+
+				var earlyDepart = parseInt(d.B08011_002E) + parseInt(d.B08011_003E) + parseInt(d.B08011_004E) + parseInt(d.B08011_005E) + parseInt(d.B08011_006E) + parseInt(d.B08011_007E);
+
+				var lateDepart = parseInt(d.B08011_008E) + parseInt(d.B08011_009E) + parseInt(d.B08011_010E) + parseInt(d.B08011_011E) + parseInt(d.B08011_012E) + parseInt(d.B08011_013E);
+
+
+				var departTotal = earlyDepart + lateDepart;
+
+				return {
+					name: d.NAME,
+					total: total,
+					drive: driveTotal,
+					public: publicTotal,
+					driveParameter: driveTotal / total ,
+					publicParameter: publicTotal / total,
+					short: shortTravel,
+					long: longTravel,
+					shortParameter: shortTravel / travelTotal,
+					longParameter: longTravel / travelTotal,
+					early: earlyDepart,
+					late: lateDepart,
+					earlyParameter: earlyDepart / departTotal,
+					lateParameter: lateDepart / departTotal,
+					fips: d.state,
+					district: d["congressional district"]
+				};
+			});
+
+			console.log(dataset)
+			console.log(dataset.length);
+
+
+			var xScale = d3.scaleLinear().domain([-1,1]).range([margin,width-margin])
+			var yScale = d3.scaleLinear().domain([-1,1]).range([margin,height-margin])
+
+			var colorScale = d3.scaleLinear().domain([-1,1]).range([1,0])
+
+			var dots = d3.select('svg')
+			.selectAll('.dots')
+			.data(dataset)
+			.enter()
+			.append('circle')
+			.attr('cx', function(d){
+				return xScale(d.driveParameter - d.publicParameter)
+			})
+			.attr('cy', function(d){
+				return yScale(d.longParameter - d.shortParameter)
+			})		 					
+			.attr('r',5)
+			.attr('stroke','white')
+			.style('stroke-width',0)
+			.attr('opacity',.5)
+			.attr('class', 'dots')
+			.attr('fill', function(d){
+				return d3.interpolatePlasma(colorScale(d.longParameter - d.shortParameter));
+
+			})
+			.on('mouseover', function(d) {
+				d3.select('#key').text('');
+
+				d3.select(this).transition().ease(d3.easeBounce).duration(1000).style('stroke-width',5).attr('r',20).attr('opacity',1);
+
+				d3.select('#key').text(d.name);
+
+				console.log(d);
+
+			})
+
+			.on('mouseout', function(d) {
+				d3.select(this).transition().style('stroke-width',0).attr('r',5).attr('opacity',.5);
+
+
+			})
+
+			d3.select('#switch').on('click', function(d){ 
+
+				if(counter == 0){
+					d3.selectAll('.dots').transition().duration(1500)
+					.attr('cy',function(d){
+
+						return yScale(d.earlyParameter - d.lateParameter);
+
+					})
+					.attr('fill', function(d){
+						return d3.interpolatePlasma(colorScale(d.earlyParameter - d.lateParameter));
+
+					})
+
+					d3.select('#yTop').text('early commute')
+					d3.select('#yBottom').text('late commute')
+
+					counter = 1;
+				}
+				else{
+					d3.selectAll('.dots').transition().duration(1500)
+					.attr('cy',function(d){
+
+						return yScale(d.longParameter - d.shortParameter)
+
+					})
+					.attr('fill', function(d){
+						return d3.interpolatePlasma(colorScale(d.longParameter - d.shortParameter));
+
+					})
+
+					d3.select('#yTop').text('short commute')
+					d3.select('#yBottom').text('long commute')
+
+					counter = 0;
+
+
+				}
+			})
+		});
+
+
+
+
+
+
+
+	</script>
+
+</body>
+</html>
