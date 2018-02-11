@@ -45,7 +45,7 @@ Commonly, we want to define the domain dynamically (for instance, if we don't ac
 D3 can dynamically find the lowest and highest value in a dataset.
 
 - Smallest Value: `d3.min(dataset_to_evaluate)` 
-- Largest Value: `d3.min(dataset_to_evaluate)` 
+- Largest Value: `d3.max(dataset_to_evaluate)` 
 - Array of Smallest and Largest Value: `d3.extent(dataset_to_evaluate)`
 
 As you can imagine, we very often use the last one because its format matches what scales expect for their domains and ranges.
