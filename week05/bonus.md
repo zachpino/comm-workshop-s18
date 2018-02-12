@@ -141,4 +141,7 @@ Why might this set of seemingly unrelated states share this property?
 
 The states with the highest native populations total — in order Alaska, Washington, North Carolina, Texas, New Mexico, Arizona, Oklahoma, California, New York, and South Dakota — have some of the highest discrepancies in web-access. Why might this be?
 
+-----
+
+Onwards to [this week's exercises](data.md).
 

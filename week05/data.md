@@ -10,11 +10,15 @@ Notably, we'll be looking at datapoints from the following ACS groups:
 
 Though we aren't specifically looking at gender differentials (and we'll be using estimated totals and not pulling in gender-specific data), these datapoints are the best way to prove out some potential insights on the United States' commuting behaviors.
 
-How and why people commute is a complicated, nested set of motivations and constraints tied to all kinds of socioeconomic factors: job availability, real estate price and availability, industry locuses, school performance, taxation, infrastructure condition, presence of aligned public transporation, age, topogarphical complexities and geopolitical boundaries... on and on. 
+How and why people commute is a complicated, nested set of motivations and constraints tied to all kinds of socioeconomic factors: job availability, real estate price and availability, industry locuses, school performance, taxation, infrastructure condition, presence of aligned public transporation, political identity and age, education level, topographical complexities and geopolitical boundaries... on and on. And, there may be economic or socials incentives that encourage specific commuting behaviors or discourage the capital-intensive commuting technology investments, for instance lobbying actions on behalf of various transportation types in geographic regions. Its' a tangled beast, and data viz can help us get to answers.
 
-We will map these commuting-related datapoints in relation to one another, and as a result, our chart will be fairly expected. This is often a good place to start with any data visualization: plot known values against one another to see if the datapoints move together as expected. This is a way to experimentally prove *correlation*.
+----
 
-For example, we might *hypothesize* with common sense that commuters who leave early are also the ones who take a long time to get to work, since in most locales in America there is a set time for work to begin. If you live further away, it will take you longer to reach work on time. But, of course, we should ensure that our hypothesis is present in the data before moving on to research into the impact of more distant socioeconomic forces on commute time. 
+##### Hypothetical Correlation
+
+We will begin by mapping these commuting-related datapoints in relation to one another, and as a result, our chart will start out fairly expected. This is often a good place to commence with any data visualization: plot similar, known values against one another to see if the datapoints move together as expected. This is a way to experimentally prove *correlation* or luck out and find discordant insights.
+
+For example, we might *hypothesize* with common sense that commuters who leave early are also the ones who take a long time to get to work, since in most locales in the United States there is a set time for work to begin. If you live further away, it will take you longer to reach work on time. But, of course, we should ensure that our hypothesis is provable in the data before moving on to research into the impact of more distant socioeconomic forces on commute time. This will turn out to be true.
 
 Another *hypothesis* might interrelate public transportation and commute time. Where public transportation is available, we would expect commute times to be short — these are urban areas where travel distances are short. And indeed, we would expect urban dwellers to take public transit if and only if public transit delivered a comparable travel time relative to rush hour traffic. As we'll see, though, this seemingly reasonable *hypothesis* is totally flawed.
 
@@ -22,4 +26,4 @@ Once these factors internal to commuting are better understood, it would be a go
 
 -----
 
-So, we're talking about commuting. Let's move onto [fetching that census data directly with D3](fetch.md).
+So, we're talking about commuting. Let's move onto [building a page for visualization](container.md).
