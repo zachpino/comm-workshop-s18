@@ -11,8 +11,8 @@ Use the lessons from this and last week to draw three charts, one per html page.
 Ensure that these charts *look good* by settings `.attr` and `.style` on your elements. They should look at least as considered as this week's scatterplot example (a low bar to clear).
 
 - One horizontal or vertical bar chart 
-- One line plot 
-- One scatter plot
+- One (line plot)[line.md]
+- One (scatter plot)[scatter.md]
 
 Try to imagine which ACS datapoints (in combination) might be a good match to each plot type. In addition, for each chart, try to articulate some specific learnings that the visualization manifests. Include this learning somewhere in the web page `<body>`. Please limit everything to ACS/census data for now.
 
