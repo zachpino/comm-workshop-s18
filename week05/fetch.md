@@ -50,6 +50,8 @@ d3.text("https://api.census.gov/data/2015/acs/acs5?get=NAME,B08006_003E&for=cong
 
 You should see a highly structured set of entries that can be expanded and collapsed inside of the console, one for each congressional district. This is a *javascript object*, which is kind of like an array, but with new abilities like customizable key:value pairings. 
 
+![response](responseObject.png)
+
 -----
 
 Let's [customize the data structure](structure.md) so that it is more legible and has all the info we need.
