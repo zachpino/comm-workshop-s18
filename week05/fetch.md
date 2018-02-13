@@ -30,6 +30,8 @@ d3.text("https://api.census.gov/data/2015/acs/acs5?get=NAME,B08006_003E&for=cong
 
 Placing this code within your script tags and loading the page in a browser should yield a pop-up with the census response! In this case, the data is 'how many people drive to work alone' per congressional district. But, it's a mess of formatting and whitespace, with brackets all over the place.
 
+![unparsed response](unparsedObject.png)
+
 And in fact, the problem is those brackets! In particular, the beginning and final bracket cause D3's csv parser to fail. For this text to validate as a proper comma-separated-value file, we need to strip all the structural brackets out of the census API response. To do this, we need do use dreaded [regular expressions](https://regexr.com) — often called *regexes* — to filter the text for specific characters. This one, though, is pretty easy. After removing the brackets with that regex, evaluate the structured results in your web console.
 
 ```js
