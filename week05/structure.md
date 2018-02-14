@@ -44,7 +44,7 @@ Note that we use the *dot syntax* ("d.") to pull different columns out of the da
 
 In the `return` section, we are building a model for how we want our data structured. The name to the left of the colon is the *key*, the name for the value (like a column or row header in excel). The data to the right of the colon is the *value*, what D3 will pass from the API response onto the rest of your code.
 
-Because the `congressional district` column has a space in its name, we alternatively must use the *bracket notation* to pull that data-point, which is reminiscent of standard array syntax. It works exactly the same as *dot syntax* otherwise -- the two are mostly interchangeable (with the exception of wanting a variable interpolated, which requires bracket notation just like properties with a space in its name — we'll see that edge case later on).
+Because the `congressional district` column has a space in its name, we alternatively must use the *bracket notation* to pull that data-point, which is reminiscent of standard array syntax. It works exactly the same as *dot syntax* otherwise -- the two are mostly interchangeable (with the exception of wanting a variable interpolated, which requires bracket notation just like properties with a space in their name — we'll see that edge case later on).
 
 ![js object, structured](structuredObject.png)
 
