@@ -46,7 +46,8 @@ In the `return` section, we are building a model for how we want our data struct
 
 Because the `congressional district` column has a space in its name, we can alternatively use the *bracket notation* to pull that data-point, which is reminiscent of standard array syntax. It works exactly the same as *dot syntax* otherwise -- the two are mostly interchangeable (with the exception of wanting a variable interpolated, which requires bracket notation as well. we'll see that edge case later on).
 
+![js object, structured](structuredObject.png)
+
 -----
 
-Let's [customize the data structure](structure.md) so that it is more legible and has all the info we need.
 
