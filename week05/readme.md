@@ -15,13 +15,13 @@ This set of tutorials develops a more complex chart type (one that is intimately
 
 -----
 
-- [Color Scales and D3 Chromatic](svg-container.md)
+- [Parameterized Matrix](parameterizedmatrix.md)
+- [Desired Setup and Functionality](plan.md)
 
 -----
 
-- [Parameterized Matrix](parameterizedmatrix.md)
-- [Desired Setup and Functionality](plan.md)
 - [Plotting Layout and Points](plot.md)
+- [Color Scales and D3 Chromatic](svg-container.md)
 
 -----
 
