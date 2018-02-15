@@ -50,5 +50,7 @@ All this code gets added on to the bottom of the `var dots = ...` chunk of drawi
 
 -----
 
-Let's move on to some ([homework](homework.md) to get some practice.
+Let's move on to some [homework](homework.md) to get some practice.
+
+Also take a look at the [complete code](complete.md).
 

@@ -1,4 +1,4 @@
-### Homework for 2/15/18
+### Homework for 2/22/18
 
 In addition to continuing to refine your [dataset and story](../week03/dataset.md)...
 

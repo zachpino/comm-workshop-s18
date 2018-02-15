@@ -29,7 +29,7 @@ Documentation and Resources for the Spring 2018 IIT Institute of Design Communic
 - [Week 05 · Accessing Data Directly with D3 and Animation](week05/readme.md)
 	> Classtime: Pull data directly from the ACS with D3. 2x2 Scatterplot
 	
-	> Homework: [Create a scatterplot comparing a set of census datapoints, with switchable data.](week05/homework.md)
+	> Homework: [Create a matrix comparing a set of census datapoints, with animated interactivity.](week05/homework.md)
 
 - Week 06 · Geo-Data and Drawing Maps
 	> Classtime: Sourcing and manipulating shapefiles from census mapping system TIGER. 
