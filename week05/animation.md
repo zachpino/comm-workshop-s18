@@ -48,6 +48,8 @@ All this code gets added on to the bottom of the `var dots = ...` chunk of drawi
 		;
 ```
 
+
+![mouseover](animate.gif)
 -----
 
 Let's move on to some [homework](homework.md) to get some practice.
