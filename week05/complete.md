@@ -189,13 +189,7 @@
 			var xScale = d3.scaleLinear().domain([-1,1]).range([margin,width-margin])
 			var yScale = d3.scaleLinear().domain([-1,1]).range([margin,height-margin])
 
-console.log(dataset);
 
-
-
-
-			//scale to be used later for color mapping
-			var colorScale = d3.scaleLinear().domain([-1,1]).range([1,0])
 
 			//find the svg container
 			var dots = d3.select('svg')
