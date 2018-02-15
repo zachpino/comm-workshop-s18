@@ -1,34 +1,30 @@
 ### Week 6: Interaction, Animation, and Data Switching
 
-This set of tutorials develops a more complex chart type (one that is intimately familiar to ID designers), and introduces some of the interactivity and animation abilities of D3. Take these lessons slowly, and practice by tweaking the examples.
+This set of tutorials adds some of D3's interactivity and animation abilities to [last week's matrix exercise](../week05/readme.md). Take these lessons slowly, and practice by tweaking the examples.
 
 -----
 
-- [Bonus from Last Week](bonus.md)
-- [Base Questions for the Day](data.md)
+- [Starting Point from Last Week](bonus.md)
+- [Chromatic Scales](color.md)
+-----
+
+- [Detecting Events](events.md)
+- [Switching Text](switch.md)
 
 -----
 
-- [HTML Container](container.md)
-- [Fetching Data with D3](fetch.md)
-- [Building Better Data Structures](structure.md)
+- [Animating Objects](animate.md)
+- [Changing Datasets](change_data.md)
 
 -----
 
-- [Parameterized Matrix](parameterizedmatrix.md)
-- [SVG Container, Background, Labels, and Axes](bg.md)
-
------
-
-- [Plotting Layout and Points](plot.md)
+- [Complete Example](complete.md)
 - [Homework](homework.md)
 
 -----
 
 Official D3 References
 
-- [D3 Fetching](https://github.com/d3/d3-fetch)
-- [JS Objects](https://www.w3schools.com/js/js_objects.asp)
 - [D3 Chromatic](https://github.com/d3/d3-scale-chromatic)
 - [D3 Events](https://github.com/d3/d3-selection/blob/master/README.md#handling-events)
 - [D3 Transition](https://github.com/d3/d3-transition)
