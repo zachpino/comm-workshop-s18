@@ -29,7 +29,3 @@ Official D3 References
 
 - [D3 Fetching](https://github.com/d3/d3-fetch)
 - [JS Objects](https://www.w3schools.com/js/js_objects.asp)
-- [D3 Chromatic](https://github.com/d3/d3-scale-chromatic)
-- [D3 Events](https://github.com/d3/d3-selection/blob/master/README.md#handling-events)
-- [D3 Transition](https://github.com/d3/d3-transition)
-- [Animation Easing Comparison](https://bl.ocks.org/d3noob/1ea51d03775b9650e8dfd03474e202fe)
