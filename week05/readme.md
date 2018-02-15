@@ -21,13 +21,9 @@ This set of tutorials develops a more complex chart type (one that is intimately
 -----
 
 - [Plotting Layout and Points](plot.md)
-- [Animation on Mouseover/Mouseout Event](animation.md)
+- [Homework](homework.md
 
 -----
-
-- [Homework](homework.md)
-
----
 
 Official D3 References
 
