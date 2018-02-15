@@ -4,9 +4,7 @@
 <html>
 <head>
 	<style> 
-	#switch{background-color:#333;color:white;padding:20;width:100;text-align:center;font-family:'courier';cursor:hand;}
-	#swtich:hover{}
-</style>
+	</style>
 </head>
 
 <body>
