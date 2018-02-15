@@ -2,7 +2,7 @@
 
 In addition to continuing to refine your [dataset and story](../week03/dataset.md)...
 
-Pull down several datasets from the Census API that are related to your chosen topic space(s). In addition, find a static dataset (.csv file or equivalent) that you can work with from your chosen [plus] space.
+Pull down several datasets from the Census API that are related to your chosen topic space(s). In addition, find a static dataset (.csv file or equivalent) that you can work with from your chosen plus space. Best to just paste that into your file as an array, and address it as we did datasets previously. 
 
 Then, draw a parameterized matrix with the plus data plotted against at least two census datapoints. 
 
