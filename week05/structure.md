@@ -50,4 +50,4 @@ Because the `congressional district` column has a space in its name, we alternat
 
 -----
 
-
+Let's now consider how we can draw this information to the screen and include more data points in a [visualization logic](parameterizedmatrix.md).

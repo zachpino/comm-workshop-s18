@@ -16,17 +16,12 @@ This set of tutorials develops a more complex chart type (one that is intimately
 -----
 
 - [Parameterized Matrix](parameterizedmatrix.md)
-- [Desired Setup and Functionality](plan.md)
+- [SVG Container, Background, Labels, and Axes](bg.md)
 
 -----
 
 - [Plotting Layout and Points](plot.md)
-- [Color Scales and D3 Chromatic](svg-container.md)
-
------
-
 - [Animation on Mouseover/Mouseout Event](animation.md)
-- [Interactive Data Switch on Click Event](switch.md)
 
 -----
 
