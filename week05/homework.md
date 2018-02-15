@@ -2,9 +2,9 @@
 
 In addition to continuing to refine your [dataset and story](../week03/dataset.md)...
 
-Pull down several datasets from the Census API that are related to your chosen topic space(s).
+Pull down several datasets from the Census API that are related to your chosen topic space(s). In addition, find a static dataset (.csv file or equivalent) that you can work with from your chosen [plus] space.
 
-Then, draw an interactive, parameterized matrix and experiment with mouseover/mouseout animations.
+Then, draw an interactive, parameterized matrix and experiment with mouseover/mouseout animations. Plot the [plus] data against at least two census datapoints. 
 
 Ensure that this matrix is well designed by intentionally setting `.attr` and `.style` on your elements. Think about typography! They should look at least as considered as this week's example (a low bar to clear). Think about how your data content might influence the aesthetics of your matrix.
 
