@@ -2,6 +2,12 @@
 
 Our data is structured and ready to use. We'll map transit type to x and commute length to y.
 
+Note that `.data()` and `.enter()` show up again, in combination with `.selectAll`. When we `.selectAll`, D3 finds nothing on the page. When we `.data()`, we compare that *empty* selection with the dataset variable. We then call `.enter()` to return all of the data points *that don't have a corresponding selected element*. This data (in our case all of the data points) then each trigger the following code block `.append('circle')...`.
+
+![.enter vs .update vs .exit](http://78.media.tumblr.com/482d9382e82d1c779ef62510fb3ab6aa/tumblr_inline_n0i9pcT8rI1r5kllz.jpg)
+
+Read from Mike Bostock, creator of D3, more about [this model of joining selected elements to data](https://bost.ocks.org/mike/join/).
+
 This code goes within the `d3.text(){}` block, underneath the previous data structuring code. 
 
 ```js

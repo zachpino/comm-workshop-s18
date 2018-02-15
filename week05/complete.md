@@ -4,17 +4,13 @@
 <html>
 <head>
 	<style> 
-	#switch{background-color:#333;color:white;padding:20;width:100;text-align:center;font-family:'courier';cursor:hand;}
-	#swtich:hover{}
-</style>
+	</style>
 </head>
 
 <body>
 
 	<script src="https://d3js.org/d3.v4.min.js"></script>
 	<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-	<div id='switch'>Switch Dataset</div>
-
 
 	<script>
 
@@ -193,13 +189,7 @@
 			var xScale = d3.scaleLinear().domain([-1,1]).range([margin,width-margin])
 			var yScale = d3.scaleLinear().domain([-1,1]).range([margin,height-margin])
 
-console.log(dataset);
 
-
-
-
-			//scale to be used later for color mapping
-			var colorScale = d3.scaleLinear().domain([-1,1]).range([1,0])
 
 			//find the svg container
 			var dots = d3.select('svg')
@@ -229,8 +219,8 @@ console.log(dataset);
 			.attr('class', 'dots')
 			//fill color, soon to be expanded
 			.attr('fill', '#f2844b')
+			
 			//this object should respond to mouse hovering
-						//this object should respond to mouse hovering
 			.on('mouseover', function(d) {
 				
 				//look for an element with id name key and erase its text	
@@ -255,6 +245,7 @@ console.log(dataset);
 				.attr('opacity',1);
 		
 			})
+			
 			//this object should respond to mouse moving away from it
 			.on('mouseout', function(d) {
 
