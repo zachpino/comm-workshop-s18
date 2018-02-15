@@ -62,4 +62,4 @@ Again, another nice linear relationship, with a clear focus. Commuters leave ear
 
 -----
 
-It's currently impossible to get more information on which dot corresponds to which congressional district. Let's [add some interaction](animation.md) to improve that.
+Let's practice these models with some [homework](homework.md)
