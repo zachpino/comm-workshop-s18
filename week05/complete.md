@@ -219,8 +219,8 @@
 			.attr('class', 'dots')
 			//fill color, soon to be expanded
 			.attr('fill', '#f2844b')
+			
 			//this object should respond to mouse hovering
-						//this object should respond to mouse hovering
 			.on('mouseover', function(d) {
 				
 				//look for an element with id name key and erase its text	
@@ -245,6 +245,7 @@
 				.attr('opacity',1);
 		
 			})
+			
 			//this object should respond to mouse moving away from it
 			.on('mouseout', function(d) {
 
