@@ -48,7 +48,7 @@ Again, nothing new here!
 
 What are some learnings we can tease out from this plot? Note the nearly linear relationship we're seeing, when commutes are longer, people tend to take public transit. Counterintuitive? What might explain what we're seeing?
 
-We can also swap the parameters being visualized on the y axis, and change the y-axis labels, to view a different sets of parameterized comparison.
+We can also swap the parameters being visualized on the y-axis, and change the y-axis labels, to view a different sets of parameterized comparisons.
 
 ```
 					.attr('cy',function(d){
