@@ -21,7 +21,7 @@ This set of tutorials develops a more complex chart type (one that is intimately
 -----
 
 - [Plotting Layout and Points](plot.md)
-- [Homework](homework.md
+- [Homework](homework.md)
 
 -----
 
