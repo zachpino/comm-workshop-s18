@@ -1,6 +1,6 @@
-### Week 5: Accessing Data Directly with D3 and Animation
+### Week 5: Accessing Data Directly with D3 and Parameterized Matrices (2x2)
 
-This set of tutorials develops a more complex chart type (one that is intimately familiar to ID designers), and introduces some of the interactivity and animation abilities of D3. Take these lessons slowly, and practice by tweaking the examples.
+This set of tutorials develops a more complex chart type (one that is intimately familiar to ID designers). Take these lessons slowly, and practice by tweaking the examples.
 
 -----
 
