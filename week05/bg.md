@@ -104,7 +104,7 @@ All of this code should be placed above the `d3.text()` bit we previously added.
 		//draw key
 		var key = d3.select('svg')
 		.append('text')
-		.text('district')
+		.text('')
 		.attr('x' , margin/2)
 		.attr('y' , margin/2)
 		.attr('font-family' , 'courier')
@@ -117,6 +117,8 @@ All of this code should be placed above the `d3.text()` bit we previously added.
 Nothing new here, just a set of SVG drawing actions, exectuted through D3 `select`s and `append`s. Note that the elements are each given an `id` for ease of finding that object later on.
 
 All of those weird integers are just placement offsets, to help the text appear better centered.
+
+The `#key` we're drawing won't do anything now, but will be used later for some dynamic text.
 
 ![axes and labels](axeslabels.png)
 

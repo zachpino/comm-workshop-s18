@@ -4,12 +4,17 @@ This set of tutorials adds some of D3's interactivity and animation abilities to
 
 -----
 
-- [Starting Point from Last Week](bonus.md)
-- [Chromatic Scales](color.md)
+- [Starting Point from Last Week](start.md)
+
 -----
 
 - [Detecting Events](events.md)
 - [Switching Text](switch.md)
+
+-----
+
+- [Follow the $$$](money.md)
+- [Chromatic Scales](color.md)
 
 -----
 
