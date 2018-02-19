@@ -43,9 +43,11 @@ d3.select(#redMaker)
 
 Pretty cool, huh?
 
+The `d` in this case will refer to the data attached to any element that was created by d3 and has data bound to it.
+
 -----
 
-There is a special javascript keyword `this` that causes all kinds of problems in other contexts. But, in D3, its use is clear -- it refers to the specific element that detected the event. This is very useful for handling mouse hovering, for instance. The mouse cursor entering an object triggers the `mouseover` event, and when it leaves the object, the `mouseout` event occurs. Both can be attached to objects and do different things, or `mouseover` can alter a state, and `mouseout` can restore the original condition.
+There is a special javascript keyword `this` that causes all kinds of problems in other contexts. But, in D3, its use is clear — it refers to the specific element that detected the event. This is very useful for handling mouse hovering, for instance. The mouse cursor entering an object triggers the `mouseover` event, and when it leaves the object, the `mouseout` event occurs. Both can be attached to objects and do different things, or `mouseover` can alter a state, and `mouseout` can restore the original condition.
 
 ```js
 d3.select('svg')
