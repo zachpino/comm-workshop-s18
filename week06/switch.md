@@ -47,6 +47,8 @@ Add this code onto the end of the creation of your dots, as though it were just 
 
 When a viewer mouses over a dot, we can see which congressional district that dot represents in the `#key` area of the svg.
 
+`d` refers to the data bound to the object that is moused-over, whereas `this` refers to the object itself. So, we can `select` another object on the page such as `#key` and update it with the data of the moused-over dot with `d`, or adjust the moused-over object's appearence with `this`.
+
 With our visualization more interactive, can we reach any new insights in exploring our plot?
 
 -----
