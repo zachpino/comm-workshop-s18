@@ -19,7 +19,7 @@ There are explicit color *schemes* for handling categorical, continuous, divergi
 
 To use these scales, all we need to do is choose an appropriate scheme, and ensure we have a *parameterized* value between 0 and 1 to map. One end of the color scale is 0, and the other is 1, and all other values get plotted in the middle of the gradients. 
 
-So, we often need to make another scale, just to map our data between the 0 and 1 necessary to use these cool color scales.
+So, we often need to make another scale, just to map our data between the 0 and 1 necessary to use these color scales.
 
 ```js
 	//make a parameterizing scale
@@ -37,7 +37,7 @@ So, we often need to make another scale, just to map our data between the 0 and 
 
 Back to our plot, let's implement a color scale.
 
-Since we have inherenly diverging data in our parameterized matrix, we should choose a diverging schema. Let's use the `d3.interpolatePlasma()` diverging scheme. It's dramatic, and doesn't artificially add any bias since orange and purple aren't universally associated with any particular sentiment. Feel free, though, to try out other colors schemes.
+Since we have inherenly diverging data in our parameterized matrix, we should choose a diverging schema. Let's use the `d3.interpolatePlasma()` diverging scheme. It's dramatic, and doesn't artificially add any bias since orange and purple aren't universally associated with any particular sentiment. Feel free, though, to try out other color schemes.
 
 ![plasma scheme](https://raw.githubusercontent.com/d3/d3-scale-chromatic/master/img/plasma.png)
 
