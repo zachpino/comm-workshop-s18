@@ -31,12 +31,11 @@ For instance, if we wanted to make it so that when a button on a page is clicked
 
 d3.select(#redMaker)
 	.on('click', function(d){
-
 		d3.selectAll('.blueElement')
 			.attr('fill','red')
 			;
-
-})
+	})
+;
 
 </script>
 ```
