@@ -9,7 +9,7 @@ Documentation and Resources for the Spring 2018 IIT Institute of Design Communic
 	
 	> Homework: Explore census data. Complete half of the [Census Scavenger Hunt](week01/scavhunt.md) and record any questions for class discussion.
 
-- Week 02 · Data and List Management in JS and Drawing with SVG
+- Week 02 · The Hunt!
 	> Classtime: Work through scavenger hunt problems
 
 	> Homework: Explore census data. Complete [Census Scavenger Hunt](week01/scavhunt.md) and submit to Blackboard.
