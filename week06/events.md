@@ -13,10 +13,12 @@ There are [more events too](https://developer.mozilla.org/en-US/docs/Web/API/Eve
 In order to make an element respond to any of the above listed events, the syntax is the same.
 
 ```js
-d3.select('#interactiveElement').on('event', function(d){
+d3.select('#interactiveElement')
+	.on('event', function(d){
 	//code for when the event is detected goes here...
 
 	})
+;
 
 ```
 
