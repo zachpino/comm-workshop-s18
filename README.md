@@ -26,30 +26,30 @@ Documentation and Resources for the Spring 2018 IIT Institute of Design Communic
 	
 	> Homework: [Visualize a self-selected dataset in a scatter or bar chart that *looks good*](week04/homework.md)
 
-- [Week 05 · Accessing Data Directly with D3 and Animation](week05/readme.md)
-	> Classtime: Pull data directly from the ACS with D3. 2x2 Scatterplot
+- [Week 05 · Accessing Data Directly with D3](week05/readme.md)
+	> Classtime: Pull data directly from the ACS with D3. 2x2 Parameterized Matrix
 	
-	> Homework: [Create a matrix comparing a set of census datapoints, with animated interactivity.](week05/homework.md)
+	> Homework: [Create a matrix comparing a set of census datapoints.](week05/homework.md)
 
-- Week 06 · Geo-Data and Drawing Maps
+- [Week 06 · D3 Interactivity and Animation](week06/readme.md)
+	> Classtime: Reacting to events with D3, and animating data
+	
+	> Homework: [Add animated interactivity to your matrices.](week06/homework.md)
+
+- Week 07 · Geo-Data and Drawing Maps
 	> Classtime: Sourcing and manipulating shapefiles from census mapping system TIGER. 
 	
 	> Homework: Pull down a set of shapefiles and convert them into geojson and svg for editing in Illustrator
 
-- Week 07 · Choropleths and Showing Data on Maps
+- Week 08 · Choropleths and Showing Data on Maps
 	> Classtime: Draw a map and programmatically draw circles based on a dataset. Geocoding
 	
 	> Homework: Plot multidimensional datapoints on map from week 6
 
-- Week 08 · Correlation and Causation
+- Week 09 · Correlation and Causation
 	> Classtime: Tooltips, Basis Statistics
 	
 	> Homework: Create T+Z defined animations with assigned dataset 
-
-- Week 09 · Transitioning Datasets in Visualizations
-	> Classtime: Add dropdown so that a chart can animate between different census year datasets
-	
-	> Homework: Draw a choropleth with multiple transitioning datasets based on assigned dataset 
 
 - Week 10· Drawing Custom Shapes and Plots
 	> Classtime: SVG paths, bezier and quadratic/quartic curves, and shapes examples

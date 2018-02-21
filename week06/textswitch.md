@@ -6,7 +6,7 @@ Our plot looks good, but we still can't tell which district is which. So many in
 
 Let's use an event handler to change an svg text element on the page with an id of `key`, created previously but unused, to show the congressional district name.
 
-Add this code onto the end of the creation of your dots, as though it were just another `.attr()` or `.style()`
+Add this code onto the end of the creation of your dots, as though it were just another `.attr()` or `.style()`.
 
 ```js
 	//all the dot making stuff is above this line
@@ -45,12 +45,15 @@ Add this code onto the end of the creation of your dots, as though it were just 
 
 ![hover effect](hover.gif)
 
-When a viewer mouses over a dot, we can see which congressional district that dot represents in the `#key` area of the svg.
+When a viewer mouses over a dot, they can see which congressional district that dot represents in the `#key` area of the svg.
 
-`d` refers to the data bound to the object that is moused-over, whereas `this` refers to the object itself. So, we can `select` another object on the page such as `#key` and update it with the data of the moused-over dot with `d`, or adjust the moused-over object's appearence with `this`.
+**Important**
+A common point of confusion: `d` refers to the *data* bound to the object that is moused-over, whereas `this` refers to the *circle object* itself. 
+
+So, we can `select` another object on the page such as `#key` and update it with the data of the moused-over dot with `d`, or adjust the moused-over circle object's appearence with `this`.
 
 With our visualization more interactive, can we reach any new insights in exploring our plot?
 
 -----
 
-We can now move on to another goal, adding another data point [encoded in the radius of the circle](money.md)! 
+Mouseover is cool and all, but it is kind of jarring. Wouldn't it be nice if we could [animate](animation.md) that transition instead?

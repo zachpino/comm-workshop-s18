@@ -1,19 +1,23 @@
 ### Animating Elements and Handling Mouseover/Mouseout Events
 
-Adding animation and interactivity is what D3 was designed for. All we have to do is identify an *event* to respond to, and then set up the new state we want our objects to transform into. D3 *tweens* the initial state to the new state over a configurable period of time. Moreover, D3 gives us the ability to set an *easing* parameter. This is a concept unique to animation: *how should the object animate with respect to time*. Read more and [view the possible variations and settings here](https://bl.ocks.org/d3noob/1ea51d03775b9650e8dfd03474e202fe).
+Adding animation and interactivity is what D3 was designed for. All we have to do is identify an *event* to respond to, and then set up the new state we want our objects to transform into over time. This is the same as we did before to switch out text, but with one significant change.
 
-To trigger all this functionality, all we need to do is elect which event to respond to with  `.on('event', function(d){})`, and call `.transition()` inside — which tells D3 to animate things. We also often set `.ease` for custom easing and `.duration()` — how long the animation should last, measured in milliseconds. 
+To trigger all this functionality, all we need to do is elect which event to respond to with  `.on('event', function(d){})`, and call a new method `.transition()` inside — which tells D3 to animate changes. We also often set `.ease` for custom easing and `.duration()` — how long the animation should last, measured in milliseconds. These two methods can only come after a `.transition()`.
+
+So, with `.transition()` called, D3 [tweens](https://en.wikipedia.org/wiki/Inbetweening) the initial state to the new state over a configurable period of time. Moreover, D3 gives us the ability to set an *easing* parameter. This is a concept unique to animation: *how should the object animate with respect to time*. Read more and [view the possible variations and settings here](https://bl.ocks.org/d3noob/1ea51d03775b9650e8dfd03474e202fe).
 
 All this code gets added on to the bottom of the `var dots = ...` chunk of drawing code. It is part of the same code block that plots the svg circles.
 
 ```js
+			//all the dot making stuff is above this line
 			//this object should respond to mouse hovering
 			.on('mouseover', function(d) {
 				
-				//look for an element with id name key and erase its text	
+				//find a thing on the page with id 'key'
 				d3.select('#key')
-				//set the text of the key element to the name property of the dot
-				.text(d.name);
+				//and show the name of the rolled over element in it
+				.text(d.name)
+				;
 
 				//'this' is a keyword that refers to the object that detected the event
 				//select the rolled over dot
@@ -32,11 +36,14 @@ All this code gets added on to the bottom of the `var dots = ...` chunk of drawi
 				.attr('opacity',1);
 		
 			})
-			//this object should respond to mouse moving away from it
+
+			//this object should also respond to mouse moving away from it
 			.on('mouseout', function(d) {
 
-				//look for an element with id name key and set its text	back to default
-				d3.select('#key').text('district');
+				//find a thing on the page with id 'key'
+				d3.select('#key')
+				//and empty its text
+				.text('');
 
 				//reverse of the mouseover, without the fancy animation
 				d3.select(this)
@@ -50,9 +57,9 @@ All this code gets added on to the bottom of the `var dots = ...` chunk of drawi
 
 
 ![mouseover](animate.gif)
+
+Looks great! Any new learnings now that the experience is much better?
+
 -----
 
-Let's move on to some [homework](homework.md) to get some practice.
-
-Also take a look at the [complete code](complete.md).
-
+We can now move on to another goal, adding a new data point [encoded in the radius of the circle](money.md)! 

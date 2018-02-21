@@ -1,8 +1,3 @@
-### Starting Code
-
-Let's begin where we left off. A fully realized parameterized matrix, with points for congressional districts and their constituents plotted according to commuting behavior.
-
-```html
 <html>
 <head>
 	<style> 
@@ -113,7 +108,7 @@ Let's begin where we left off. A fully realized parameterized matrix, with point
 		//draw key
 		var key = d3.select('svg')
 		.append('text')
-		.text('')
+		.text('	')
 		.attr('x' , margin/2)
 		.attr('y' , margin/2)
 		.attr('font-family' , 'courier')
@@ -123,7 +118,7 @@ Let's begin where we left off. A fully realized parameterized matrix, with point
 		;
 
 		//query ACS
-		d3.text("https://api.census.gov/data/2015/acs/acs5?get=NAME,B08006_003E,B08006_008E,B08006_014E,B08006_015E,B08006_016E,B08006_017E,B08006_004E,B08012_002E,B08012_003E,B08012_004E,B08012_005E,B08012_006E,B08012_007E,B08012_008E,B08012_009E,B08012_010E,B08012_011E,B08012_012E,B08012_013E,B08011_002E,B08011_003E,B08011_004E,B08011_005E,B08011_006E,B08011_007E,B08011_008E,B08011_009E,B08011_010E,B08011_011E,B08011_012E,B08011_013E,B08011_014E&for=congressional%20district", function(censusData) {
+		d3.text("https://api.census.gov/data/2015/acs/acs5?get=NAME,B08006_003E,B08006_008E,B08006_014E,B08006_015E,B08006_016E,B08006_017E,B08006_004E,B08012_002E,B08012_003E,B08012_004E,B08012_005E,B08012_006E,B08012_007E,B08012_008E,B08012_009E,B08012_010E,B08012_011E,B08012_012E,B08012_013E,B08011_002E,B08011_003E,B08011_004E,B08011_005E,B08011_006E,B08011_007E,B08011_008E,B08011_009E,B08011_010E,B08011_011E,B08011_012E,B08011_013E,B08011_014E&for=county:*", function(censusData) {
 			
 			//remove annoying brackets
 			var noBracketsData = censusData.replace(/[\[\]]+/g,'')
@@ -227,31 +222,3 @@ Let's begin where we left off. A fully realized parameterized matrix, with point
 
 </body>
 </html>
-```
-
-![commute type plotted against time of departure](late.png)
-
-Fortunately, that's a pretty effective plot! We can begin to see patterns in the data without adding more complexity. 
-
-Want to see something cool? We can change one value and get a different data scope! Adjust the very end of the census query to read...
-
-```js
-for=county:*
-```
-
-...and we get a plot of all the US counties rather than the congressional districts. 
-
-![counties](county.png)
-
-But, as cool as these plots are, they have a number of obvious limitations.
-
-- It's impossible to see which congressional district or county corresponds to each dot.
-- We're wasting potential dimensions! The circles are all the same size and color.
-- It's a bit hard to understand how nearby elements rank relative to one another, especially in the clumps.
-
-Let's work on these! 
-
------
-
-First, we can [add interactivity](events.md) to understand which data item is which.
-

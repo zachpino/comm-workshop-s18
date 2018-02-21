@@ -8,7 +8,7 @@ D3 makes it easy for developers to elect from a wide set of interaction *events*
 - Focus and blur (on input elements)
 - (Multi)Touch taps
 
-There are [more events too](https://developer.mozilla.org/en-US/docs/Web/API/Event), but that batch tends to be the useful set for data visualization purposes.
+There are [more events too](https://developer.mozilla.org/en-US/docs/Web/API/Event), but the batch above tends to be the useful set for data visualization purposes.
 
 In order to make an element respond to any of the above listed events, the syntax is the same.
 
@@ -43,7 +43,7 @@ d3.select(#redMaker)
 
 Pretty cool, huh?
 
-The `d` in this case will refer to the data attached to any element that was created by d3 and has data bound to it.
+The `d` in this case will refer to the data attached to an element that was created by d3, created inside of a `.data().enter()` creation loop.
 
 -----
 
@@ -84,5 +84,5 @@ You'll also see that the event handler is attached to the objects directly when 
 
 -----
 
-Let's use this new understanding of event handlers to [make some text dynamic](switch.md) to help see which congressional district dot is which.
+Let's use this new understanding of event handlers to [make some text dynamic](textswitch.md) to help see which congressional district dot is which.
 

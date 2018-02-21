@@ -4,7 +4,7 @@ In addition to continuing to refine your [dataset and story](../week03/dataset.m
 
 Pull down several datasets from the Census API that are related to your chosen topic space(s). In addition, find a static dataset (.csv file or equivalent) that you can work with from your chosen plus space. Best to just paste that into your file as an array, and address it as we did datasets previously. 
 
-Then, draw a parameterized matrix with the plus data plotted against at least two census datapoints. 
+Then, draw a parameterized matrix with the plus data plotted against the census datapoints. 
 
 Ensure that this matrix is well designed by intentionally setting `.attr` and `.style` on your elements. Think about typography! They should look at least as considered as this week's example (a low bar to clear). Think about how your data content might influence the aesthetics of your matrix.
 

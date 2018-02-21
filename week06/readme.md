@@ -9,7 +9,8 @@ This set of tutorials adds some of D3's interactivity and animation abilities to
 -----
 
 - [Detecting Events](events.md)
-- [Switching Text](switch.md)
+- [Switching Text](textswitch.md)
+- [Animating](animation.md)
 
 -----
 
@@ -18,19 +19,18 @@ This set of tutorials adds some of D3's interactivity and animation abilities to
 
 -----
 
-- [Animating Objects](animate.md)
 - [Changing Datasets](change_data.md)
+- [Complete Example](complete.md)
 
 -----
 
-- [Complete Example](complete.md)
 - [Homework](homework.md)
 
 -----
 
 Official D3 References
 
-- [D3 Chromatic](https://github.com/d3/d3-scale-chromatic)
 - [D3 Events](https://github.com/d3/d3-selection/blob/master/README.md#handling-events)
 - [D3 Transition](https://github.com/d3/d3-transition)
 - [Animation Easing Comparison](https://bl.ocks.org/d3noob/1ea51d03775b9650e8dfd03474e202fe)
+- [D3 Chromatic](https://github.com/d3/d3-scale-chromatic)
