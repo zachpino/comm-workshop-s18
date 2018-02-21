@@ -17,6 +17,7 @@ Build out the page around the matrix, and try to contextualize the intended comp
 For those of you that want a challenge!
 
 Bonus: Add radius variation based on another static dataset
+
 Bonus: Can you draw a [regression line / trend line](https://en.wikipedia.org/wiki/Linear_regression) (these are different things, but in a parameterized matrix they are often the same) into your visualization? How about a curve if appropriate? Don't bother with trying to do it programmatically, just plot the line or curve directly with the [`<polyline>`](https://www.w3schools.com/graphics/svg_polyline.asp) or [`<path>`](https://www.w3schools.com/graphics/svg_path.asp) svg elements.
 
 
