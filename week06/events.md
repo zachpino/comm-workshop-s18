@@ -50,6 +50,8 @@ The `d` in this case will refer to the data attached to an element that was crea
 
 There is a special javascript keyword `this` that causes all kinds of problems in other contexts. But, in D3, its use is clear — it refers to the specific element that detected the event. This is very useful for handling mouse hovering, for instance. The mouse cursor entering an object triggers the `mouseover` event, and when it leaves the object, the `mouseout` event occurs. Both can be attached to objects and do different things, or `mouseover` can alter a state, and `mouseout` can restore the original condition.
 
+In D3, them most common pattern is to assign a specific class name on `mouseover`, and remove that classname on `mouseout`. We'll cover that model in future exercises — for now though, let's be explicit and use `.attr()` and `.style()` directly.
+
 ```js
 d3.select('svg')
 	.selectAll('.dots')
