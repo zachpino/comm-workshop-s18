@@ -47,7 +47,7 @@ Add this code onto the end of the creation of your dots, as though it were just 
 
 When a viewer mouses over a dot, they can see which congressional district that dot represents in the `#key` area of the svg.
 
-##### Important
+#### Important
 
 A common point of confusion: `d` refers to the *data* bound to the object that is moused-over, whereas `this` refers to the *circle object* itself. 
 
