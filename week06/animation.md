@@ -2,9 +2,9 @@
 
 Adding animation and interactivity is what D3 was designed for. All we have to do is identify an *event* to respond to, and then set up the new state we want our objects to transform into over time. This is the same as we did before to switch out text, but with one significant change.
 
-To trigger all this functionality, all we need to do is elect which event to respond to with  `.on('event', function(d){})`, and call a new method `.transition()` inside — which tells D3 to animate changes. We also often set `.ease` for custom easing and `.duration()` — how long the animation should last, measured in milliseconds. These two methods can only come after a `.transition()`.
+To trigger all this functionality, all we need to do is elect which event to respond to with  `.on('event', function(d){})`, and call a new method `.transition()` inside the anonymous function — which tells D3 to animate changes. 
 
-So, with `.transition()` called, D3 [tweens](https://en.wikipedia.org/wiki/Inbetweening) the initial state to the new state over a configurable period of time. Moreover, D3 gives us the ability to set an *easing* parameter. This is a concept unique to animation: *how should the object animate with respect to time*. Read more and [view the possible variations and settings here](https://bl.ocks.org/d3noob/1ea51d03775b9650e8dfd03474e202fe).
+With `.transition()` called, D3 [tweens](https://en.wikipedia.org/wiki/Inbetweening) the initial state to the new state over a configurable period of time. Arterwards, we can set `.duration()` to determine how long the animation should last, measured in milliseconds. Additionally, D3 gives us the ability to set an *easing* parameter in `.ease()`. This is a concept unique to animation: *how should the object accelerate with respect to time*. Should it start slow and speed up as it nears the end of its movement? Move normally at the start and then overshoot its target, bouncing towards its final destination? Read more and [view the possible variations and settings here](https://bl.ocks.org/d3noob/1ea51d03775b9650e8dfd03474e202fe). Both `.ease()` and `.duration()` can only come after `.transition()` is called.
 
 All this code gets added on to the bottom of the `var dots = ...` chunk of drawing code. It is part of the same code block that plots the svg circles.
 
@@ -54,8 +54,6 @@ All this code gets added on to the bottom of the `var dots = ...` chunk of drawi
 			})
 		;
 ```
-
-
 ![mouseover](animate.gif)
 
 Looks great! Any new learnings now that the experience is much better?
