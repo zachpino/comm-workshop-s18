@@ -14,7 +14,7 @@ This dataset is structured as an object according to the following model. The ke
 
 [Download the dataset](money.js) if it is hard to copy and paste.
 
-This object should be pasted near the top of your code, at least above the `d3.text()` call to the Census API. We can gain access to this new data by typing in this syntax `money.1707`.
+This object should be pasted near the top of your code, at least above the `d3.text()` call to the Census API. We can gain access to this new data by using the syntax `money.1707`.
 
 -----
 
@@ -51,7 +51,7 @@ var congressCode = d.state + d["congressional district"];
 
 You'll notice that we are creating the same 4 digit code for each congressional district that our openSecrets dataset uses. We then `return` a `districtMoney` property, using bracket notation. We need to use bracket style object access because we want the variable to be evaluated (there is no property called `congressCode`, instead we want JS to use what the variable is set equal to). This is just like how we access properties with spaces in the names, like `"congressional district"` directly above `districtMoney`.
 
-So, the possibilities for accessing properties are the following:
+So, the possibilities for accessing object properties are the following:
 
 - We know the name of the property: Use dot or bracket notation with quotation marks.
 	- d.B08011_004E
@@ -79,9 +79,9 @@ Since this is a static dataset, it's not worth the extra code it would take to d
 And after all that, we can adjust the `r` attribute of the drawn circles.
 
 ```
-		.attr('r', function(d){
-				return moneyScale(d.districtMoney); 
-		})
+	.attr('r', function(d){
+		return moneyScale(d.districtMoney); 
+	})
 ```
 
 ![money plot](money.png)
