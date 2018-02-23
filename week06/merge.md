@@ -304,7 +304,7 @@ The outcome is a single dataset to push through your visualization logic, combin
 
 ------
 
-As mentioned above, every dataset merge attempt will have its own unique challenges, and will likely need some variation and combination of the techniques outlined here. Give these a try when an opportunity presents itself.cReturn to this page frequently, it might well be the most commonly queried resource of all these pages. 
+As mentioned above, every dataset merge attempt will have its own unique challenges, and will likely need some variation and combination of the techniques outlined here. Give these a try when an opportunity presents itself.
 
 Take a look at this week's [completed code](complete.md).
 
