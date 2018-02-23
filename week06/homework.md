@@ -2,7 +2,7 @@
 
 You have presentations to prepare this week, focus on those. But, please add the following features to your parameterized matrix from the exercises this week.
 
-- A static dataset driving the radius for your circles
+- A static dataset driving the radius of your circles
 - Designed interaction and animations for mouseover, mouseout, and/or click events for your plotted circles
 
 -----
