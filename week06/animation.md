@@ -25,7 +25,7 @@ All this code gets added on to the bottom of the `var dots = ...` chunk of drawi
 				//turn on animation	
 				.transition()
 				//bounce animation
-				.ease(d3.easeBounce)
+				.ease(d3.easeElastic)
 				//animate over 1 second
 				.duration(1000)
 				//increase stroke width
