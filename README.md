@@ -36,41 +36,41 @@ Documentation and Resources for the Spring 2018 IIT Institute of Design Communic
 	
 	> Homework: [Add animated interactivity to your matrices.](week06/homework.md)
 
-- Week 07 · Geo-Data and Drawing Maps
+- [Week 07 · Pretty Colors and Data Switching](week07/readme.md)
+	> Classtime: Color Scales and Dynamic Data
+	
+	> Homework: [Build one of the proposed visualizations!](week07/homework.md)
+
+- Week 08 · Geo-Data and Drawing Maps
 	> Classtime: Sourcing and manipulating shapefiles from census mapping system TIGER. 
 	
 	> Homework: Pull down a set of shapefiles and convert them into geojson and svg for editing in Illustrator
 
-- Week 08 · Choropleths and Showing Data on Maps
+- Week 09 · Choropleths and Showing Data on Maps
 	> Classtime: Draw a map and programmatically draw circles based on a dataset. Geocoding
 	
 	> Homework: Plot multidimensional datapoints on map from week 6
 
-- Week 09 · Correlation and Causation
-	> Classtime: Tooltips, Basis Statistics
-	
-	> Homework: Create T+Z defined animations with assigned dataset 
-
-- Week 10· Drawing Custom Shapes and Plots
-	> Classtime: SVG paths, bezier and quadratic/quartic curves, and shapes examples
-	
-	> Homework: Visualize a self-selected, simple dataset in a more complex way (area chart, flow diagram, sankey, spider...)
-	
-- Week 11 · Time Math
-	> Classtime: Time series visualization using D3 time modules
+- Week 10 · Correlation and Causation, Time-Based Plots and Math
+	> Classtime: Tooltips, Basic Statistics, Time Series Visualization
 	
 	> Homework: Draw a set of time series visualization based on assigned dataset from week 9.
 
-- Week 12 · Hierarchical Diagrams
+- Week 11· Drawing Custom Shapes and Plots
+	> Classtime: SVG paths, bezier and quadratic/quartic curves, and shapes examples
+	
+	> Homework: Visualize a self-selected, simple dataset in a more complex way (area chart, flow diagram, sankey, spider...)
+
+- Week 12 · Web Page Layout
+	> Classtime: Responsive HTML page layout construction, image and media tags, advanced CSS typography
+	
+	> Homework: Create page structure and add supporting content to choropleth from week 9 and time series from week 10.
+
+- Week 13 · Hierarchical Diagrams
 	> Classtime: Work with hierarchical dataset to draw nested connections between content (sankey and network diagrams)
 	
 	> Homework: Find data appropriate for a network visualization and draw it.
 
-- Week 13 · Web Page Layout
-	> Classtime: Responsive HTML page layout construction, image and media tags, advanced CSS typography
-	
-	> Homework: Create page structure and add supporting content to choropleth from week 9 and time series from week 10.
-	
 - Week 14 · Final Presentation!
 	> Classtime: Critique
 	
