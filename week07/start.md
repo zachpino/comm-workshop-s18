@@ -1,4 +1,4 @@
-### Complete Code
+### Starting Code from Week 6
 
 ```html
 <html>
