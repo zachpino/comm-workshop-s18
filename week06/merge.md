@@ -63,7 +63,7 @@ If any of these things are shared, we can probably combine the datasets. There a
 
 ##### Shared Index: Running `.data()` Twice
 
-If we wanted to use two datasets that have the same items in the same order — they have shared *indices* — to plot `cx` and `cy` separately. 
+Let's use two datasets that have the same items in the same order — they have shared *indices* — to plot `cx` and `cy` separately. 
 
 This will draw the circles at 0 on the y-axis, and then *immediately move them* to the new cy position. This happens so fast that they never even show up at their initial position.
 
