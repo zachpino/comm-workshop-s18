@@ -1,6 +1,6 @@
-### Week 6: Interaction, Animation, and Data Switching
+### Week 7: Pretty Colors and Data Switching
 
-This set of tutorials adds some of D3's interactivity and animation abilities to [last week's matrix exercise](../week05/readme.md). Take these lessons slowly, and practice by tweaking the examples.
+This week's code adds some bells and whistles, including user selectable data plotting, to the [matrix exercise from the last two weeks](../week06/readme.md). Take these lessons slowly, and practice by tweaking the examples.
 
 -----
 
@@ -8,17 +8,7 @@ This set of tutorials adds some of D3's interactivity and animation abilities to
 
 -----
 
-- [Detecting Events](events.md)
-- [Switching Text](textswitch.md)
-- [Animating](animation.md)
-
------
-
-- [Follow the $$$](money.md)
 - [Chromatic Scales](color.md)
-
------
-
 - [Changing Datasets](change_data.md)
 - [Complete Example](complete.md)
 
@@ -30,7 +20,4 @@ This set of tutorials adds some of D3's interactivity and animation abilities to
 
 Official D3 References
 
-- [D3 Events](https://github.com/d3/d3-selection/blob/master/README.md#handling-events)
-- [D3 Transition](https://github.com/d3/d3-transition)
-- [Animation Easing Comparison](https://bl.ocks.org/d3noob/1ea51d03775b9650e8dfd03474e202fe)
 - [D3 Chromatic](https://github.com/d3/d3-scale-chromatic)
