@@ -52,6 +52,8 @@ There is a special javascript keyword `this` that causes all kinds of problems i
 
 In D3, them most common pattern is to assign a specific classname on `mouseover`, and remove that classname on `mouseout`. We'll cover that model in future exercises — for now though, let's be explicit and use `.attr()` and `.style()` directly.
 
+This code is just an example, and it doesn't need to be added to your plot just yet.
+
 ```js
 d3.select('svg')
 	.selectAll('.dots')
