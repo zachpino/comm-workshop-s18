@@ -24,7 +24,7 @@ All this code gets added on to the bottom of the `var dots = ...` chunk of drawi
 				d3.select(this)
 				//turn on animation	
 				.transition()
-				//bounce animation
+				//bouncey animation
 				.ease(d3.easeElastic)
 				//animate over 1 second
 				.duration(1000)
