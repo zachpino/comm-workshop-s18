@@ -229,3 +229,7 @@
 </body>
 </html>
 ```
+
+-----
+
+Let's [add some nicer color to this plot](color.md), to make the individual data points easier to read.
