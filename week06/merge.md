@@ -134,25 +134,19 @@ Very similar to the above example. The main difference is that we don't need to 
 		.attr('r',15)
 		.attr('class','dots')
 	;
-	 
-
-	d3.select('svg')
-		.selectAll('.dots')
-		.data(arrayData)
-	;
 ```
 
-This has better performance than the example above, but it is harder to maintain and understand. Merging by index is still inherently fragile. It's very easy for an unexpected item — like Washinton D.C. or Guam in a set of states — to be in one dataset, and not the other. The visualization will work, but the data might be incorrectly combined! 
+This has better performance than the example above, but it is harder to maintain and understand. Merging by index is still inherently fragile, and there are better ways.
 
 -----
 
-So, that's how we have to handle *standard arrays*, as they only way to merge them is through their indices. A much better approach is to use objects. 
+So, that's how we have to handle *standard arrays*, as they only way to merge them is through their indices. A much better approach is to use *objects*. 
 
 -----
 
 ##### Convert Array to Object
 
-So, how do we convert data from an array to an object? Data returned from the census can be handled with a `d3.csvParse()` method. But, sometimes it's simpler to just convert it directly.
+So, how do we convert data from an array to an object? Data returned from the census can be handled with a `d3.csvParse()` method after the brackets are removed. But, sometimes it's simpler to just convert the data directly.
 
 ```
 	//like what we would get from copying and pasting from an ACS response
@@ -180,7 +174,6 @@ So, how do we convert data from an array to an object? Data returned from the ce
 	//[{name: "California", population: 39250017, fips: "06"}, 
 	//{name: "Illinois", population: 12801539, fips: "17"}, 
 	//{name: "New York", population: 19745289, fips: "36"}]
-
 ```
 
 Easy peasy. 
@@ -189,7 +182,7 @@ Easy peasy.
 
 ##### Shared Key and Value: Running `.data` Twice
 
-In the example above, we created a `.name` attribute in our dataset, which is potentially shared between multiple datasets. Note, that the indices of these objects *don't match*, the states are in a different order, so we can't use any of the tricks we used above.
+In the example above, we created a `.name` attribute in our dataset, which is potentially shared between multiple datasets. Note that the indices of these objects *don't match*, the states are in a different order — so we can't use any of the tricks we used above.
 
 ```
 	//like what we would get from d3.csvParse()
@@ -223,7 +216,6 @@ In the example above, we created a `.name` attribute in our dataset, which is po
 		.data(convertedArrayObj, function(d){return d.name})
 		.attr('cy', function(d){return d.population})
 	;
-
 ```
 
 Note that, in the second `.data()` call when we introduce our second dataset, we can add an *accessor function* to the `.data()` line. This is a *keying* function, where we're telling D3 to use the `d.name` attribute of both datasets to figure out how the objects should be merged *as an alternative to their indices*.
@@ -232,9 +224,9 @@ Note that, in the second `.data()` call when we introduce our second dataset, we
 
 ##### Shared Value: Editing Objects to Match
 
-In these two objects, the fips code for the states is available in both datasets, but in the second dataset it is prepended by its region and division codes. For example, New York (fips 36) is in the Northeast Region (fips 01) and the Middle Atlantic Division (fips 02). So it is formally, from largest to smallest geographic region, fips 	`010236`.
+In these two objects, the fips code for the states is available in both datasets, but in the second dataset it is prepended by its region and division codes. For example, New York (fips 36) is in the Northeast Region (fips 01) and the Middle Atlantic Division (fips 02). So it is formally, from largest to smallest geographic region, fips `010236`.
 
-In order to mate these datasets, we need to make a unifying edit to synthesize the simpler state fips code, since we ultimately need *both the key and value to match*.
+In order to mate these datasets, we need to make a unifying edit to match the simpler state fips code, since we ultimately need *both the key and value to match*.
 
 ```
 	//like what we would get from d3.csvParse()
@@ -312,9 +304,7 @@ The outcome is a single dataset to push through your visualization logic, combin
 
 ------
 
-As mentioned above, every dataset merge attempt will have its own unique challenges, and will likely need some variation and combination of the techniques outlined here. Give these a try when an opportunity presents itself.
-
-Return to this page frequently! 
+As mentioned above, every dataset merge attempt will have its own unique challenges, and will likely need some variation and combination of the techniques outlined here. Give these a try when an opportunity presents itself.cReturn to this page frequently, it might well be the most commonly queried resource of all these pages. 
 
 Take a look at this week's [completed code](complete.md).
 
