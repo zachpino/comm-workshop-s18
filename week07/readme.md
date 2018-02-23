@@ -15,7 +15,12 @@ This set of tutorials adds some of D3's interactivity and animation abilities to
 -----
 
 - [Follow the $$$](money.md)
-- [Data Merging](merge.md)
+- [Chromatic Scales](color.md)
+
+-----
+
+- [Changing Datasets](change_data.md)
+- [Complete Example](complete.md)
 
 -----
 
@@ -28,3 +33,4 @@ Official D3 References
 - [D3 Events](https://github.com/d3/d3-selection/blob/master/README.md#handling-events)
 - [D3 Transition](https://github.com/d3/d3-transition)
 - [Animation Easing Comparison](https://bl.ocks.org/d3noob/1ea51d03775b9650e8dfd03474e202fe)
+- [D3 Chromatic](https://github.com/d3/d3-scale-chromatic)
