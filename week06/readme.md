@@ -19,6 +19,7 @@ This set of tutorials adds some of D3's interactivity and animation abilities to
 
 -----
 
+- [Complete Code](complete.md)
 - [Homework](homework.md)
 
 -----

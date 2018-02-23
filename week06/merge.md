@@ -1,6 +1,6 @@
 ### Merging Data
 
-We've now seen a few different way to join datasets. To formalize these learnings, let's imagine a set of datasets — all referencing California, Illinois, and New York — structured in different ways.
+One of the biggest challenges facing data visualizers is how to combine discordant, though related, datasets into one visualization logic. We've already seen a few different way to join datasets. To formalize these learnings, let's imagine a set of datasets — all referencing California, Illinois, and New York — structured in different ways.
 
 ```
 	//like what we would get from copying and pasting from an ACS response
@@ -61,7 +61,7 @@ If any of these things are shared, we can probably combine the datasets. There a
 
 -----
 
-### Shared Index: Running `.data()` Twice
+##### Shared Index: Running `.data()` Twice
 
 If we wanted to use two datasets that have the same items in the same order — they have shared *indices* — to plot `cx` and `cy` separately. 
 
@@ -105,7 +105,7 @@ Though this is the most understandable, there are many weaknesses. Merging by in
 
 -----
 
-### Shared Index: Running `.data()` Once
+##### Shared Index: Running `.data()` Once
 
 Very similar to the above example. The main difference is that we don't need to run `.data` twice, and instead use an indexing variable `i` to access the correct item in sequence in the second dataset.
 
@@ -150,7 +150,7 @@ So, that's how we have to handle *standard arrays*, as they only way to merge th
 
 -----
 
-### Convert Array to Object
+##### Convert Array to Object
 
 So, how do we convert data from an array to an object? Data returned from the census can be handled with a `d3.csvParse()` method. But, sometimes it's simpler to just convert it directly.
 
@@ -187,7 +187,7 @@ Easy peasy.
 
 -----
 
-### Shared Key and Value: Running `.data` Twice
+##### Shared Key and Value: Running `.data` Twice
 
 In the example above, we created a `.name` attribute in our dataset, which is potentially shared between multiple datasets. Note, that the indices of these objects *don't match*, the states are in a different order, so we can't use any of the tricks we used above.
 
@@ -230,7 +230,7 @@ Note that, in the second `.data()` call when we introduce our second dataset, we
 
 -----
 
-### Shared Value: Editing Objects to Match
+##### Shared Value: Editing Objects to Match
 
 In these two objects, the fips code for the states is available in both datasets, but in the second dataset it is prepended by its region and division codes. For example, New York (fips 36) is in the Northeast Region (fips 01) and the Middle Atlantic Division (fips 02). So it is formally, from largest to smallest geographic region, fips 	`010236`.
 
@@ -279,7 +279,7 @@ Again, `.data()` is taking a keying function to ensure the datapoints are matche
 
 -----
 
-### Shared Keys: Matrix Flipping
+##### Shared Keys: Matrix Flipping
 
 This is a common scenario when the two datasets to be combined are transpositions (flipped matrices) of one another. This means that what is a row in one dataset is a column in the other.
 
@@ -308,13 +308,18 @@ This is a common scenario when the two datasets to be combined are transposition
 	//{name: "California", fips: "06", gunDealers: 1782, hospitalBeds: 74793}];
 ```
 
-The outcome is a single dataset to push through your visualization logic, combining all necessary data.
+The outcome is a single dataset to push through your visualization logic, combining all necessary data. 
 
 ------
 
-As mentioned above, every dataset merge attempt will have its own unique challenges, and will likely need some variation and combination of the techniques outlined here. Give these a try when an opportunity presents itself!
+As mentioned above, every dataset merge attempt will have its own unique challenges, and will likely need some variation and combination of the techniques outlined here. Give these a try when an opportunity presents itself.
 
------
+Return to this page frequently! 
+
+Take a look at this week's [completed code](complete.md).
+
+And, let's [practice with some homework](homework.md) to reinforce these learning.
+
 
 
 

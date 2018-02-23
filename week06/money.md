@@ -94,10 +94,4 @@ Given that circles are now scaled with data, it would probably be a good idea to
 
 The plot is getting better. We have interactivity, animation, and more complex data being visualized. 
 
-But, still it's hard to distinguish the dots from one another when they're clustered, and the [uniform orange color is so boring](color.md)! 
-
-
-
-
-
-
+What we just did was something that causes problems for every data visualizer: how do we [combine data of different structures from different sources](merge.md)?
