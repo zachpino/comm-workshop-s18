@@ -14,6 +14,8 @@ Add this code onto the end of the creation of your dots, as though it were just 
 	//all the dot making stuff is above this line
 	//when a dot is moused over...
 	.on('mouseover', function(d) {
+		//view in browser console rolled over district	
+		console.log(d.name);
 		//find a thing on the page with id 'key'
 		d3.select('#key')
 		//and show the name of the rolled over element in it
