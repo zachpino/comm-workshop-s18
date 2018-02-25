@@ -14,7 +14,7 @@ This dataset is structured as an object according to a specific model, like all 
 
 [Download the dataset](money.js) if it is hard to copy and paste.
 
-This object should be pasted near the top of your code, at least above the `d3.text()` call to the Census API. We can gain access to this new data by using the syntax `money.1707`.
+This object should be pasted near the top of your code, at least above the `d3.text()` call to the Census API. We can gain access to this new data by using the syntax `money.1707` to get the value for Illinois' 7th District.
 
 -----
 
