@@ -56,7 +56,7 @@ Documentation and Resources for the Spring 2018 IIT Institute of Design Communic
 	
 	> Homework: Draw a set of time series visualization based on assigned dataset from week 9.
 
-- Week 11· Drawing Custom Shapes and Plots
+- Week 11· Axes and Tooltips, Drawing Custom Shapes and Plots
 	> Classtime: SVG paths, bezier and quadratic/quartic curves, and shapes examples
 	
 	> Homework: Visualize a self-selected, simple dataset in a more complex way (area chart, flow diagram, sankey, spider...)
