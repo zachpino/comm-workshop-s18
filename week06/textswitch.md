@@ -1,5 +1,7 @@
 ### Dynamic Text
 
+(Back to our visualization. Make sure your census call is for congressional districts, and not counties.)
+
 Our plot looks good, but we still can't tell which district is which. So many indistinguishable orange dots!
 
 ![plot](late.png)
