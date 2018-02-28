@@ -335,6 +335,8 @@ https://api.census.gov/data/2015/acs/acs5?get=NAME,B06009_006E,B01001_001E&for=s
 
 ##### New York has the most individuals with advanced degrees: 19,673,174. It also has the highest proportion: 10.126%. Illinois is a close second in both, and Minnesota overperforms for its population count.
 
+-----
+
 10. The concept "GEOGRAPHICAL MOBILITY IN THE PAST YEAR BY AGE FOR CURRENT RESIDENCE IN THE UNITED STATES" holds these numbers.
 
 Moved from different state, 1 to 4 years: B07001_066E
