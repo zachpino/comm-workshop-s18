@@ -177,7 +177,7 @@ https://api.census.gov/data/2015/acs/acs5?get=NAME,B05010_002E,B05010_018E&for=s
 
 Dividing one value by the other yields a rankable list of numbers.
 
-##### Brooklyn Community Unit School District 188 (23640) has 30x more students below the poverty line than above 2x the poverty line. It is located within the St. Louis metropolitan area, east of the Missippi.
+##### Brooklyn Community Unit School District 188 (23640) has 30x more students below the poverty line than above 2x the poverty line. It is located within the St. Louis metropolitan area, east of the Mississippi.
 
 ##### Elmwood Community Unit School District 322 (14050) has an effectively infinite ratio, as it has 0 students below the poverty line, and 603 above 2x the poverty line. It is located in Central Illinois, northwest of Bloomington.
 
