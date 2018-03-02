@@ -12,4 +12,4 @@ Build out the page around the matrix, and try to contextualize the intended comp
 
 Additionally, *choose the simplest of the visualizations* that your story will require, *and build it*. Easy, right? 
 
-We would recommend you begin with something we have covered: a bar chart, line plot, line chart, scatter plot, matrix. Use the real data.
+We would recommend you begin with something we have covered: a bar chart, line plot, line chart, scatter plot, matrix. Use  real data!
