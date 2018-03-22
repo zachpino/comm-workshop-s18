@@ -8,6 +8,7 @@ Let's return this week to a simple bar chart, to ensure that all of the techniqu
 
 -----
 
+- [In-Class Progress](progress.md)
 - [Complete Example](complete.md)
 
 -----
