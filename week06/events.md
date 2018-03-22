@@ -1,5 +1,7 @@
 ### Handling Events
 
+(This page is just explanation, none of this gets added to the plot we've been developing.)
+
 D3 makes it easy for developers to elect from a wide set of interaction *events* to which any given page element can respond. On the desktop and mobile devices, events include:
 
 - Clicking and double clicking with a configurable delay

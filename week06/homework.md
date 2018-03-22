@@ -2,7 +2,7 @@
 
 You have presentations to prepare this week, focus on those. But, please add the following features to your parameterized matrix from the exercises this week.
 
-- A static dataset to compare against ACS values
+- A static dataset, pasted into your file, driving the radius of your circles
 - Designed interaction and animations for mouseover, mouseout, and/or click events for your plotted circles
 
 -----

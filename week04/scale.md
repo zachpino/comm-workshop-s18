@@ -82,8 +82,8 @@ var dataset = [
 ];
 
 var extents = d3.extent(dataset, function(d){
-					return d[1] / d[2];
-				});
+	return d[1] / d[2];
+});
 
 var ferryScale = d3.scaleLinear().domain(extents).range([0,100]);
 
