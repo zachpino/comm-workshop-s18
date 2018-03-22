@@ -6,7 +6,7 @@ Complete the exercise for this week, if we do not make it through everything in 
 
 Additionally, as we are requesting *both a print and web instance of your project*, it will be necessary to convert your inDesign styles into much more reusable CSS styles. Start that work this week! 
 
-There is no right way to make a CSS style guide, which is a simple HTML document demonstrating the different typographic and formatting rules that your end product will eventually follow. This will be a living document, updated whenever a need for communicating a new content type or context emerges.
+There is no right way to make a *CSS style guide*, which is a simple HTML document demonstrating the different typographic and formatting rules that your end product will eventually follow. This will be a living document, updated whenever a need for communicating a new content type or context emerges.
 
 For inspiration and ideas, take a look at some examples at [some examples](http://styleguides.io), this [pre-built template](https://hugeinc.github.io/styleguide/), and consider how a pay-for [web service](https://frontify.com/styleguide) handles style guides. You can also use [this service](http://stylifyme.com) to algorithmically pull a styleguide out of an existing websites.
 
