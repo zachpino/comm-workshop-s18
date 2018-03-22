@@ -4,6 +4,13 @@ Complete the exercise for this week, if we do not make it through everything in 
 
 -----
 
+Consider starting on these Lynda.com tutorials if neededd...
+
+- [CSS Grid Layout](https://www.lynda.com/CSS-tutorials/Welcome/622088/651299-4.html)
+- [HTML Fundamentals](https://www.lynda.com/HTML-tutorials/HTML-Essential-Training/170427-2.html)
+
+-----
+
 Additionally, as we are requesting *both a print and web instance of your project*, it will be necessary to convert your inDesign styles into much more reusable CSS styles. Start that work this week! 
 
 There is no right way to make a *CSS style guide*, which is a simple HTML document demonstrating the different typographic and formatting rules that your end product will eventually follow. This will be a living document, updated whenever a need for communicating a new content type or context emerges.
