@@ -20,4 +20,4 @@ Make sure you use this technique when working with external files that your visu
 
 -----
 
-Now that we can see our complex work, let's do [some homework](homework.md) to reinforce this week's skills.
+Now that we can see our maps, let's add some polish by [coloring each county based on its data](choropleth.md).

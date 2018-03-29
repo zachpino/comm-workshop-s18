@@ -10,8 +10,12 @@ Let's return this week to a simple bar chart, to ensure that all of the techniqu
 
 - [Downloading Geo-Data from TIGER](geodata.md)
 - [Shapefile Manipulation](shapefiles.md)
+
+-----
+
 - [Visualize Geo-Data](visualize.md)
 - [Simple HTTP Server](simpleserver.md)
+- [Choropleth](choropleth.md)
 
 -----
 
