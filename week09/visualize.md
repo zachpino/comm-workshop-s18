@@ -30,13 +30,6 @@ Note that we are including a new library, [D3's additional geoprojections](https
 			.append('svg')
 			.attr('height',height)
 			.attr('width',width)
-			.style('float','left')
-			//attach zoom interaction to the map
-			.call(d3.zoom()
-				.on("zoom", function () {
-        			g.attr("transform", d3.event.transform)
-      			})
-      		);
 		;
 
 		//rectangular background for map svg
@@ -46,23 +39,21 @@ Note that we are including a new library, [D3's additional geoprojections](https
 			.attr('y',0)
 			.attr('width',width)
 			.attr('height',height)
-			.attr('fill','##771512')
+			.attr('fill','black')
+		;
 
-		//append an svg group, into which we'll draw map stuff to keep our svg structure neat
-   		var g = svg.append('g');
-
-    	//decide how to project spherical coordinates to cartesian coorindates
+    		//decide how to project spherical coordinates to cartesian coorindates
 		var proj = d3.geoAlbersUsa()
   			.scale(1500)
   			.translate([width/2, height/2]);
   		;
 
 		//set up path projector. this converts the coordinates to svg path drawing instructions
-	    var path = d3.geoPath()
-	    	.projection(proj);
+	    	var path = d3.geoPath()
+	    		.projection(proj);
 
 	
-		//access geojson file
+		//access geojson file, err is if we get any errors in reading the file, geojson is the data
    		d3.json('counties.json', function(err, geojson) {
    		
 			//draw all of the regions included in the 'features' child array
