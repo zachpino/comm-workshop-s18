@@ -15,6 +15,6 @@ var proj = d3.geoMercator()
 
 ```
 
-Make use of a chromatic scale to fill the geo boundaries depending on one of the scaled values that TIGER provides in the `properties` child array of each geo entity. For instance, `ALAND` or `AWATER`. These aren't that intereting of course, but we'll be able to add more compelling data soon.
+Make use of a chromatic scale to fill the geo boundaries depending on one of the scaled values that TIGER provides in the `properties` child array of each geo entity. For instance, `ALAND` or `AWATER`. These aren't that interesting of course, but we'll be able to add more compelling data soon.
 
 Screenshot your work and submit to blackboard.
