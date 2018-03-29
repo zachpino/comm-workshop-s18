@@ -46,10 +46,10 @@ Documentation and Resources for the Spring 2018 IIT Institute of Design Communic
 	
 	> Homework: [CSS Style Guide](week08/homework.md)
 
-- Week 09 · Geo-Data and Drawing Maps
-	> Classtime: Sourcing and manipulating shapefiles from census mapping system TIGER. Draw a map and programmatically fill regions and draw circles based on a dataset. 
+- [Week 09 · Geo-Data and Drawing Maps](week09/readme.md)
+	> Classtime: Sourcing and manipulating shapefiles from census mapping system TIGER. Draw a map and programmatically fill regions. 
 	
-	> Homework: Pull down a set of shapefiles and convert them into geojson and svg for editing in Illustrator
+	> Homework: [Make a choropleth](week09/homework.md)
 
 - Week 10 · Correlation and Causation, Time-Based Plots and Math
 	> Classtime: Geocoding, Tooltips, Basic Statistics, Time Series Visualization
