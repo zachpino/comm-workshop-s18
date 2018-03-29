@@ -44,20 +44,21 @@ Note that we are including a new library, [D3's additional geoprojections](https
 
     		//decide how to project spherical coordinates to cartesian coorindates
 		var proj = d3.geoAlbersUsa()
-  			.scale(1500)
+  			.scale(1300)
   			.translate([width/2, height/2]);
   		;
 
 		//set up path projector. this converts the coordinates to svg path drawing instructions
-	    	var path = d3.geoPath()
-	    		.projection(proj);
+    	var path = d3.geoPath()
+    		.projection(proj);
 
 	
 		//access geojson file, err is if we get any errors in reading the file, geojson is the data
    		d3.json('counties.json', function(err, geojson) {
    		
 			//draw all of the regions included in the 'features' child array
-			g.selectAll('.counties')
+			var counties = d3.select('svg')
+				.selectAll('.counties')
 				.data(geojson.features)
 				.enter()
 				.append("path")
@@ -65,7 +66,7 @@ Note that we are including a new library, [D3's additional geoprojections](https
 				.attr("class","counties")
 				.attr('stroke-width',1)
 				.attr('stroke','white')
-				.attr('fill', 'black')	
+				.attr('fill', 'teal')	
 				.attr('opacity',1)			
 		})
 			
@@ -75,6 +76,11 @@ Note that we are including a new library, [D3's additional geoprojections](https
 
 </html>
 ```
+
+
+Tada! 
+
+![geo paths](geo.png)
 
 -----
 

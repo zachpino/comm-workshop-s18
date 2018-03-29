@@ -8,9 +8,6 @@ This code below makes use of a chromatic scale to color the counties of America 
 
 ![bad choropleth](badchoro.png)
 
-
-
-
 Too muddy, lots of very blue and very red counties, and not particularly informative. To improve this, we should compress the dynamic range by taking a root of the ratios, rather than the raw ratio values. To do this, we can use `scalePow().exponent(.25)` to raise each ratio to an exponential power — here to the 1/4th power. Try out other values to expand or collapse the variance of the dataset. Values below 1 will flatten the extremes out, allowing us to better see subtle variation in the visualization. Exponent values above 1 will expand variations, helpful when deviations are very small. Setting the exponent to `1` is the same as `d3.scaleLinear()`.
 
 A better choropleth:
