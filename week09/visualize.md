@@ -1,6 +1,6 @@
 ### Visualizing Geo Paths
 
-D3 was built for drawing maps, and it's fundamentally the same thing as visualizing a scatterplot or any other plot. There are, however some specific functions we need to prepare.
+D3 was built for drawing maps, and it's fundamentally the same thing as visualizing any other plot. There are, however some specific functions we need to prepare.
 
 Note that we are including a new library, [D3's additional geoprojections](https://github.com/d3/d3-geo-projection) for more flexibility when projecting.
 
