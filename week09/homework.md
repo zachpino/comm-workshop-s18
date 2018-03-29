@@ -8,10 +8,10 @@ Here, we are adjusting our projection to use the Mercator projection, and center
 
 ```js
 var proj = d3.geoMercator()
-				.center([-87.6298,41.8781])
-				.scale(1500)
-				.translate( [width/2 , height/2 ] )
-			;
+	.center([-87.6298,41.8781])
+	.scale(1500)
+	.translate( [width/2 , height/2 ] )
+;
 
 ```
 
