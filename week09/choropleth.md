@@ -4,7 +4,16 @@ Drawing maps is the same as drawing charts, and so too is the manipulation of a 
 
 When color or other visual variables are used to compare visual regions, often but not always geographic boundaries, the resulting form is called a [choropleth](https://en.wikipedia.org/wiki/Choropleth_map).
 
-This code makes use of a chromatic scale to color the counties of America by their proportion of water area to land area. Since so many counties have either a very high ratio (littoral, lacustrine, and riverine counties), or a very low ratio (prarie, desert, and other landlocked counties), the normal linear scale `d3.scaleLinear` is not a good match. Instead, we could compress the dynamic range by taking a root of the ratios, rather than the raw ratio values. To do this, we can use `scalePow().exponent(.25)` to raise each ratio to the power of 1/4. This will flatten the extremes out, allowing us to better see subtle variation in the visualization.
+This code below makes use of a chromatic scale to color the counties of America by their proportion of water area to land area. Since so many counties have either a very high ratio (littoral, lacustrine, and riverine counties), or a very low ratio (prarie, desert, and other landlocked counties), the normal linear scale `d3.scaleLinear` is not a good match. If we used a linear scale, we would get this poor choropleth:
+
+![bad choropleth](badchoro.png)
+
+
+
+
+Too muddy, lots of very blue and very red counties, and not particularly informative. To improve this, we should compress the dynamic range by taking a root of the ratios, rather than the raw ratio values. To do this, we can use `scalePow().exponent(.25)` to raise each ratio to an exponential power — here to the 1/4th power. Try out other values to expand or collapse the variance of the dataset. Values below 1 will flatten the extremes out, allowing us to better see subtle variation in the visualization. Exponent values above 1 will expand variations, helpful when deviations are very small. Setting the exponent to `1` is the same as `d3.scaleLinear()`.
+
+A better choropleth:
 
 ![choropleth](choropleth.png)
 
