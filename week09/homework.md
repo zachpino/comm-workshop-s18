@@ -1,9 +1,7 @@
 ### Homework due 4/6
 
-Draw a choropleth, colored by census values of your choice, with some data related to your project. Feel free to explore different scales. Make use of a chromatic scale to fill the geo boundaries.
+Draw a choropleth with TIGER data! Please make use of something other than the national counties scope we used in class. Your choropleth could be counties per state, tracts per urban area, states per region... 
+
+Make use of a chromatic scale to fill the geo boundaries depending on one of the scaled values that TIGER provides in the `properties` child array of each geo entity.
 
 Screenshot and submit to blackboard.
-
-- Bonus: Could you add labels to the map? 
-- Bonus: Could you add cities to the map or other geographic features of interest?
-- Bonus: How about some interactivity or animation? Dataset switching?
