@@ -50,21 +50,22 @@ Documentation and Resources for the Spring 2018 IIT Institute of Design Communic
 	> Classtime: Sourcing and manipulating shapefiles from census mapping system TIGER. Draw a map and programmatically fill regions. 
 	
 	> Homework: [Make a choropleth](week09/homework.md)
+	
+- Week 10 · Fancy Shapes and Data Mapping
+	> Classtime: Connecting datasets with a key, drawing spider plots.
+	
+	> Homework: Make an interactive map tool
 
-- Week 10 · Correlation and Causation, Time-Based Plots and Math
+- Week 11 · Correlation and Causation, Time-Based Plots and Math
 	> Classtime: Geocoding, Tooltips, Basic Statistics, Time Series Visualization
 	
 	> Homework: Draw a set of time series visualization based on assigned dataset from week 9.
 
-- Week 11· Axes and Tooltips, Drawing Custom Shapes and Plots
+- Week 12 · Axes and Tooltips, Drawing Custom Shapes and Plots
 	> Classtime: SVG paths, bezier and quadratic/quartic curves, and shapes examples
 	
 	> Homework: Visualize a self-selected, simple dataset in a more complex way (area chart, flow diagram, sankey, spider...)
 
-- Week 12 · Web Page Layout
-	> Classtime: Responsive HTML page layout construction, image and media tags, advanced CSS typography
-	
-	> Homework: Create page structure and add supporting content to choropleth from week 9 and time series from week 10.
 
 - Week 13 · Hierarchical Diagrams
 	> Classtime: Work with hierarchical dataset to draw nested connections between content (sankey and network diagrams)
