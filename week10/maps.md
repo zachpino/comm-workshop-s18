@@ -76,4 +76,4 @@ In this case, `d` refers to the geographic dataset, since that's what we're iter
 
 Spend some time on this page, using `console.log` to see how the datapoints are now available in your code.
 
-Let's move on to some odds and ends like expected [geographic visualization interactiviy](zoom.md).
+Let's move on to some odds and ends like expected [geographic visualization interactivity](zoom.md).
