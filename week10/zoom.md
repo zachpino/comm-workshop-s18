@@ -28,4 +28,4 @@ Note, importantly, the constraints implemented by `.scaleExtent([min,max])` and 
 
 -----
 
-What if we now wanted to add [some markers](points.md) to the interactive visualization? 
+What if we now wanted to add [some markers](point.md) to the interactive visualization? 
