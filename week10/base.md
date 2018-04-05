@@ -148,7 +148,7 @@ Also, please download this [geojson file](congressional_districts_5m.json) which
 
 -----
 
-All additional geographic drawing code will go below the `console.log(censusData)` line. That's the only place that we can be sure that we have our census data and geographic loaded and ready to use.
+All additional geographic drawing code will go below the `console.log(censusData)` line. That's the only place that we can be sure that we have our census data and geographic vectors loaded and ready to use.
 
 -----
 
