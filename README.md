@@ -51,10 +51,10 @@ Documentation and Resources for the Spring 2018 IIT Institute of Design Communic
 	
 	> Homework: [Make a choropleth](week09/homework.md)
 	
-- Week 10 · Fancy Shapes and Data Mapping
+- [Week 10 · Fancy Shapes and Data Mapping](week10/readme.md)
 	> Classtime: Connecting datasets with a key, drawing spider plots.
 	
-	> Homework: Make an interactive map tool
+	> Homework: [Make an interactive map visualization that uses a complex shape](week10/homework.md)
 
 - Week 11 · Correlation and Causation, Time-Based Plots and Math
 	> Classtime: Geocoding, Tooltips, Basic Statistics, Time Series Visualization

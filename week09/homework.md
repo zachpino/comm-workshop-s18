@@ -1,4 +1,4 @@
-### Homework due 4/6
+### Homework due 4/5
 
 Draw a choropleth with TIGER data! Please make use of something other than the national counties scope we used in class. Your choropleth could be counties in a single state state, tracts per urban area, CSAs in a division, states per region, etc.
 
