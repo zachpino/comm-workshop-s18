@@ -7,6 +7,8 @@
 - That shows more than just a single datapoint (for example, it might show a differential between two timestamps, a percentage of the population rather than the raw person count, a calculated and/or weighted value, a result of a ranking algorithm)...
 - That is somehow interactive, with clicking and/or hovering to expose additional or more precise data...
 - With positioned text labels or symbols.
+
+- Alternatively, if your core datasets are lon/lat points, visualize those points on a map instead of producing a choropleth. Otherwise, the same guidelines apply.
 	
 Some other goals to push your coding abilities further!
 
