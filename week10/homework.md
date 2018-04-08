@@ -1,6 +1,6 @@
 ### Homework due 4/12
 
-* Due in-class on the 12th to share with the class informally. Also, upload zip to Blackboard by 9am on the 12th.*
+*Due in-class on the 12th to share with the class informally. Also, upload zip to Blackboard by 9am on the 12th.*
 
 	- Create a choropleth tool that will help you research some aspect of your space...
 	- That uses census data to determine its color fill...
@@ -8,6 +8,8 @@
 	- That is somehow interactive, with clicking and/or hovering to expose additional or more precise data...
 	- With positioned text labels or symbols.
 	
+Some other goals to push your coding abilities further!
+
 	- Bonus: Animated?
 	- Bonus: Additionally add in a non-census dataset?
 	- Bonus: Allow the viewer to interactively switch the data points of the visualization?
