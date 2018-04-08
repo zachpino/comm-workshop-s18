@@ -15,8 +15,10 @@ Let's return this week to a simple bar chart, to ensure that all of the techniqu
 
 -----
 
-- Spider Plot Example Coming After Class!
+- [Homework](homework.md)
+- [Homework Example](example.md)
 
 -----
 
-- [Homework](homework.md)
+- [Extract Data from PDF Tables](http://tabula.technology)
+- [Editing and Extracting Data from Giant CSV Files](http://bconnelly.net/working-with-csvs-on-the-command-line/)
