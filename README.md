@@ -59,7 +59,7 @@ Documentation and Resources for the Spring 2018 IIT Institute of Design Communic
 - [Week 11 · Correlation and Causation, Time-Based Plots and Math](week11/readme.md)
 	> Classtime: Spider Charts and Stats
 	
-	> Homework: Coming soon!
+	> Homework: Do your project!
 
 - Week 12 · Axes and Tooltips, Drawing Custom Shapes and Plots
 	> Classtime: SVG paths, bezier and quadratic/quartic curves, and shapes examples
