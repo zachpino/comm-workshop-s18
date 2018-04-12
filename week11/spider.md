@@ -8,12 +8,14 @@ The data visualization works of Italian designers Federica Fragapane and Valerio
 [A World of Drugs - La Lettura #28 - Corriere della Sera](https://www.behance.net/FedericaFragapane) by Federica Fragapane]
 ![narcotics crime](https://mir-s3-cdn-cf.behance.net/project_modules/2800/9b4e2356782473.59bbdc3d5af3b.jpg)
 
-[Opera - La Lettura #24 - Corriere della Sera](https://www.behance.net/valeriopellegrini) by Valerio Pelligrini]
+[Opera - La Lettura #24 - Corriere della Sera](https://www.behance.net/valeriopellegrini) by Valerio Pelligrini
 ![opera](https://mir-s3-cdn-cf.behance.net/project_modules/disp/419ded29400144.56055920f4185.jpg)
 
 -----
 
 Because of the circular nature of spider charts, which is a poor match to the cartesian nature of SVG, the code this week is significantly more complex than the D3 logic used in other visualizations. We need to rely on sine and cosine to plot our points in polar space, and run many loops to handle all of the data. 
+
+![spider](spider.png)
 
 You will also see in the code below a JS object being passed as an argument to our *spider()* function, which allows easy customization of the output. This is an emergent pattern in javascript culture, which is highly dynamic in its norms and conventions.
 
