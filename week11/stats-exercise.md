@@ -65,7 +65,7 @@ Let's explore some data using statistical methods.
             var censusDataset = d3.csvParse(noBrackets, function(d){
                 return {
                     name: d.NAME,
-                    county: d.county,
+                    district: d["congressional district"],
                     fips: d.state,
                     income: +d.B06011_001E,
                     total: +d.B01001_001E,
