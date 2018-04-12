@@ -206,7 +206,7 @@ You will also see in the code below a JS object being passed as an argument to o
 						//loop through based on dataset length and parameters of of tau
 						for(var i = 0, j=0; j<(args.dataArray).length; i = i + ((2*Math.PI)/(args.dataArray).length), j++ ) {
 							//populate array 
-							ringPoints.push([ (Math.sin(i) * (args.radius / args.ringCount)*k) + args.x, (Math.cos(i) * (args.radius / args.ringCount)*k) + args.y]);
+							ringPoints.push([ (Math.sin(i) * (args.radius / args.ringCount)*k) + args.x, (-Math.cos(i) * (args.radius / args.ringCount)*k) + args.y]);
 						}
 
 						//this line, kind of like a scale, converts data into svg drawing directions
