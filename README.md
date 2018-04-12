@@ -56,14 +56,15 @@ Documentation and Resources for the Spring 2018 IIT Institute of Design Communic
 	
 	> Homework: [Make an interactive choropleth visualization](week10/homework.md)
 
-- Week 11 · Correlation and Causation, Time-Based Plots and Math
-	> Classtime: Geocoding, Tooltips, Basic Statistics, Time Series Visualization
+- [Week 11 · Correlation and Causation, Time-Based Plots and Math](week11/readme.md)
+	> Classtime: Spider Charts and Stats
 	
-	> Homework: Draw a set of time series visualization based on assigned dataset from week 9.
+	> Homework: Coming soon!
 
 - Week 12 · Axes and Tooltips, Drawing Custom Shapes and Plots
 	> Classtime: SVG paths, bezier and quadratic/quartic curves, and shapes examples
-	
+	> Classtime: Geocoding, Tooltips, Basic Statistics, Time Series Visualization
+
 	> Homework: Visualize a self-selected, simple dataset in a more complex way (area chart, flow diagram, sankey, spider...)
 
 
