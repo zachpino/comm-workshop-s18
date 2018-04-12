@@ -1,6 +1,6 @@
 ### Week 10: Connecting Datasets Grab Bag
 
-Let's return this week to a simple bar chart, to ensure that all of the techniques so far have been mastered. 
+Let's cover some additional data connection techniques between our geographic data vectors and census information, though the methods are extensible to arbitrary datasets.
 
 -----
 
