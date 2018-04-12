@@ -8,7 +8,7 @@ Let's build a complex visualization — the spider chart — as well as review s
 
 -----
 
-- [Stats Terms](stats.md)
+- [Statistics Terms](stats.md)
 - [Statistical Exercise](stats-exercise.md)
 
 -----
