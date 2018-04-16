@@ -159,7 +159,7 @@ function getPearsonCorrelation(x, y) {
 d3.variance(dataset, function(d){return d.comparisonData})
 ```
 
-- Valence: A unitless measure of which direction a datapoint would be expected to trend through time or some other independent variable.
+- Valence: A unitless measure of which direction a datapoint would be expected to trend through time or some other independent variable. *The valence of health insurance in America is towards covered care*.
 
 
 
