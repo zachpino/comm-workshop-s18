@@ -56,7 +56,7 @@ Documentation and Resources for the Spring 2018 IIT Institute of Design Communic
 	
 	> Homework: [Make an interactive choropleth visualization](week10/homework.md)
 
-- [Week 11 · Correlation and Causation, Time-Based Plots and Math](week11/readme.md)
+- [Week 11 · Spider Chart and Statistics](week11/readme.md)
 	> Classtime: Spider Charts and Stats
 	
 	> Homework: Do your project!
