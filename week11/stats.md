@@ -78,7 +78,7 @@ d3.max(dataset, function(d){return d.comparisonData})
 d3.min(dataset, function(d){return d.comparisonData})
 ```
 
-- Extents: The highest and lowest occuring value
+- Extents: The highest and lowest occuring values
 
 ```js
 d3.extent(dataset, function(d){return d.comparisonData})
