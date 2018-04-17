@@ -16,7 +16,7 @@ Let's cover some additional data connection techniques between our geographic da
 -----
 
 - [Homework](homework.md)
-- [Homework Example](example.md)
+- [Homework Example](homework-example.md)
 
 -----
 
