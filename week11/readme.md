@@ -5,6 +5,7 @@ Let's build a complex visualization — the spider chart — as well as review s
 -----
 
 - [Spider Chart](spider.md)
+- [Spider Fingerprint Example](spider-example.md)
 
 -----
 
