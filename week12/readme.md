@@ -15,6 +15,7 @@ Random leftovers and resources this week.
 
 - [Axes, Time Math, and Tooltips](axes.md)
 - [Responsive SVGs](responsive.md)
+- [Multiple SVGs](multiple.md)
 
 -----
 
