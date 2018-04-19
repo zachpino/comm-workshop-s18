@@ -44,7 +44,7 @@ In Adobe Illustrator, artboards scaled to 100 x 100 pixels were used so that lat
 - Note that, if your svg code includes elements other than `<path>`s, like `<circle>`s or `<rect>`s, you'll want to move some of the control points *a little bit* in AI on those geometric elements to make them somewhat irregular, so that AI exports *only paths*.
 - We are only interested in the `<path>` elements, and specifically their `d="..."` attributes. Delete everything before and after, leaving only the contents of the `d=""` parts. Don't forget to remove the closing brackets — `"/>` — of the `<path>` tags.
 
-```html
+```
 M98.509,62.176c-1.189-8.246-8.297-14.611-17.018-14.611c-8.709,0-17.052-3.225-23.491-9.081l-3.489-3.172
 		l0.493-0.329l-2.701-4.052l-1.506,1.004l-7.133-6.484c-1.588-1.441-3.646-2.238-5.791-2.238H8.726
 		c-1.331,0-2.617,0.558-3.527,1.532c-0.909,0.974-1.379,2.293-1.288,3.624l0.584,8.623l0.088,0.504
@@ -61,13 +61,13 @@ M25.667,39.94c-2.545,0.077-0.925,6.134-5.439,7.754s-9.607,3.819-4.861,5.556s11.2
 
 - Remove any line breaks and tabs and combine the path directions for all paths. Spaces are fine to separate the paths, but they should all be on one line.
 
-```html
+```
 M98.509,62.176c-1.189-8.246-8.297-14.611-17.018-14.611c-8.709,0-17.052-3.225-23.491-9.081l-3.489-3.172l0.493-0.329l-2.701-4.052l-1.506,1.004l-7.133-6.484c-1.588-1.441-3.646-2.238-5.791-2.238H8.726c-1.331,0-2.617,0.558-3.527,1.532c-0.909,0.974-1.379,2.293-1.288,3.624l0.584,8.623l0.088,0.504c0.913,3.194,0.596,6.591-0.89,9.564l-0.214,0.432c-1.427,2.859-2.182,6.056-2.182,9.252v5.432v4.87v6.303c0,1.897,1.541,3.438,3.438,3.438h90.529c1.897,0,3.438-1.541,3.438-3.438v-6.303v-2.435v-2.436H98.509z M6.167,56.744c0-2.444,0.577-4.89,1.671-7.072l0.214-0.432c1.994-3.989,2.447-8.535,1.285-12.833l-0.608-8.323h29.145c0.933,0,1.826,0.346,2.513,0.969l6.234,5.667l-1.624,1.083l2.701,4.052l2.638-1.758l0.922,0.838l-6.261,4.173l2.702,4.052l7.281-4.854c7.307,6.532,16.706,10.128,26.679,10.128c5.879,0,10.802,4.189,11.929,9.74h-41.15V50h-4.871v12.176H6.167V56.744zM93.833,71.917H6.167v-4.871h87.666V71.917z M25.667,39.94c-2.545,0.077-0.925,6.134-5.439,7.754s-9.607,3.819-4.861,5.556s11.227-4.746,11.227-6.655S29.486,39.824,25.667,39.94z
 ```
 
 - We can now set a variable in JS equal to that path direction string, and use it in our D3 code!
 
-```html
+```js
 var shoe = "M98.509,62.176c-1.189-8.246-8.297-14.611-17.018-14.611c-8.709,0-17.052-3.225-23.491-9.081l-3.489-3.172l0.493-0.329l-2.701-4.052l-1.506,1.004l-7.133-6.484c-1.588-1.441-3.646-2.238-5.791-2.238H8.726c-1.331,0-2.617,0.558-3.527,1.532c-0.909,0.974-1.379,2.293-1.288,3.624l0.584,8.623l0.088,0.504c0.913,3.194,0.596,6.591-0.89,9.564l-0.214,0.432c-1.427,2.859-2.182,6.056-2.182,9.252v5.432v4.87v6.303c0,1.897,1.541,3.438,3.438,3.438h90.529c1.897,0,3.438-1.541,3.438-3.438v-6.303v-2.435v-2.436H98.509z M6.167,56.744c0-2.444,0.577-4.89,1.671-7.072l0.214-0.432c1.994-3.989,2.447-8.535,1.285-12.833l-0.608-8.323h29.145c0.933,0,1.826,0.346,2.513,0.969l6.234,5.667l-1.624,1.083l2.701,4.052l2.638-1.758l0.922,0.838l-6.261,4.173l2.702,4.052l7.281-4.854c7.307,6.532,16.706,10.128,26.679,10.128c5.879,0,10.802,4.189,11.929,9.74h-41.15V50h-4.871v12.176H6.167V56.744zM93.833,71.917H6.167v-4.871h87.666V71.917z M25.667,39.94c-2.545,0.077-0.925,6.134-5.439,7.754s-9.607,3.819-4.861,5.556s11.227-4.746,11.227-6.655S29.486,39.824,25.667,39.94z
 "
 
@@ -76,7 +76,7 @@ svg.append('path').attr('d', shoe).attr('fill','red');
 
 - Because the drawing directions are relative to the 0,0 upper-left origin point and fit in a 100x100 square, we can use the svg `transform()` attribute [to move, scale, and rotate the vectors](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Basic_Transformations) into desired or data-driven positions.
 
-```html
+```js
 svg.append('path')
 	.attr('d', ...)
 	.attr('transform', function(d,i){ 
@@ -94,7 +94,7 @@ svg.append('path')
 
 - The logic above is placing and scaling relative to the upper-left origin corner, so some additional tweaks (add or subtract a few pixels) may be necessary to the `x` and `y` values. The code below plots the *center* of the icon at the desired position.
 
-```html
+```js
 svg.append('path')
 	.attr('d', ...)
 	.attr('transform', function(d,i){ 
