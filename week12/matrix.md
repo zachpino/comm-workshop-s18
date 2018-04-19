@@ -8,13 +8,13 @@ This simple visualization pattern has recently come into data viz fashion, drive
 
 This example demonstrating commuting behavior uses a simple `array.forEach(function(obj))` loop to flatten the census object and convert Illinois's commuting behaviors histogram from this from the ACs...
 
-```js
+```
 [{"name":"Illinois","bus":231862,"train":320945,"ferry":404,"taxi":12092,"motorcycle":6103,"bicycle":39187,"walk":184984,"car":4926537}]
 ```
 
-to a flattened array that looks like this where each 1,000 commuters becomes a single object in a new array...
+... to a flattened array that looks like this where each 1,000 commuters becomes a single object in a new array...
 
-```js
+```
 [{"type":"bus"},{"type":"bus"},{"type":"bus"},{"type":"bus"},{"type":"bus"},{"type":"bus"},{"type":"bus"},{"type":"bus"},{"type":"bus"},{"type":"bus"},{"type":"bus"},{"type":"bus"},{"type":"bus"},{"type":"bus"},{"type":"bus"},{"type":"bus"},{"type":"bus"},
 ...
 {"type":"train"},{"type":"train"},{"type":"train"},{"type":"train"},{"type":"train"},{"type":"train"},{"type":"train"},{"type":"train"},{"type":"train"},{"type":"train"},{"type":"train"},{"type":"train"},{"type":"train"},{"type":"train"},{"type":"train"},
@@ -22,6 +22,8 @@ to a flattened array that looks like this where each 1,000 commuters becomes a s
 {"type":"motorcycle"},{"type":"motorcycle"},{"type":"motorcycle"},{"type":"motorcycle"},{"type":"motorcycle"},{"type":"motorcycle"},{"type":"motorcycle"},{"type":"bicycle"},{"type":"bicycle"},{"type":"bicycle"},{"type":"bicycle"},{"type":"bicycle"},{"type":"bicycle"},{"type":"bicycle"},{"type":"bicycle"},{"type":"bicycle"},{"type":"bicycle"},{"type":"bicycle"},{"type":"bicycle"},{"type":"bicycle"},{"type":"bicycle"},{"type":"bicycle"},{"type":"bicycle"},{"type":"bicycle"},{"type":"bicycle"},{"type":"bicycle"},{"type":"bicycle"},{"type":"bicycle"},{"type":"bicycle"},
 ...
 ```
+
+The end result is this visualization, with a matrix of entitities representing a subset of the population.
 
 ![matrix](matrix.png)
 
