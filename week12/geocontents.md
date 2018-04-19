@@ -6,7 +6,7 @@ Very often, we need to calculate if some geo-coordinate is *inside* of a *closed
 d3.geoContains( geoEntity, [longitude,latitude] )
 ```
 
-The code above returns `true` if `[longitude,latitude]` is inside of feature `geoEntity` and `false` if not. `geoEntity` must be a geoJSON object. D3 leverages a super-fast instantion of the [PiP Winding Number (Angle Subtension) Algorithm](https://en.wikipedia.org/wiki/Point_in_polygon), enabling the `geoContains()` function to run on thousands of elements per seconds without any meaningful slow down.
+The code above returns `true` if `[longitude,latitude]` is inside of feature `geoEntity` and `false` if not. `geoEntity` must be a geoJSON object. D3 leverages a super-fast instantiation of the [PiP Winding Number (Angle Subtension) Algorithm](https://en.wikipedia.org/wiki/Point_in_polygon), enabling the `geoContains()` function to run on thousands of elements per seconds without any meaningful slow down.
 
 -----
 

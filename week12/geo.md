@@ -1,6 +1,8 @@
 ### GeoCircles and GeoArcs
 
-Let's learn to draw some other kinds of geo-entities
+Let's learn to programmatically draw some other sorts of geo-entities.
+
+-----
 
 ##### GeoCircles
 
@@ -9,8 +11,8 @@ GeoCircles are circles placed on geographic visualizations that, unlike SVG circ
 ```
 //construct circle
 var circle = d3.geoCircle()
-				.center( [lon,lat] )
-				.radius(.25)()
+	.center( [lon,lat] )
+	.radius(.25)()
 ;
 
 //draw circle
@@ -25,7 +27,7 @@ g.append("path")
 
 ##### GeoArcs
 
-GeoArcs are [geodesic](https://en.wikipedia.org/wiki/Geodesic) segments of [Great Circles](https://en.wikipedia.org/wiki/Great_circle), the intersection between a plane which has its origin at the center of the Earth and a sphere. This will always bisect the sphere into two hemispheres, and GeoArcs will always be the shortest path between two points on the globe, and approximate the routes that planes would ideally fly were wind and weather systems not a factor.
+GeoArcs are [geodesic](https://en.wikipedia.org/wiki/Geodesic) segments of [Great Circles](https://en.wikipedia.org/wiki/Great_circle), the intersection between a plane which has its origin at the center of the Earth and a sphere. This will always bisect the sphere into two hemispheres, and GeoArcs will always be the shortest path between two points on the globe — approximating the routes that planes would ideally fly were wind and weather systems not a factor.
 
 ```
 //construct arc
@@ -48,8 +50,7 @@ This simple demo draws some GeoCircles and a GeoArc. Note the slight bend in the
 ![simple](images/simple.png)
 
 ```html
-
-```<html>
+<html>
 <head>
 	<style> 
 	
@@ -181,7 +182,7 @@ Switching the target city to Anchorage reveals the obvious effect of the AlbersU
 
 -----
 
-A more complex example demonstrates how to serially generate GeoCircles and GeoArcs by visualizing airplane routes from O'Hare Airport logged by [OpenFlighs Data](https://openflights.org). Note in particular how the GeoCircles near the edges of the globe become highly elliptical, and the GeoArcs bend realistically. Importantly, projections take an optional `.precision()` setting that allows use to smooth out any kinks in the lines. By default, that number is set at .7, lower numbers (to a min of .01) mean higher precision and smoother lines at the cost of rendering time.
+A more complex example demonstrates how to serially generate GeoCircles and GeoArcs by visualizing airplane routes from O'Hare Airport logged by [OpenFlights Data](https://openflights.org). Note in particular how the GeoCircles near the edges of the globe become highly elliptical, and the GeoArcs bend realistically. Importantly, projections take an optional `.precision()` setting that allows use to smooth out any kinks in the lines. By default, that number is set at .7, lower numbers (to a min of .01) mean higher precision and smoother lines at the cost of rendering time.
 
 ![flights](images/flights.png)
 

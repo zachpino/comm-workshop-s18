@@ -79,4 +79,4 @@ You may at some point need to show geo-data for countries like the USA that have
 
 -----
 
-Let's now convert this code to a more D3-standard version, and also draw [SVG icons](matrix-svg.md) instead of dots. 
+Let's now look at some dataviz presentation pattern, starting with a [matrix plot](matrix.md).
