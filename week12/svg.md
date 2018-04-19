@@ -13,6 +13,12 @@ Make sure you take a look at what SVG can do! All of these can be implemented wi
 
 -----
 
+##### Responsive SVG Containers
+
+- Do [this](https://stackoverflow.com/questions/16265123/resize-svg-when-window-is-resized-in-d3-js)! 
+
+-----
+
 ##### D3 Utilities
 
 There are also other D3 utilities that make certain kinds of imagery and plots much easier to pull off in SVG.
