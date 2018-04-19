@@ -79,4 +79,4 @@ You may at some point need to show geo-data for countries like the USA that have
 
 -----
 
-Let's now look at some dataviz presentation pattern, starting with a [matrix plot](matrix.md).
+Let's now look at some dataviz presentation patterns, starting with a [matrix plot](matrix.md).
