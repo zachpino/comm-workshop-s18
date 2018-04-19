@@ -36,13 +36,13 @@ If you have a folder of shapefile assets, you will often find a file with the `.
 Should you encounter this common issue, a great utility — [MyGeoData Converter](https://mygeodata.cloud/converter/shp-to-latlong) — allows you to *reproject* all the coordinates to a more common (global) projection logic.
 
 - Upload a zipped folder of shapefiles containing a .prj file.
-![upload](reproj-upload.png)
+![upload](images/reproj-upload.png)
 - Select your desired `Output Format`, often `GeoJSON`
 - Click on `(the same as input)` directly underneath
 - Select `WGS 84`, the [World Geodetic System 1984 standard](https://en.wikipedia.org/wiki/World_Geodetic_System), used by basically everything including GPS systems, the UN for country boundary demarcations, and NASA for orbital calculations.
-![wgs84](reproj-wgs84.png)
+![wgs84](images/reproj-wgs84.png)
 - Click 'Set Selected'
-![convert](convert.png)
+![convert](images/convert.png)
 - Click the green 'Convert Now'
 
 Beware that you only get 3 free conversions per month.
@@ -67,7 +67,7 @@ Of course, just because some government agencies are forced to use State Plane p
 
 Explore how unusual projection might help you amplify data-driven stories by importing the [D3 Extended Geo Projections Library](https://github.com/d3/d3-geo-projection) and evaluating the different projections contained therein.
 
-![proj](proj.png)
+![proj](images/proj.png)
 
 -----
 
@@ -75,7 +75,7 @@ Explore how unusual projection might help you amplify data-driven stories by imp
 
 You may at some point need to show geo-data for countries like the USA that have distant territorial holdings. The [D3 Composite Projections Library](http://geoexamples.com/d3-composite-projections/) provides dedicated distorted projections, like AlbersUSA, for gathering those territories and projecting those countries into a single visualization with D3.
 
-![composite projections](composite.png)
+![composite projections](images/composite.png)
 
 -----
 

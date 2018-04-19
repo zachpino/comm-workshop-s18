@@ -2,7 +2,7 @@
 
 This example shows how to do programmatic action based on the scroll position of the browser, an emergent pattern in data viz design. But, a much more robust and rigorous approach is [detailed by Jim Vallandingham](http://vallandingham.me/scroller.html). He also demonstrates the [tabbed stepwise](http://vallandingham.me/stepper_steps.html), rather than scrolling, version of transitioning data visualization content. And, best of all, he has [compiled many examples](http://vallandingham.me/scroll_talk/examples/) of these pattern. [Pudding has a list of alternate JS libraries](https://pudding.cool/process/how-to-implement-scrollytelling/) which can be combined with D3 towards the same presentation goals that are worth exploring as well.
 
-![scroller](scroller.gif)
+![scroller](images/scroller.gif)
 
 ---
 

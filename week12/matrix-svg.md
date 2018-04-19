@@ -2,7 +2,7 @@
 
 Same plot and logic as before, but with icons prepared in Adobe Illustrator.
 
-![matrix-svg](matrix-svg.png)
+![matrix-svg](images/matrix-svg.png)
 
 -----
 
