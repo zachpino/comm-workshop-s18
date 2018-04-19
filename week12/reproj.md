@@ -46,7 +46,7 @@ Of course, just because some government agencies are forced to use State Plane p
 
 Explore how unusual projection might help you amplify data-driven stories by importing the [D3 Extended Geo Projections Library](https://github.com/d3/d3-geo-projection) and evaluating the different projections contained therein.
 
-![proj][proj.png]
+![proj](proj.png)
 
 -----
 
