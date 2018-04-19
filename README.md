@@ -62,7 +62,7 @@ Documentation and Resources for the Spring 2018 IIT Institute of Design Communic
 	> Homework: Do your project!
 
 - [Week 12 · Data Viz Patterns, Odds and Sods](week12/readme.md)
-	> Classtime: Geocoding, Axes, Tooltips, Time Math, Scroller, Responsiveness, Precomposed SVG Content, Other Patterns
+	> Classtime: Geocoding, Axes, Tooltips, Time Math, Scroller, Responsiveness, Precomposed SVG Content, Other Patterns...
 
 	> Homework: Do your project!
 

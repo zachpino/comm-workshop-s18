@@ -1,6 +1,19 @@
-### Reprojection, State Planes, Unusual Projections, and Composite Projections
+### Geocoding, Reprojection, State Planes, Unusual Projections, and Composite Projections
 
 A bit of a grab-bag on assorted projection-related concepts and utilities.
+
+----
+
+##### Forward and Reverse Geocoding
+
+Sometimes a dataset contains addresses or place names, rather than the longitude-latitude tuples that are what data visualization usually requires. The act of converting between human place names and longitude-latitude is called *geocoding*, and there are many utilities to do this work for us. Note, though, that this is an action that often [requires a few dollars](https://geocod.io) if a large number of coordinates or addresses needs to be converted at once or regularly. 
+
+- [Forward Batch Geocoding](https://www.doogal.co.uk/BatchGeocoding.php) : Address / Place Name -> Longitude & Latitude
+- [Reverse Batch Geocoding](https://www.doogal.co.uk/BatchReverseGeocoding.php) : Longitude & Latitude -> Address / Place Name
+
+These tools have somehow avoided Google's normally punitive gaze, as they anonymously abuse the [Google Maps Geocoding API](https://developers.google.com/maps/documentation/geocoding/start) to make the appropriate conversions — and the Google Maps API is *definitely not free*. Perhaps they'll be shut down some day, but they have been running for years without issue. ¯\_(ツ)_/¯ 
+
+Beware that the Google API will massively slow down after about 300 lookups, so run large conversions in small batches. After 300 lookups, reload the page, and your speed will rebound.
 
 ----
 
