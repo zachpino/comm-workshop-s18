@@ -11,7 +11,7 @@ Sometimes a dataset contains addresses or place names, rather than the longitude
 - [Forward Batch Geocoding](https://www.doogal.co.uk/BatchGeocoding.php) : Address / Place Name -> Longitude & Latitude
 - [Reverse Batch Geocoding](https://www.doogal.co.uk/BatchReverseGeocoding.php) : Longitude & Latitude -> Address / Place Name
 
-These tools have somehow avoided Google's normally punitive gaze, as they anonymously abuse the [Google Maps Geocoding API](https://developers.google.com/maps/documentation/geocoding/start) to make the appropriate conversions — and the Google Maps API is *definitely not free*. Perhaps they'll be shut down some day, but they have been running for years without issue. ¯\\_(ツ)_/¯ 
+These tools have somehow avoided Google's normally punitive gaze, as they anonymously abuse the [Google Maps Geocoding API](https://developers.google.com/maps/documentation/geocoding/start) to make the appropriate conversions — and the Google Maps API is *definitely not free*. Perhaps they'll be shut down some day, but they have been running for years without issue. ¯\\\_(ツ)\_/¯ 
 
 Beware that the Google API will massively slow down after about 300 lookups, so run large conversions in small batches. After 300 lookups, reload the page, and your speed will rebound.
 
