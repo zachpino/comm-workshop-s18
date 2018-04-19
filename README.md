@@ -61,17 +61,15 @@ Documentation and Resources for the Spring 2018 IIT Institute of Design Communic
 	
 	> Homework: Do your project!
 
-- Week 12 · Axes and Tooltips, Drawing Custom Shapes and Plots
-	> Classtime: SVG paths, bezier and quadratic/quartic curves, and shapes examples
-	> Classtime: Geocoding, Tooltips, Basic Statistics, Time Series Visualization
+- [Week 12 · Data Viz Patterns, Odds and Sods](week12/readme.md)
+	> Classtime: Geocoding, Axes, Tooltips, Time Math, Scroller, Responsiveness, Precomposed SVG Content, Other Patterns
 
-	> Homework: Visualize a self-selected, simple dataset in a more complex way (area chart, flow diagram, sankey, spider...)
-
+	> Homework: Do your project!
 
 - Week 13 · Hierarchical Diagrams
-	> Classtime: Work with hierarchical dataset to draw nested connections between content (sankey and network diagrams)
-	
-	> Homework: Find data appropriate for a network visualization and draw it.
+	> Classtime: Serving dataviz content on the internet
+
+	> Homework: Do your project!
 
 - Week 14 · Final Presentation!
 	> Classtime: Critique
