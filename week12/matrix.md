@@ -6,13 +6,13 @@ This simple visualization pattern has recently come into data viz fashion, drive
 
 -----
 
-This example demonstrating commuting behavior uses a simple `array.forEach(function(obj))` loop to flatten the census object and convert Illinois's commuting behaviors histogram from this from the ACs...
+This example demonstrating commuting behavior uses a simple `array.forEach(function(obj))` loop to flatten the census object and convert Illinois's commuting behaviors histogram from this from the ACS...
 
 ```
 [{"name":"Illinois","bus":231862,"train":320945,"ferry":404,"taxi":12092,"motorcycle":6103,"bicycle":39187,"walk":184984,"car":4926537}]
 ```
 
-... to a flattened array that looks like this where each 1,000 commuters becomes a single object in a new array...
+... to a flattened array where each 1,000 commuters becomes a single object in a new array...
 
 ```
 [{"type":"bus"},{"type":"bus"},{"type":"bus"},{"type":"bus"},{"type":"bus"},{"type":"bus"},{"type":"bus"},{"type":"bus"},{"type":"bus"},{"type":"bus"},{"type":"bus"},{"type":"bus"},{"type":"bus"},{"type":"bus"},{"type":"bus"},{"type":"bus"},{"type":"bus"},
