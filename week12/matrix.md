@@ -2,7 +2,7 @@
 
 This simple visualization pattern has recently come into data viz fashion, driven especially by 538's [Gun Deaths in America](https://fivethirtyeight.com/features/gun-deaths/) visualization.
 
-![538](gundeaths.md)
+![538](gundeaths.png)
 
 -----
 
