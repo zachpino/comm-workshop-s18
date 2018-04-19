@@ -25,7 +25,7 @@ This example demonstrating commuting behavior uses a simple `array.forEach(funct
 
 The end result is this visualization, with a matrix of entitities representing a subset of the population.
 
-![matrix](matrix.png)
+![matrix](images/matrix.png)
 
 -----
 

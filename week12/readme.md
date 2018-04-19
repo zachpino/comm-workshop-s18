@@ -4,13 +4,12 @@ Random leftovers and resources this week.
 
 -----
 
-- [Geocoding](geocoding.md)
 - [Geo-Arcs and Geo-Circles](geo.md)
 - [Geocontents](geocontents.md)
 
 -----
 
-- [Reprojection, Fancy Projections, Composite Projections, and State Planes](reproj.md)
+- [Geocoding, Reprojection, State Planes, Unusual Projections, and Composite Projections](reproj.md)
 
 -----
 
