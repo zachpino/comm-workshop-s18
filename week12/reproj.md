@@ -11,21 +11,29 @@ Sometimes a dataset contains addresses or place names, rather than the longitude
 - [Forward Batch Geocoding](https://www.doogal.co.uk/BatchGeocoding.php) : Address / Place Name -> Longitude & Latitude
 - [Reverse Batch Geocoding](https://www.doogal.co.uk/BatchReverseGeocoding.php) : Longitude & Latitude -> Address / Place Name
 
-These tools have somehow avoided Google's normally punitive gaze, as they anonymously abuse the [Google Maps Geocoding API](https://developers.google.com/maps/documentation/geocoding/start) to make the appropriate conversions — and the Google Maps API is *definitely not free*. Perhaps they'll be shut down some day, but they have been running for years without issue. ¯\\\_(ツ)\_/¯ 
+These tools have somehow avoided Google's normally punitive gaze, as they anonymously abuse the [Google Maps Geocoding API](https://developers.google.com/maps/documentation/geocoding/start) to make the appropriate conversions — and the Google Maps API is *definitely not free*. Perhaps they'll be shut down some day, but these tools have been available for years without issue. ¯\\\_(ツ)\_/¯ 
 
-Beware that the Google API will massively slow down after about 300 lookups, so run large conversions in small batches. After 300 lookups, reload the page, and your speed will rebound.
+Beware that the Google API will *massively slow down* after about 300 lookups, so run large conversions in small batches. 
+
+- Configure the options to your needs
+- Paste in 250ish lookups
+- Run the geocoder until the lookups complete (up to 10 minutes or so for 250)
+- Copy the results
+- Reload the page
+- Paste in new lookups
+- Run the geocoder (your speed will have rebound with each page reload)
 
 ----
 
 ##### Reprojection 
 
-Sometimes, high resolution shapefiles implement specific unusual projections, so their internal coordinate systems don't match standard longitude-latitude coorindates. For example, [this shapefile of the Chicago transit system](https://catalog.data.gov/dataset/cta-l-rail-stations-shapefile) includes coordinates projected to the `NAD_1983_StatePlane_Illinois_East_FIPS_1201_Feet`. This means that the `[0,0]` coordinate of the geo-data is not in the Atlantic Ocean where the Prime Meridien and Equator intersect, but rather is in North-Eastern Illinois.
+Sometimes, high resolution shapefiles implement specific and unusual projections, so their internal coordinate systems don't match standard longitude-latitude coorindates. For example, [this shapefile of the Chicago transit system](https://catalog.data.gov/dataset/cta-l-rail-stations-shapefile) includes coordinates projected to the `NAD_1983_StatePlane_Illinois_East_FIPS_1201_Feet`. This means that the `[0,0]` coordinate of the geo-data is not in the Atlantic Ocean where the Prime Meridien and Equator intersect as we would expect, but rather is in North-Eastern Illinois.
 
 If we convert that shapefile to geoJSON and draw it with D3, it would overlap much of the world and not be drawn inside of Chicago as we would want it to be.
 
 If you have a folder of shapefile assets, you will often find a file with the `.prj` extention. Opening this file in a text editor like Sublime will reveal what projection is being used. All sorts of official projections exist, many hyper-specific to some geographic region.
 
-Should you encounter this common issue, a great utility — [MyGeoData Converter](https://mygeodata.cloud/converter/shp-to-latlong) — allows you to reproject all the coordinates to a more common (global) projection logic.
+Should you encounter this common issue, a great utility — [MyGeoData Converter](https://mygeodata.cloud/converter/shp-to-latlong) — allows you to *reproject* all the coordinates to a more common (global) projection logic.
 
 - Upload a zipped folder of shapefiles containing a .prj file.
 ![upload](reproj-upload.png)
@@ -53,7 +61,7 @@ Note that, if you have a shapefile that implements State Plane projections, you 
 
 ##### Unusual Projections
 
-Of course, just because some government agencies are forced to use State Plane projections doesn't mean our visualization must. Many different projections exist that exemplify different spatial properties: direction, area, orientation, and/or shape. In addition, some projections exist [just to be beautiful](https://www.jasondavies.com/maps/gingery/), ease 3d assembly from a [developable pattern](https://en.wikipedia.org/wiki/Dymaxion_map), or provide [bias-shattering and unexpected views of the world](https://en.wikipedia.org/wiki/South-up_map_orientation). The choice of projection can be one driven by a persuasive, or visual, goal.
+Of course, just because some government agencies are forced to use State Plane projections doesn't mean our visualization must. Many different projections exist that exemplify different spatial properties: direction, area, orientation, and/or shape. In addition, some projections exist [just to be beautiful](https://www.jasondavies.com/maps/gingery/), ease 3d assembly from a [developable pattern](https://en.wikipedia.org/wiki/Dymaxion_map), more clearly represent [the places humans inhabit](https://en.wikipedia.org/wiki/Robinson_projection) and distort the oceans and uninhabited areas, or provide [bias-shattering and unexpected views of the world](https://en.wikipedia.org/wiki/South-up_map_orientation). The choice of projection can be one driven by a persuasive, or visual, goal.
 
 [Jason Davies data visualization work](https://www.jasondavies.com) offers many great examples of unusual projections that attract viewers into examining and reconsidering the otherwise familiar contours of the Earth.
 
