@@ -66,8 +66,8 @@ Documentation and Resources for the Spring 2018 IIT Institute of Design Communic
 
 	> Homework: Do your project!
 
-- Week 13 · Hierarchical Diagrams
-	> Classtime: Serving dataviz content on the internet
+- [Week 13 · Inputs and Handling Multiple SVGs](week13/readme.md)
+	> Classtime: Quick example of composed data visualization entities on a page.
 
 	> Homework: Do your project!
 
