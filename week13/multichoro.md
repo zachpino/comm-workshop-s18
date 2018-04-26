@@ -22,7 +22,8 @@ var dropdownValue = d3.select('#dropdown-ID').property('value');
 After creating several positioned `<div>`s and input elements, this example draws different data based on user input into two different choropleths for user comparison. A shared time slider allows a viewer to manipulate the two choropleths together.
 
 Grab the code and all dependencies [zipped up](multichoro.zip).
-It also demonstrates a common D3 development pattern:
+
+This example also demonstrates a common D3 development pattern:
 
 - Setup screen variables
 - Draw static content (backgrounds, base maps, axes...)
