@@ -5,3 +5,4 @@ Quick example of handling common interactions for data switching / filtering, as
 -----
 
 - [Two Choropleths, Dropdown Selections, Sliders](multichoro.md)
+- [Linked Visualizations](linked.md)

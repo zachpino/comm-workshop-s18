@@ -288,3 +288,7 @@ This example also demonstrates a common D3 development pattern:
 
 </html>
 ```
+
+-----
+
+Let's [add more visualizations](linked.md)!
