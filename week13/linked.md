@@ -31,7 +31,7 @@ We can then, on `click`, simply ask D3 to `.selectAll` of the items that share t
 
 Download all of the [assets](linked.zip).
 
-![linked vizes](linked.mp4)
+![linked vizes](linked.gif)
 
 -----
 
