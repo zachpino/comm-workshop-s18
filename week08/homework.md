@@ -4,7 +4,7 @@ Complete the exercise for this week, if we do not make it through everything in 
 
 -----
 
-Consider starting on these Lynda.com tutorials if neededd...
+Consider starting on these Lynda.com tutorials if needed...
 
 - [CSS Grid Layout](https://www.lynda.com/CSS-tutorials/Welcome/622088/651299-4.html)
 - [HTML Fundamentals](https://www.lynda.com/HTML-tutorials/HTML-Essential-Training/170427-2.html)
