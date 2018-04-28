@@ -29,6 +29,12 @@ We can then, on `click`, simply ask D3 to `.selectAll` of the items that share t
 })
 ```
 
+-----
+
+This example also shows how to assemble your own custom color scales, both one- and two-dimensional! The Choropleths and Bar Chart use custom color scales to fill their visual elements. The scatterplot uses a bilinear gradient generating function to create a rectangular gradient space.
+
+-----
+
 Download all of the [assets](linked.zip).
 
 ![linked vizes](linked.gif)
@@ -599,7 +605,7 @@ Download all of the [assets](linked.zip).
 					var barScaleLow = d3.scalePow().exponent(.5).domain([barExtents[0],0]).range([- (height - margin*2) / 2 , 0 ]);
 					var barScaleHigh = d3.scalePow().exponent(.5).domain([0,barExtents[1]]).range([0, (height - margin*2) / 2 ]);
 
-					//custom 3-point custom color scale! Note the pivot point and interpolation function called to control how the colors blend
+					//custom color scale! 
 					//https://github.com/d3/d3-interpolate
 					var barColorScaleLow = d3.scalePow().exponent(.5).domain([barExtents[0], 0]).interpolate(d3.interpolateRgb).range([d3.rgb("#0ff"), d3.rgb('#000')]);
 					var barColorScaleHigh = d3.scalePow().exponent(.5).domain([0, barExtents[1]]).interpolate(d3.interpolateRgb).range([d3.rgb('#000'), d3.rgb('#f0f')]);
