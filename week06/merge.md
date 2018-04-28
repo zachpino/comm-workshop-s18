@@ -240,9 +240,9 @@ In order to mate these datasets, we need to make a unifying edit to match the si
 	//like what we would get from d3.csvParse()
 	//number of walmarts per state
 	var objectData2 = [
-		{stateCode:"020317", gunDealers: 167},
-		{stateCode:"010236", gunDealers: 87},
-		{stateCode:"040906", gunDealers: 137}
+		{stateCode:"020317", walmarts: 167},
+		{stateCode:"010236", walmarts: 87},
+		{stateCode:"040906", walmarts: 137}
 	];
 
 	objectData2.forEach(function(item){
