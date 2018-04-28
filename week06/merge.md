@@ -2,6 +2,10 @@
 
 One of the biggest challenges facing data visualizers is how to combine discordant, though related, datasets into one visualization logic. We've already seen a few different way to join datasets. To formalize these learnings, let's imagine a set of datasets — all referencing California, Illinois, and New York — structured in different ways.
 
+Be aware that some of the need for these techniques are taken up by D3 maps, which are much more powerful and will be [discussed later](https://github.com/zachpino/comm-workshop-s18/blob/master/week10/maps.md). But, it never hurts to improve our general Javascript data manipulation abilities.
+
+-----
+
 ```
 	//like what we would get from copying and pasting from an ACS response
 	//first key line removed
