@@ -2,7 +2,7 @@
 
 Sometimes, we want to visualize data that is meaningfully spatial or regional, but we want to flatten the geographic differences between entities. Any visualization where geographic data is shown on a *manipulated* version of geography is called a **cartogram**.
 
-For example, if we wanted to plot data about what percentage of the population worked from home in each state, as part of a larger story about how state employment policies could be influencing entrepreneurship, it might be critical to identify regional trends. But, we also might want to have Rhode Island and Washington DC be just as visible as California for easier comparison, since the actual geographic forms of the states themselves do not matter as much, and could ultimately obfuscate the very relationships that the visualization strives to make manifest.
+For example, if we wanted to plot data about what percentage of the population worked from home in each state, as part of a larger story about how state employment policies could be influencing entrepreneurship, it might be critical to identify regional trends. But, we also might want to have Rhode Island and Washington DC be just as visible as California for easier comparison. The actual geographic forms of the states themselves do not matter as much, and could ultimately obfuscate the very relationships that the visualization strives to make manifest.
 
 ![cartogram](cartogram.png)
 
