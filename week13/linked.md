@@ -672,10 +672,7 @@ Download all of the [assets](linked.zip).
 
 </html>
 ```
-<<<<<<< HEAD
 
 -----
 
 Lots of code! Let's do something simpler but [maybe more visually useful](cartogram.md)?
-=======
->>>>>>> 2e8b40f196432ea5415a40b1b2fc46f1ec4f3537
