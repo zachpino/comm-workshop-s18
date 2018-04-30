@@ -6,7 +6,7 @@ For example, if we wanted to plot data about what percentage of the population w
 
 ![cartogram](cartogram.png)
 
-This simplified version of geography makes it easier to compare all the states at a glance, as well as discover geospatial trends since the states are plotted in a matrix spot approximate to their real locations.
+This simplified version of geography makes it easier to compare all the states at a glance, as well as discover geospatial trends, as the states are plotted in a matrix position approximate to their real locations.
 
 Cartograms can be much more expressive than this simple matrix approach, [programmatically adjusting the space alloted to each entity](https://medium.com/google-news-lab/tilegrams-make-your-own-cartogram-hexmaps-with-our-new-tool-df46894eeec1) or even [distorting the actual shape of the geo-entity with data](http://archive.worldmapper.org/thumbnails/mapindex1-12.html)!
 
