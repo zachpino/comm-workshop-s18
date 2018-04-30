@@ -666,3 +666,7 @@ Download all of the [assets](linked.zip).
 
 </html>
 ```
+
+-----
+
+Lots of code! Let's do something simpler but [maybe more visually useful](cartogram.md)?
