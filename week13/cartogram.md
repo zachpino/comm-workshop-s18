@@ -2,13 +2,13 @@
 
 Sometimes, we want to visualize data that is meaningfully spatial or regional, but we want to flatten the geographic differences between entities. Any visualization where geographic data is shown on a *manipulated* version of geography is called a [**cartogram**](https://en.wikipedia.org/wiki/Cartogram).
 
-For example, if we wanted to plot data about what percentage of the population worked from home in each state, it might be important to see regional trends. But, we also might want to have Rhode Island and Washington DC be just as visible as California for easier comparison since the actual geographic forms themselves don't matter as much, and might obfuscate the data.
+For example, if we wanted to plot data about what percentage of the population worked from home in each state, as part of a larger story about how state employment policies could be influencing entrepreneurship, it might be critical to identify regional trends. But, we also might want to have Rhode Island and Washington DC be just as visible as California for easier comparison. The actual geographic forms of the states themselves do not matter as much, and could ultimately obfuscate the very relationships that the visualization strives to make manifest.
 
 ![cartogram](cartogram.png)
 
-This simplified version of geography makes it easier to compare all the states at a glance, as well as discover geospatial trends since the states are plotted in a matrix spot approximate to their real locations.
+This simplified version of geography makes it easier to compare all the states at a glance, as well as discover geospatial trends, as the states are plotted in a matrix position approximate to their real locations.
 
-Cartograms can be much more expressive than this simple matrix approach, [specifically adjusting the space alloted to each entity](https://medium.com/google-news-lab/tilegrams-make-your-own-cartogram-hexmaps-with-our-new-tool-df46894eeec1) or even [distorting the actual shape of the geo-entity with data](http://archive.worldmapper.org/thumbnails/mapindex1-12.html)!
+Cartograms can be much more expressive than this simple matrix approach, [programmatically adjusting the space alloted to each entity](https://medium.com/google-news-lab/tilegrams-make-your-own-cartogram-hexmaps-with-our-new-tool-df46894eeec1) or even [distorting the actual shape of the geo-entity with data](http://archive.worldmapper.org/thumbnails/mapindex1-12.html)!
 
 -----
 
