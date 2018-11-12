@@ -12,7 +12,7 @@ Modeled on an Ancient Roman equivalent that tracked citizenry for military draft
 #### Criticisms and Limitations of the Census
 Historical census data, valuable and available, is tarnished by historical realities. The censuses of the early United States did not count women, people of color, or indigineous peoples, until the landmark census of 1850 — which was administered by the ahead-of-his-time sociopoltical activist and Civil War cartographer and strategist [Joseph C.G. Kennedy](https://en.wikipedia.org/wiki/Joseph_C._G._Kennedy). The census of 1940 was used surreptitiously to identify potential Italian, German, and Japanese sympathizers. Because the census strives to offer consistent data over time, it often uses non-contemporary terminology and selection biases. For instance, the census still maintains binary gender definitions, counts same-sex marriages in some states and not others, and mixes up racial and ethic identity, Counting people, inherently, requires the drawing of lines between people — and that is often done by the census in unenlighted, conservative ways with consistency as the ultimate goal.
 
-Moreover, because of the role of the census in determining House of Representative seat counts, census data collection is often politicized. The 2020 census is already being accused of potential misuse mostly surrounding the counting of undocumented immigrants, and despite its importance, is under threat of defunding by both political sides. Additionally, contemporary gross population trends are much more dynamic than the every 10 year original model designed for the on-horseback census worker. As a result, the census data collection efforts have expanded.
+Moreover, because of the role of the census in determining House of Representative seat counts, census data collection is often politicized. The 2020 census is already being accused of potential misuse mostly surrounding the counting of undocumented immigrants, and despite its importance, is under threat of defunding by both political sides. Additionally, contemporary gross population trends are much more dynamic than the *every 10 year* original model designed for the on-horseback census worker. As a result, the census data collection efforts have expanded.
 
 
 #### American Community Survey
@@ -71,7 +71,7 @@ The [yearly ACS API](https://census.gov/data/developers/data-sets/acs-1year.html
 
 The querying format is different for each type of presentation, though the process is similar. 
 
-Underneath each presentation is an set of resources that looks something like this:
+Underneath each presentation is a set of resources that looks something like this:
 
 ##### Detail Tables
 - Example Call: api.census.gov/data/2016/acs/acs1?get=NAME,B01001_001E&for=state:*&key=...
