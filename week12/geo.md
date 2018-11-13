@@ -6,7 +6,7 @@ Let's learn to programmatically draw some other sorts of geo-entities.
 
 ##### GeoCircles
 
-GeoCircles are circles placed on geographic visualizations that, unlike SVG circles, *are deformed by projection math*. This means that GeoCircles of the same size placed at different places on the globe will appear totally different from one another, depending on how the chosen projection distorts the sphere of the Earth. GeoCircles are [small circles](https://en.wikipedia.org/wiki/Circle_of_a_sphere), an intersection between a sphere and a plane which is [normal](https://en.wikipedia.org/wiki/Normal_(geometry)) to a line starting at the center of the earth and directed at some specific surface point on the sphere. The plane is made non-tangent, moved towards the center of the Earth, by setting a `radius` measured in degrees of longitude *not pixels*.
+GeoCircles are circles placed on geographic visualizations that, unlike SVG circles, *are deformed by projection math*. This means that GeoCircles of the same size placed at different places on the globe will appear totally different from one another, depending on how the chosen projection distorts the sphere of the Earth. GeoCircles are [small circles](https://en.wikipedia.org/wiki/Circle_of_a_sphere), an intersection between a sphere and a plane which is [normal](https://en.wikipedia.org/wiki/Normal_(geometry)) to a line starting at the center of the earth and directed at some specific surface point on the sphere. The plane is made non-tangent, moved towards the center of the Earth, by setting a `radius` measured in degrees of longitude, and *not pixels*.
 
 ```
 //construct circle
